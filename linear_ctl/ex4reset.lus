@@ -1,0 +1,7 @@
+node top(r : bool; in0 : real) returns (x0, x1, x2 : real);
+let
+  assert(in0 >= -1. and in0 <= 1.);
+  x0 = 0. -> if r then 1. else 0.9379 * pre x0 - 0.0381 * pre x1 - 0.0414 * pre x2 + 0.0237 * in0;
+  x1 = 0. -> if r then 1. else -0.0404 * pre x0 + 0.968 * pre x1 - 0.0179 * pre x2 + 0.0143 * in0;
+  x2 = 0. -> if r then 1. else 0.0142 * pre x0 - 0.0197 * pre x1 + 0.9823 * pre x2 + 0.0077 * in0;
+tel

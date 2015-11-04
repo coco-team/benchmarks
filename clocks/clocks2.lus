@@ -1,0 +1,25 @@
+
+type choice = enum { One, Two };
+type entier = int;
+
+const PI = 3;
+
+const choix = One;
+
+node toto (x:int) returns (a:int;y:int)
+var c : choice clock;b1, b2:entier;
+let
+  a = PI fby (a+1);
+  c = if a=x then One else Two ;
+  b1 = 1 when One(c);
+  b2 = 2 when Two(c);
+  y = merge c (One -> b1) (Two -> b2);
+tel
+
+node test (x:bool) returns (y:int)
+var a:int; b:int;
+let
+   (a,b) = toto(if x then 0 else 1);
+   y = a ;
+tel
+

@@ -1,0 +1,12 @@
+node top(in4_0 : real) returns (x4_0, x4_1, x4_2, inl2_0, yn, ynm1, xnm1, xnm2 : real);
+let
+  assert(in4_0 >= -1. and in4_0 <= 1.);
+  x4_0 = 0. -> 0.9379 * pre x4_0 - 0.0381 * pre x4_1 - 0.0414 * pre x4_2 + 0.0237 * in4_0;
+  x4_1 = 0. -> -0.0404 * pre x4_0 + 0.968 * pre x4_1 - 0.0179 * pre x4_2 + 0.0143 * in4_0;
+  x4_2 = 0. -> 0.0142 * pre x4_0 - 0.0197 * pre x4_1 + 0.9823 * pre x4_2 + 0.0077 * in4_0;
+  inl2_0 = in4_0 -> 0.3 * x4_1;
+  yn = 0. -> 0.21875*inl2_0 + 0.40625*pre xnm1 + 0.21875*pre xnm2 + 0.375*pre yn - 0.1875*pre ynm1;
+  ynm1 = 0. -> pre yn;
+  xnm1 = 0. -> inl2_0;
+  xnm2 = 0. -> pre xnm1;
+tel

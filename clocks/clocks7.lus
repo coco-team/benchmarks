@@ -1,0 +1,16 @@
+
+type choice1 = enum { On, Off };
+type choice2 = enum { Up, Down };
+
+node toto (x:int) returns (y:int)
+var c:choice1 clock; d:choice2 clock; b1,b2,b3,z:int;
+let
+  c = if 0=x when Up(d) then Off else On;
+  d = if x>0 then Up else Down;
+  b1 = 1 when On(c);
+  b2 = 2 when Off(c);
+  b3 = 3 when Down(d);
+  y = merge d (Up -> z) (Down -> b3);
+  z = merge c (On -> b1) (Off -> b2);
+tel
+

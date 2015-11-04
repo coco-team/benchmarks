@@ -1,0 +1,12 @@
+node accu(i: int) returns (o: int);
+let
+  o = 0 -> i + pre o;
+tel;
+  
+node f(reset: bool) returns (out: int);
+var cpt: int;
+let
+  cpt, out = if reset then (0, 0) else ((0 -> 1 + pre cpt), accu(cpt));
+--  cpt = if reset then 0 else (0 -> 1 + pre cpt);
+--  out = if reset then 0 else accu(cpt);
+tel;

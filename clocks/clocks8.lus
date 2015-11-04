@@ -1,0 +1,14 @@
+
+type choice = enum { On, Off };
+
+node toto (x:int) returns (e:int)
+var c:choice clock; a,b1,b2,d : int;
+let
+  a = 2*x;
+  b1 = a + 1 when On(c);
+  b2 = a - 1 when Off(c);
+  c = if 0=x then Off else On;
+  d = merge c (On -> b1) (Off -> b2);
+  e = d/2;
+tel
+

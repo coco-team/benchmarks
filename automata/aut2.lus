@@ -1,0 +1,102 @@
+  type parity__type = enum {Even, Odd };
+  
+  
+  function parity__Odd_unless (parity__restart_in: bool; parity__state_in: parity__type; l: int) returns (parity__restart_act: bool; parity__state_act: parity__type)
+var __parity__Odd_unless_1: bool;
+let
+    
+    parity__restart_act, parity__state_act = (if __parity__Odd_unless_1 then (true,Even) else (parity__restart_in,parity__state_in));
+    __parity__Odd_unless_1 = ((l mod 2) = 0);
+     
+tel
+ 
+node parity__Odd_handler_until (parity__restart_act: bool; parity__state_act: parity__type; x: int) returns (parity__restart_in: bool; parity__state_in: parity__type; l_out: int)
+var __parity__Odd_handler_until_2: int;
+    __parity__Odd_handler_until_1: bool;
+    l: int;
+let
+    
+    parity__restart_in, parity__state_in = (parity__restart_act,parity__state_act);
+    l_out = l;
+    l = (if __parity__Odd_handler_until_1 then x else __parity__Odd_handler_until_2);
+    __parity__Odd_handler_until_2 = pre ((3 * l) + 1);
+    __parity__Odd_handler_until_1 = (true -> false);
+     
+tel
+ 
+function parity__Even_unless (parity__restart_in: bool; parity__state_in: parity__type; l: int) returns (parity__restart_act: bool; parity__state_act: parity__type)
+var __parity__Even_unless_1: bool;
+let
+    
+    parity__restart_act, parity__state_act = (if __parity__Even_unless_1 then (true,Odd) else (parity__restart_in,parity__state_in));
+    __parity__Even_unless_1 = ((l mod 2) = 1);
+     
+tel
+ 
+node parity__Even_handler_until (parity__restart_act: bool; parity__state_act: parity__type; x: int) returns (parity__restart_in: bool; parity__state_in: parity__type; l_out: int)
+var __parity__Even_handler_until_2: int;
+    __parity__Even_handler_until_1: bool;
+    l: int;
+let
+    
+    parity__restart_in, parity__state_in = (parity__restart_act,parity__state_act);
+    l_out = l;
+    l = (if __parity__Even_handler_until_1 then x else __parity__Even_handler_until_2);
+    __parity__Even_handler_until_2 = pre (l / 2);
+    __parity__Even_handler_until_1 = (true -> false);
+     
+tel
+
+node test1 (x: int) returns (y: bool)
+var __test1_12: bool;
+    __test1_13: parity__type;
+    __test1_11: bool;
+    __test1_8: bool;
+    __test1_9: parity__type;
+    __test1_10: int;
+    __test1_5: bool;
+    __test1_6: parity__type;
+    __test1_7: int;
+    __test1_3: bool;
+    __test1_4: parity__type;
+    __test1_1: bool;
+    __test1_2: parity__type;
+    parity__next_restart_in: bool;
+    parity__restart_in: bool;
+    parity__restart_act: bool;
+    parity__next_state_in: parity__type;
+    parity__state_in: parity__type clock;
+    parity__state_act: parity__type clock;
+    l: int;
+let
+    
+    parity__restart_in, parity__state_in = (if __test1_11 then (false,Even) else (__test1_12,__test1_13));
+    __test1_12, __test1_13 = pre (parity__next_restart_in,parity__next_state_in);
+    __test1_11 = (true -> false);
+
+    parity__next_restart_in, parity__next_state_in, l = merge parity__state_act (Even -> (__test1_8,__test1_9,__test1_10))
+                                                                                (Odd -> (__test1_5,__test1_6,__test1_7));
+    __test1_8, __test1_9, __test1_10 = parity__Even_handler_until (parity__restart_act when Even(parity__state_act),
+                                                                   parity__state_act when Even(parity__state_act),
+                                                                   x when Even(parity__state_act))
+                                       every (parity__restart_act);
+    __test1_5, __test1_6, __test1_7 = parity__Odd_handler_until (parity__restart_act when Odd(parity__state_act),
+                                                                 parity__state_act when Odd(parity__state_act),
+                                                                 x when Odd(parity__state_act))
+                                      every (parity__restart_act);
+
+
+    parity__restart_act, parity__state_act = merge parity__state_in (Even -> (__test1_3,__test1_4))
+                                                                    (Odd -> (__test1_1,__test1_2));
+    __test1_3, __test1_4 = parity__Even_unless (parity__restart_in when Even(parity__state_in),
+                                                parity__state_in when Even(parity__state_in),
+                                                l when Even(parity__state_in))
+                           every (parity__restart_in);
+    __test1_1, __test1_2 = parity__Odd_unless (parity__restart_in when Odd(parity__state_in),
+                                               parity__state_in when Odd(parity__state_in),
+                                               l when Odd(parity__state_in))
+                           every (parity__restart_in);
+
+    y = (l = 1);
+     
+tel

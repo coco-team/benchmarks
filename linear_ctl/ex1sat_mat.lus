@@ -1,0 +1,21 @@
+#open "arrays"
+
+node ctl(in0 : real^1^1) returns (sx: real; mem : real^2^1);
+var _A:  real^2^2;
+    _B:  real^2^1;
+let
+  _A = [[1.5, 1.],  [-0.7, 0.]]; 
+  _B = [[1.6, 0.]]; 
+   assert(in0[0][0] >= -1. and in0[0][0] <= 1.);
+   mem = [[0., 0.]] -> _MatMul_real(2, 2, 1,  _A,  pre mem) + _MatMul_real(2, 1, 1, _B,  in0);
+  sx = if mem[0][0] > 10. then 10. else if mem[0][0] < 10. then -10. else mem[0][0];
+tel
+
+node top(in0 : real) returns (sx, x,  y:  real);
+var res:  real^2^1;
+let
+  sx, res = ctl([[in0]]);
+  x = res[0][0];
+  y = res[0][1];
+tel
+

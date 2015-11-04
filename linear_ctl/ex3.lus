@@ -1,0 +1,6 @@
+node top(in0 : real) returns (x0, x1 : real);
+let
+  assert(in0 >= -1. and in0 <= 1.);
+  x0 = 0. -> 0.499 * pre x0 - 0.05 * pre x1 + in0;
+  x1 = 0. -> 0.01 * pre x0 + pre x1;
+tel

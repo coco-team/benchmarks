@@ -1,0 +1,7 @@
+node top(in0 : real) returns (sx, x, y : real);
+let
+  assert(in0 >= -1. and in0 <= 1.);
+  x = 0. -> 1.5 * pre sx - 0.7 * pre y + 1.6 * in0;
+  y = 0. -> pre x;
+  sx = if x > 10. then 10. else if x < -10. then -10. else x;
+tel

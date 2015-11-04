@@ -1,0 +1,15 @@
+
+node command(millisecond : bool) returns (open_light : bool)
+let
+  automaton command_control
+    state Open :
+          let
+            open_light = true;
+          tel
+          
+    state Silent :
+          let
+            open_light = false;
+          tel
+          
+tel

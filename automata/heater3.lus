@@ -1,0 +1,27 @@
+const delay_on = 200;
+
+const delay_off = 500;
+
+node count(d : int; t : bool) returns (ok : bool)
+var cpt:int;
+let
+  ok = (cpt = 0);
+  cpt = 0 -> (if t then pre cpt + 1 else pre cpt) mod d;
+tel
+
+node command(millisecond : bool) returns (open_light, open_gas : bool)
+let
+  automaton command_control
+    state Open :
+          let
+            open_light = true;
+            open_gas = true;
+          tel
+          until count(delay_on, millisecond) restart Silent
+    state Silent :
+          let
+            open_light = false;
+            open_gas = false;
+          tel
+          until count(delay_off, millisecond) restart Open
+tel

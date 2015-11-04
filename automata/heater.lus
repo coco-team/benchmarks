@@ -1,0 +1,100 @@
+
+const low = 5;
+
+const high = 5;
+
+const delay_on = 200;
+
+const delay_off = 500;
+
+node edge(c : bool) returns (edge_c : bool)
+let
+  edge_c = false -> c && not (pre c);
+tel
+
+node count(d : int; t : bool) returns (ok : bool)
+var cpt:int;
+let
+  ok = (cpt = 0);
+  cpt = 0 -> (if t then pre cpt + 1 else pre cpt) mod d;
+tel
+
+(* controling the heat *)
+(* returns [true] when [expected_temp] does not agree with [actual_temp] *)
+node heat(expected_temp, actual_temp : int) returns (ok : bool)
+let
+  automaton heat_control
+    state Stop :
+          unless (actual_temp <= expected_temp - low) resume Start
+          let
+            ok = false; 
+          tel
+    state Start :
+          unless (actual_temp >= expected_temp + high) resume Stop
+          let
+            ok = true;
+          tel
+tel
+
+(* a cyclic two mode automaton with an internal timer *)
+(* [open_light = true] and [open_gas = true] for [delay_on millisecond] *)
+(* then [open_light = false] and [open_gas = false] for *)
+(* [delay_off millisecond] *)
+node command(millisecond : bool) returns (open_light, open_gas : bool)
+let
+  automaton command_control
+    state Open :
+          let
+            open_light = true;
+            open_gas = true;
+          tel
+          until count(delay_on, millisecond) restart Silent
+    state Silent :
+          let
+            open_light = false;
+            open_gas = false;
+          tel
+          until count(delay_off, millisecond) restart Open
+tel
+
+(* the main command which control the opening of the light and gas *)
+node light(millisecond : bool; on_heat, on_light : bool) returns (open_light, open_gas, nok : bool)
+let
+  automaton light_control
+    state Light_off :
+          let
+            nok = false;
+            open_light = false;
+            open_gas = false;
+          tel
+          until on_heat restart Try
+    state Light_on :
+          let
+            nok = false;
+            open_light = false;
+            open_gas = true;
+          tel
+          until not on_heat restart Light_off
+    state Try :
+          let
+            nok = false;
+            (open_light, open_gas) = command(millisecond);
+          tel
+          until on_light restart Light_on
+          until count(3, edge(not open_light)) restart Failure
+    state Failure :
+          let
+            nok = true; 
+            open_light = false;
+            open_gas = false;
+          tel
+tel
+
+(* the main function *)
+node main(millisecond : bool; reset : bool; expected_temp, actual_temp : int; on_light : bool) returns (open_light, open_gas, ok : bool)
+var on_heat, nok : bool;
+let
+  on_heat = heat(expected_temp,actual_temp) every reset;
+  (open_light, open_gas, nok) = light(millisecond, on_heat, on_light) every reset;
+  ok = not nok;
+tel

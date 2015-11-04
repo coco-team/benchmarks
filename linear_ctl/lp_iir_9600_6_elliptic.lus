@@ -1,0 +1,16 @@
+node top(xn : real) returns (yn, ynm1, ynm2, ynm3, ynm4, ynm5, xnm1, xnm2, xnm3, xnm4, xnm5, xnm6 : real);
+let
+  assert(xn >= -1.0 and xn <= 1.0);
+  yn = 0. -> 0.0071206017131343335*xn + 0.02429729818092203*pre xnm1 + 0.04613413371939573*pre xnm2 + 0.05613064430953349*pre xnm3 + 0.04613413371939573*pre xnm4 + 0.02429729818092203*pre xnm5 + 0.0071206017131343335*pre xnm6 - -2.7445577051566046*pre yn - 4.495158480897364*pre ynm1 - -4.649204375147074*pre ynm2 - 3.2299784258838873*pre ynm3 - -1.4088842648092799*pre ynm4 - 0.31451868286474205*pre ynm5;
+  ynm1 = 0. -> pre yn;
+  ynm2 = 0. -> pre ynm1;
+  ynm3 = 0. -> pre ynm2;
+  ynm4 = 0. -> pre ynm3;
+  ynm5 = 0. -> pre ynm4;
+  xnm1 = 0. -> xn;
+  xnm2 = 0. -> pre xnm1;
+  xnm3 = 0. -> pre xnm2;
+  xnm4 = 0. -> pre xnm3;
+  xnm5 = 0. -> pre xnm4;
+  xnm6 = 0. -> pre xnm5;
+tel

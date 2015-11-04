@@ -1,0 +1,15 @@
+
+node toto (x:int; d:bool clock) returns (y:int)
+let
+  y = x when d;
+tel
+
+node test(i:int) returns (o:int)
+var c,d : bool clock;
+ l : int;
+let
+  c = i=1 when d;
+  d = i=0;
+  l = toto(i,d) when c;
+  o = 1;
+tel

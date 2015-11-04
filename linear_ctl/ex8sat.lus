@@ -1,0 +1,8 @@
+node top(ix0, ix1 : real) returns (sx0, x0, x1 : real);
+let
+  assert(ix0 > 0. and ix0 < 1.);
+  assert(ix1 > 0. and ix1 < 1.);
+  x0 = ix0 -> 0.95 * pre sx0 + 0.09975 * pre x1;
+  x1 = ix1 -> -0.1 * pre sx0 + 0.95 * pre x1;
+  sx0 = if x0 > 0.5 then 0.5 else if x0 < -0.5 then -0.5 else x0;
+tel

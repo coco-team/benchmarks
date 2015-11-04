@@ -1,0 +1,11 @@
+
+
+node test (x:bool clock) returns (c,d:int);
+var a,b:int;
+let
+  a = 1;
+  b = 2;
+(* (c,d) = (a,b) when x;*)
+(*  (a,b) = (0,0) -> if x then (pre b, pre a) else (pre a, pre b);*)
+  (c,d) = merge x (true -> (a,b) when x) (false -> (1,1));
+tel
