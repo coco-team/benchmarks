@@ -1,0 +1,43 @@
+Source: http://diydrones.com/forum/topics/matlab-simulink-simulator
+================================================================================
+
+March 8 2013 update
+
+================================================================================
+
+A good servo model has been added
+
+================================================================================
+
+Here is a Simulink simulator for the UavDevBoard MatrixPilot.
+
+MatrixPilot has been entirely programmed (wind estimation, IMU, control loops...).
+
+The airplane is the Scorpio Miss. This airplane is rudder only. So you will need to modify the bank control
+
+algorithm if you want to use a plane fitted with ailerons.
+
+The autopilot is true to the original except for the type of the variables : real rather than fractional.
+
+Model file : Miss_Sim_MatrixPilot.mdl
+
+Airplane file : Miss_Data.m
+
+MatrixPilot parameter file : MatrixPilot_Parameters.m
+
+S-Function file (IMU, DCM, wind estimation) : R.c
+
+1- Put all the files into one directory. Run Matlab/Simulink, go to the directory.
+
+2- Compile the S-Function   (instruction : mex R.c at the Matlab prompt)
+
+3- Load the parameters       (instruction : Miss_Data at the Matlab prompt)
+
+4- Load the simulink model  (instruction : Miss_Sim_MatrixPilot at the Matlab prompt
+
+Note:
+
+a/ Miss_data.m will call MatrixPilot_Parameters.m
+
+b/ Don't forget to install lcc, the Matlab default compiler. Just type and enter mex -setup at the Matlab prompt and follow the instructions
+

@@ -1,0 +1,1926 @@
+Model {
+  Name			  "AltitudeControl"
+  Version		  7.2
+  MdlSubVersion		  0
+  GraphicalInterface {
+    NumRootInports	    6
+    Inport {
+      Name		      "AntEng"
+    }
+    Inport {
+      Name		      "AltCmd"
+    }
+    Inport {
+      Name		      "Alt"
+    }
+    Inport {
+      Name		      "GsKts"
+    }
+    Inport {
+      Name		      "hdot"
+    }
+    Inport {
+      Name		      "hdotChgRate"
+    }
+    NumRootOutports	    1
+    Outport {
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      Name		      "altgammacmd"
+    }
+    ParameterArgumentNames  ""
+    ComputedModelVersion    "1.18"
+    NumModelReferences	    0
+    NumTestPointedSignals   0
+  }
+  SavedCharacterEncoding  "ISO-8859-1"
+  SaveDefaultBlockParams  on
+  ScopeRefreshTime	  0.035000
+  OverrideScopeRefreshTime on
+  DisableAllScopes	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  Created		  "Wed May 14 13:52:26 2014"
+  Creator		  "teme"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "arnaud"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Sun Mar 22 12:41:16 2015"
+  RTWModifiedTimeStamp	  348928875
+  ModelVersionFormat	  "1.%<AutoIncrement:18>"
+  ConfigurationManager	  "None"
+  SampleTimeColors	  off
+  SampleTimeAnnotations	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ShowTestPointIcons	  on
+  ShowSignalResolutionIcons on
+  ShowViewerIcons	  on
+  SortedOrder		  off
+  ExecutionContextIcon	  off
+  ShowLinearizationAnnotations on
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  SimulationMode	  "normal"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  CovReportOnPause	  on
+  CovModelRefEnable	  "Off"
+  ExtModeBatchMode	  off
+  ExtModeEnableFloating	  on
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigDurationFloating "auto"
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock on
+  BufferReuse		  on
+  ShowModelReferenceBlockVersion off
+  ShowModelReferenceBlockIO off
+  Array {
+    Type		    "Handle"
+    Dimension		    1
+    Simulink.ConfigSet {
+      $ObjectID		      1
+      Version		      "1.5.1"
+      Array {
+	Type			"Handle"
+	Dimension		8
+	Simulink.SolverCC {
+	  $ObjectID		  2
+	  Version		  "1.5.1"
+	  StartTime		  "0.0"
+	  StopTime		  "10.0"
+	  AbsTol		  "auto"
+	  FixedStep		  "auto"
+	  InitialStep		  "auto"
+	  MaxNumMinSteps	  "-1"
+	  MaxOrder		  5
+	  ZcThreshold		  "auto"
+	  ConsecutiveZCsStepRelTol "10*128*eps"
+	  MaxConsecutiveZCs	  "1000"
+	  ExtrapolationOrder	  4
+	  NumberNewtonIterations  1
+	  MaxStep		  "auto"
+	  MinStep		  "auto"
+	  MaxConsecutiveMinStep	  "1"
+	  RelTol		  "1e-3"
+	  SolverMode		  "Auto"
+	  Solver		  "ode45"
+	  SolverName		  "ode45"
+	  ShapePreserveControl	  "DisableAll"
+	  ZeroCrossControl	  "UseLocalSettings"
+	  ZeroCrossAlgorithm	  "Nonadaptive"
+	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverResetMethod	  "Fast"
+	  PositivePriorityOrder	  off
+	  AutoInsertRateTranBlk	  off
+	  SampleTimeConstraint	  "Unconstrained"
+	  InsertRTBMode		  "Whenever possible"
+	  SignalSizeVariationType "Allow only fixed size"
+	}
+	Simulink.DataIOCC {
+	  $ObjectID		  3
+	  Version		  "1.5.1"
+	  Decimation		  "1"
+	  ExternalInput		  "[t, u]"
+	  FinalStateName	  "xFinal"
+	  InitialState		  "xInitial"
+	  LimitDataPoints	  on
+	  MaxDataPoints		  "1000"
+	  LoadExternalInput	  off
+	  LoadInitialState	  off
+	  SaveFinalState	  off
+	  SaveFormat		  "Array"
+	  SaveOutput		  on
+	  SaveState		  off
+	  SignalLogging		  on
+	  InspectSignalLogs	  off
+	  SaveTime		  on
+	  StateSaveName		  "xout"
+	  TimeSaveName		  "tout"
+	  OutputSaveName	  "yout"
+	  SignalLoggingName	  "logsout"
+	  OutputOption		  "RefineOutputTimes"
+	  OutputTimes		  "[]"
+	  Refine		  "1"
+	}
+	Simulink.OptimizationCC {
+	  $ObjectID		  4
+	  Version		  "1.5.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    8
+	    Cell		    "BooleansAsBitfields"
+	    Cell		    "PassReuseOutputArgsAs"
+	    Cell		    "PassReuseOutputArgsThreshold"
+	    Cell		    "ZeroExternalMemoryAtStartup"
+	    Cell		    "ZeroInternalMemoryAtStartup"
+	    Cell		    "OptimizeModelRefInitCode"
+	    Cell		    "NoFixptDivByZeroProtection"
+	    Cell		    "UseSpecifiedMinMax"
+	    PropName		    "DisabledProps"
+	  }
+	  BlockReduction	  on
+	  BooleanDataType	  on
+	  ConditionallyExecuteInputs on
+	  InlineParams		  off
+	  InlineInvariantSignals  off
+	  OptimizeBlockIOStorage  on
+	  BufferReuse		  on
+	  EnhancedBackFolding	  off
+	  EnforceIntegerDowncast  on
+	  ExpressionFolding	  on
+	  EnableMemcpy		  on
+	  MemcpyThreshold	  64
+	  ExpressionDepthLimit	  128
+	  FoldNonRolledExpr	  on
+	  LocalBlockOutputs	  on
+	  RollThreshold		  5
+	  SystemCodeInlineAuto	  off
+	  StateBitsets		  off
+	  DataBitsets		  off
+	  UseTempVars		  off
+	  ZeroExternalMemoryAtStartup on
+	  ZeroInternalMemoryAtStartup on
+	  InitFltsAndDblsToZero	  off
+	  NoFixptDivByZeroProtection off
+	  EfficientFloat2IntCast  off
+	  EfficientMapNaN2IntZero on
+	  OptimizeModelRefInitCode off
+	  LifeSpan		  "inf"
+	  BufferReusableBoundary  on
+	  SimCompilerOptimization "Off"
+	  AccelVerboseBuild	  off
+	}
+	Simulink.DebuggingCC {
+	  $ObjectID		  5
+	  Version		  "1.5.1"
+	  RTPrefix		  "error"
+	  ConsistencyChecking	  "none"
+	  ArrayBoundsChecking	  "none"
+	  SignalInfNanChecking	  "none"
+	  SignalRangeChecking	  "none"
+	  ReadBeforeWriteMsg	  "UseLocalSettings"
+	  WriteAfterWriteMsg	  "UseLocalSettings"
+	  WriteAfterReadMsg	  "UseLocalSettings"
+	  AlgebraicLoopMsg	  "warning"
+	  ArtificialAlgebraicLoopMsg "warning"
+	  SaveWithDisabledLinksMsg "warning"
+	  SaveWithParameterizedLinksMsg	"warning"
+	  CheckSSInitialOutputMsg on
+	  UnderspecifiedInitializationDetection	"Classic"
+	  MergeDetectMultiDrivingBlocksExec "none"
+	  CheckExecutionContextPreStartOutputMsg off
+	  CheckExecutionContextRuntimeOutputMsg	off
+	  SignalResolutionControl "UseLocalSettings"
+	  BlockPriorityViolationMsg "warning"
+	  MinStepSizeMsg	  "warning"
+	  TimeAdjustmentMsg	  "none"
+	  MaxConsecutiveZCsMsg	  "error"
+	  SolverPrmCheckMsg	  "warning"
+	  InheritedTsInSrcMsg	  "warning"
+	  DiscreteInheritContinuousMsg "warning"
+	  MultiTaskDSMMsg	  "error"
+	  MultiTaskCondExecSysMsg "error"
+	  MultiTaskRateTransMsg	  "error"
+	  SingleTaskRateTransMsg  "none"
+	  TasksWithSamePriorityMsg "warning"
+	  SigSpecEnsureSampleTimeMsg "warning"
+	  CheckMatrixSingularityMsg "none"
+	  IntegerOverflowMsg	  "warning"
+	  Int32ToFloatConvMsg	  "warning"
+	  ParameterDowncastMsg	  "error"
+	  ParameterOverflowMsg	  "error"
+	  ParameterUnderflowMsg	  "none"
+	  ParameterPrecisionLossMsg "warning"
+	  ParameterTunabilityLossMsg "warning"
+	  UnderSpecifiedDataTypeMsg "none"
+	  UnnecessaryDatatypeConvMsg "none"
+	  VectorMatrixConversionMsg "none"
+	  InvalidFcnCallConnMsg	  "error"
+	  FcnCallInpInsideContextMsg "Enable All"
+	  SignalLabelMismatchMsg  "none"
+	  UnconnectedInputMsg	  "warning"
+	  UnconnectedOutputMsg	  "warning"
+	  UnconnectedLineMsg	  "warning"
+	  SFcnCompatibilityMsg	  "none"
+	  UniqueDataStoreMsg	  "none"
+	  BusObjectLabelMismatch  "warning"
+	  RootOutportRequireBusObject "warning"
+	  AssertControl		  "UseLocalSettings"
+	  EnableOverflowDetection off
+	  ModelReferenceIOMsg	  "none"
+	  ModelReferenceVersionMismatchMessage "none"
+	  ModelReferenceIOMismatchMessage "none"
+	  ModelReferenceCSMismatchMessage "none"
+	  UnknownTsInhSupMsg	  "warning"
+	  ModelReferenceDataLoggingMessage "warning"
+	  ModelReferenceSymbolNameMessage "warning"
+	  ModelReferenceExtraNoncontSigs "error"
+	  StateNameClashWarn	  "warning"
+	  StrictBusMsg		  "ErrorLevel1"
+	  LoggingUnavailableSignals "error"
+	  BlockIODiagnostic	  "none"
+	}
+	Simulink.HardwareCC {
+	  $ObjectID		  6
+	  Version		  "1.5.1"
+	  ProdBitPerChar	  8
+	  ProdBitPerShort	  16
+	  ProdBitPerInt		  32
+	  ProdBitPerLong	  32
+	  ProdIntDivRoundTo	  "Undefined"
+	  ProdEndianess		  "Unspecified"
+	  ProdWordSize		  32
+	  ProdShiftRightIntArith  on
+	  ProdHWDeviceType	  "32-bit Generic"
+	  TargetBitPerChar	  8
+	  TargetBitPerShort	  16
+	  TargetBitPerInt	  32
+	  TargetBitPerLong	  32
+	  TargetShiftRightIntArith on
+	  TargetIntDivRoundTo	  "Undefined"
+	  TargetEndianess	  "Unspecified"
+	  TargetWordSize	  32
+	  TargetTypeEmulationWarnSuppressLevel 0
+	  TargetPreprocMaxBitsSint 32
+	  TargetPreprocMaxBitsUint 32
+	  TargetHWDeviceType	  "Specified"
+	  TargetUnknown		  off
+	  ProdEqTarget		  on
+	}
+	Simulink.ModelReferenceCC {
+	  $ObjectID		  7
+	  Version		  "1.5.1"
+	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  CheckModelReferenceTargetMessage "error"
+	  ModelReferenceNumInstancesAllowed "Multi"
+	  ModelReferencePassRootInputsByReference on
+	  ModelReferenceMinAlgLoopOccurrences off
+	}
+	Simulink.SFSimCC {
+	  $ObjectID		  8
+	  Version		  "1.5.1"
+	  SFSimEnableDebug	  on
+	  SFSimOverflowDetection  on
+	  SFSimEcho		  on
+	  SimUseLocalCustomCode	  off
+	  SimBuildMode		  "sf_incremental_build"
+	}
+	Simulink.RTWCC {
+	  $BackupClass		  "Simulink.RTWCC"
+	  $ObjectID		  9
+	  Version		  "1.5.1"
+	  Array {
+	    Type		    "Cell"
+	    Dimension		    15
+	    Cell		    "IncludeHyperlinkInReport"
+	    Cell		    "GenerateTraceInfo"
+	    Cell		    "GenerateTraceReport"
+	    Cell		    "GenerateTraceReportSl"
+	    Cell		    "GenerateTraceReportSf"
+	    Cell		    "GenerateTraceReportEml"
+	    Cell		    "PortableWordSizes"
+	    Cell		    "GenerateWebview"
+	    Cell		    "GenerateCodeMetricsReport"
+	    Cell		    "GenerateCodeReplacementReport"
+	    Cell		    "GenerateErtSFunction"
+	    Cell		    "CreateSILPILBlock"
+	    Cell		    "CodeExecutionProfiling"
+	    Cell		    "CodeProfilingSaveOptions"
+	    Cell		    "CodeProfilingInstrumentation"
+	    PropName		    "DisabledProps"
+	  }
+	  SystemTargetFile	  "grt.tlc"
+	  GenCodeOnly		  off
+	  MakeCommand		  "make_rtw"
+	  GenerateMakefile	  on
+	  TemplateMakefile	  "grt_default_tmf"
+	  GenerateReport	  off
+	  SaveLog		  off
+	  RTWVerbose		  on
+	  RetainRTWFile		  off
+	  ProfileTLC		  off
+	  TLCDebug		  off
+	  TLCCoverage		  off
+	  TLCAssert		  off
+	  ProcessScriptMode	  "Default"
+	  ConfigurationMode	  "Optimized"
+	  ConfigAtBuild		  off
+	  RTWUseLocalCustomCode	  off
+	  RTWUseSimCustomCode	  off
+	  IncludeHyperlinkInReport off
+	  LaunchReport		  off
+	  TargetLang		  "C"
+	  IncludeBusHierarchyInRTWFileBlockHierarchyMap	off
+	  IncludeERTFirstTime	  off
+	  GenerateTraceInfo	  off
+	  GenerateTraceReport	  off
+	  GenerateTraceReportSl	  off
+	  GenerateTraceReportSf	  off
+	  GenerateTraceReportEml  off
+	  GenerateCodeInfo	  off
+	  RTWCompilerOptimization "Off"
+	  Array {
+	    Type		    "Handle"
+	    Dimension		    2
+	    Simulink.CodeAppCC {
+	      $ObjectID		      10
+	      Version		      "1.5.1"
+	      Array {
+		Type			"Cell"
+		Dimension		22
+		Cell			"IgnoreCustomStorageClasses"
+		Cell			"IgnoreTestpoints"
+		Cell			"InsertBlockDesc"
+		Cell			"InsertPolySpaceComments"
+		Cell			"SFDataObjDesc"
+		Cell			"MATLABFcnDesc"
+		Cell			"SimulinkDataObjDesc"
+		Cell			"DefineNamingRule"
+		Cell			"SignalNamingRule"
+		Cell			"ParamNamingRule"
+		Cell			"InternalIdentifier"
+		Cell			"InlinedPrmAccess"
+		Cell			"CustomSymbolStr"
+		Cell			"CustomSymbolStrGlobalVar"
+		Cell			"CustomSymbolStrType"
+		Cell			"CustomSymbolStrField"
+		Cell			"CustomSymbolStrFcn"
+		Cell			"CustomSymbolStrFcnArg"
+		Cell			"CustomSymbolStrBlkIO"
+		Cell			"CustomSymbolStrTmpVar"
+		Cell			"CustomSymbolStrMacro"
+		Cell			"ReqsInCode"
+		PropName		"DisabledProps"
+	      }
+	      ForceParamTrailComments off
+	      GenerateComments	      on
+	      IgnoreCustomStorageClasses on
+	      IgnoreTestpoints	      off
+	      IncHierarchyInIds	      off
+	      MaxIdLength	      31
+	      PreserveName	      off
+	      PreserveNameWithParent  off
+	      ShowEliminatedStatement off
+	      IncAutoGenComments      off
+	      SimulinkDataObjDesc     off
+	      SFDataObjDesc	      off
+	      IncDataTypeInIds	      off
+	      MangleLength	      1
+	      CustomSymbolStrGlobalVar "$R$N$M"
+	      CustomSymbolStrType     "$N$R$M_T"
+	      CustomSymbolStrField    "$N$M"
+	      CustomSymbolStrFcn      "$R$N$M$F"
+	      CustomSymbolStrBlkIO    "rtb_$N$M"
+	      CustomSymbolStrTmpVar   "$N$M"
+	      CustomSymbolStrMacro    "$R$N$M"
+	      DefineNamingRule	      "None"
+	      ParamNamingRule	      "None"
+	      SignalNamingRule	      "None"
+	      InsertBlockDesc	      off
+	      SimulinkBlockComments   on
+	      EnableCustomComments    off
+	      InlinedPrmAccess	      "Literals"
+	      ReqsInCode	      off
+	      UseSimReservedNames     off
+	    }
+	    Simulink.GRTTargetCC {
+	      $BackupClass	      "Simulink.TargetCC"
+	      $ObjectID		      11
+	      Version		      "1.5.1"
+	      Array {
+		Type			"Cell"
+		Dimension		16
+		Cell			"GeneratePreprocessorConditionals"
+		Cell			"IncludeMdlTerminateFcn"
+		Cell			"CombineOutputUpdateFcns"
+		Cell			"SuppressErrorStatus"
+		Cell			"ERTCustomFileBanners"
+		Cell			"GenerateSampleERTMain"
+		Cell			"GenerateTestInterfaces"
+		Cell			"ModelStepFunctionPrototypeControlCompliant"
+		Cell			"CPPClassGenCompliant"
+		Cell			"MultiInstanceERTCode"
+		Cell			"PurelyIntegerCode"
+		Cell			"SupportComplex"
+		Cell			"SupportAbsoluteTime"
+		Cell			"SupportContinuousTime"
+		Cell			"SupportNonInlinedSFcns"
+		Cell			"SupportNonFinite"
+		PropName		"DisabledProps"
+	      }
+	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
+	      TargetLibSuffix	      ""
+	      TargetPreCompLibLocation ""
+	      TargetFunctionLibrary   "ANSI_C"
+	      UtilityFuncGeneration   "Auto"
+	      ERTMultiwordTypeDef     "System defined"
+	      ERTMultiwordLength      256
+	      MultiwordLength	      2048
+	      GenerateFullHeader      on
+	      GenerateSampleERTMain   off
+	      GenerateTestInterfaces  off
+	      IsPILTarget	      off
+	      ModelReferenceCompliant on
+	      CompOptLevelCompliant   on
+	      IncludeMdlTerminateFcn  on
+	      CombineOutputUpdateFcns off
+	      SuppressErrorStatus     off
+	      ERTFirstTimeCompliant   off
+	      IncludeFileDelimiter    "Auto"
+	      ERTCustomFileBanners    off
+	      SupportAbsoluteTime     on
+	      LogVarNameModifier      "rt_"
+	      MatFileLogging	      on
+	      MultiInstanceERTCode    off
+	      SupportNonFinite	      on
+	      SupportComplex	      on
+	      PurelyIntegerCode	      off
+	      SupportContinuousTime   on
+	      SupportNonInlinedSFcns  on
+	      EnableShiftOperators    on
+	      ParenthesesLevel	      "Nominal"
+	      PortableWordSizes	      off
+	      ModelStepFunctionPrototypeControlCompliant off
+	      CPPClassGenCompliant    off
+	      AutosarCompliant	      off
+	      UseMalloc		      off
+	      ExtMode		      off
+	      ExtModeStaticAlloc      off
+	      ExtModeTesting	      off
+	      ExtModeStaticAllocSize  1000000
+	      ExtModeTransport	      0
+	      ExtModeMexFile	      "ext_comm"
+	      ExtModeIntrfLevel	      "Level1"
+	      RTWCAPISignals	      off
+	      RTWCAPIParams	      off
+	      RTWCAPIStates	      off
+	      GenerateASAP2	      off
+	    }
+	    PropName		    "Components"
+	  }
+	}
+	PropName		"Components"
+      }
+      Name		      "Configuration"
+      CurrentDlgPage	      "Solver"
+      ConfigPrmDlgPosition    " [ 430, 285, 1490, 915 ] "
+    }
+    PropName		    "ConfigurationSets"
+  }
+  Simulink.ConfigSet {
+    $PropName		    "ActiveConfigurationSet"
+    $ObjectID		    1
+  }
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    UseDisplayTextAsClickCallback off
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Abs
+      ZeroCross		      on
+      SampleTime	      "-1"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "fixdt(1,16,0)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+    }
+    Block {
+      BlockType		      DiscreteIntegrator
+      IntegratorMethod	      "Integration: Forward Euler"
+      gainval		      "1.0"
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      InitialConditionMode    "State and output"
+      SampleTime	      "1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      IgnoreLimit	      off
+      StateMustResolveToSignalObject off
+      RTWStateStorageClass    "Auto"
+    }
+    Block {
+      BlockType		      Gain
+      Gain		      "1"
+      Multiplication	      "Element-wise(K.*u)"
+      ParamMin		      "[]"
+      ParamMax		      "[]"
+      ParameterDataTypeMode   "Same as input"
+      ParameterDataType	      "fixdt(1,16,0)"
+      ParameterScalingMode    "Best Precision: Matrix-wise"
+      ParameterScaling	      "[]"
+      ParamDataTypeStr	      "Inherit: Same as input"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      LatchByDelayingOutsideSignal off
+      LatchByCopyingInsideSignal off
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Logic
+      Operator		      "AND"
+      Inputs		      "2"
+      IconShape		      "rectangular"
+      AllPortsSameDT	      on
+      OutDataTypeMode	      "Logical (see Configuration Parameters: Optimization)"
+      LogicDataType	      "uint(8)"
+      OutDataTypeStr	      "Inherit: Logical (see Configuration Parameters: Optimization)"
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      MinMax
+      Function		      "min"
+      Inputs		      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      BusOutputAsStruct	      off
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      DataType		      "auto"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: auto"
+      LockScale		      off
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      SourceOfInitialOutputValue "Dialog"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      Product
+      Inputs		      "2"
+      Multiplication	      "Element-wise(.*)"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Zero"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      "FromPortIcon"
+      Permissions	      "ReadWrite"
+      PermitHierarchicalResolution "All"
+      TreatAsAtomicUnit	      off
+      CheckFcnCallInpInsideContextMsg off
+      SystemSampleTime	      "-1"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Sum
+      IconShape		      "rectangular"
+      Inputs		      "++"
+      CollapseMode	      "All dimensions"
+      CollapseDim	      "1"
+      InputSameDT	      on
+      AccumDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Same as first input"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Same as first input"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      InputSameDT	      on
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1,16,0)"
+      OutScaling	      "[]"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      LockScale		      off
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+      SampleTime	      "-1"
+    }
+  }
+  System {
+    Name		    "AltitudeControl"
+    Location		    [3, 47, 1147, 695]
+    Open		    on
+    ModelBrowserVisibility  on
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+    TiledPageScale	    1
+    ShowPageBoundaries	    off
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Inport
+      Name		      "AntEng"
+      Position		      [345, 205, 375, 220]
+      Orientation	      "down"
+      IconDisplay	      "Port number"
+      DataType		      "boolean"
+      OutDataTypeStr	      "boolean"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "AltCmd"
+      Position		      [345, 253, 375, 267]
+      Port		      "2"
+      IconDisplay	      "Port number"
+      DataType		      "double"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "Alt"
+      Position		      [345, 293, 375, 307]
+      Port		      "3"
+      IconDisplay	      "Port number"
+      DataType		      "double"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "GsKts"
+      Position		      [345, 333, 375, 347]
+      Port		      "4"
+      IconDisplay	      "Port number"
+      DataType		      "double"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "hdot"
+      Position		      [345, 373, 375, 387]
+      Port		      "5"
+      IconDisplay	      "Port number"
+      DataType		      "double"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      Inport
+      Name		      "hdotChgRate"
+      Position		      [345, 428, 375, 442]
+      Port		      "6"
+      IconDisplay	      "Port number"
+      DataType		      "double"
+      OutDataTypeStr	      "double"
+      SignalType	      "real"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Altitude Control"
+      RequirementInfo	      "{'other' '..\\..\\tcm_requirements.docx' '@Simulink_requirement_item_14' 'true' 'Altitude"
+      " Control' '' } %GIDa_5c8df5fb_afa0_485e_88ca_9eaabd9d0f8f"
+      Ports		      [6, 1]
+      Position		      [530, 238, 640, 457]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Altitude Control"
+	Location		[-6, -10, 1274, 762]
+	Open			on
+	ModelBrowserVisibility	on
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "engage"
+	  RequirementInfo	  "{} %GIDa_0e288978_810b_404d_8e3d_cfce00b6b13e"
+	  Position		  [20, 78, 50, 92]
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "alteng"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "AltCmd"
+	  RequirementInfo	  "{} %GIDa_0cb28106_5eef_4f57_b895_6f6cc316bc91"
+	  Position		  [15, 263, 45, 277]
+	  Port			  "2"
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "AltCmd"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "Altitude"
+	  RequirementInfo	  "{} %GIDa_9d659266_d3a1_41f7_8443_512a58352a3d"
+	  Position		  [20, 303, 50, 317]
+	  Port			  "3"
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "Alt"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "gskts"
+	  RequirementInfo	  "{} %GIDa_63cbdc79_cc3a_41e8_a25c_03f8123eb444"
+	  Position		  [20, 363, 50, 377]
+	  Port			  "4"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "hdot"
+	  RequirementInfo	  "{} %GIDa_f80cf171_2707_4e4f_8e83_784456bc38b4"
+	  Position		  [20, 118, 50, 132]
+	  Port			  "5"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "hdotChgRate"
+	  Position		  [20, 213, 50, 227]
+	  Port			  "6"
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Abs
+	  Name			  "Abs"
+	  RequirementInfo	  "{} %GIDa_20990742_0e4c_4a42_9d74_05382c3e5e10"
+	  Position		  [295, 114, 315, 136]
+	  ShowName		  off
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "C2"
+	  Position		  [830, 470, 860, 500]
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant1"
+	  RequirementInfo	  "{} %GIDa_dca6c410_f388_4f73_ad77_90690c1c79ec"
+	  Position		  [280, 301, 305, 319]
+	  ShowName		  off
+	  Value			  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant3"
+	  RequirementInfo	  "{} %GIDa_4d484c55_e80b_4edf_b935_4d0b84fcef43"
+	  Position		  [310, 166, 335, 184]
+	  ShowName		  off
+	  Value			  "10"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Divide"
+	  RequirementInfo	  "{} %GIDa_a21511b8_8e46_4269_9008_ba9a73618299"
+	  Ports			  [2, 1]
+	  Position		  [750, 292, 780, 323]
+	  ShowName		  off
+	  Inputs		  "*/"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  RndMeth		  "Floor"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Kh"
+	  RequirementInfo	  "{} %GIDa_78bba325_b998_4ee3_b904_8fb0a7f7f7a7"
+	  Position		  [175, 253, 230, 287]
+	  Gain			  "0.08"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Logic
+	  Name			  "Logical\nOperator"
+	  RequirementInfo	  "{} %GIDa_3db4e860_846f_470a_babf_a996fcc4fa8f"
+	  Ports			  [1, 1]
+	  Position		  [460, 77, 490, 93]
+	  ShowName		  off
+	  Operator		  "NOT"
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Saturation1"
+	  RequirementInfo	  "{} %GIDa_f2f227d4_0c3d_4202_a816_beb06b8fee84"
+	  Ports			  [1, 1]
+	  Position		  [430, 354, 465, 386]
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  System {
+	    Name		    "Saturation1"
+	    Location		    [634, 28, 1914, 800]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "SigIn"
+	      RequirementInfo	      "{} %GIDa_3f5a5311_8185_423f_bf45_67fce5708cdf"
+	      Position		      [50, 68, 80, 82]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant1"
+	      RequirementInfo	      "{} %GIDa_5a314e61_37a6_49c9_8286_17afee39489d"
+	      Position		      [45, 31, 80, 49]
+	      ShowName		      off
+	      Value		      "0.0001"
+	    }
+	    Block {
+	      BlockType		      Constant
+	      Name		      "Constant2"
+	      RequirementInfo	      "{} %GIDa_19bb776a_128d_4f79_8f32_c6db1286f54e"
+	      Position		      [50, 101, 80, 119]
+	      ShowName		      off
+	      Value		      "1000"
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "Enforce\nlow lim"
+	      RequirementInfo	      "{} %GIDa_f1ed7bfa_f6af_4dde_ac1b_3ccc756e151e"
+	      Ports		      [2, 1]
+	      Position		      [135, 32, 165, 63]
+	      Function		      "max"
+	      Inputs		      "2"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "Enforce\nup lim"
+	      RequirementInfo	      "{} %GIDa_b7d41d07_03e7_4646_9c0d_3c39819752e0"
+	      Ports		      [2, 1]
+	      Position		      [240, 42, 270, 73]
+	      Function		      "min"
+	      Inputs		      "2"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      RequirementInfo	      "{} %GIDa_a8215b4d_1c2e_47f3_a8fe_a5ea2625158e"
+	      Position		      [335, 53, 365, 67]
+	      ShowName		      off
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Constant1"
+	      SrcPort		      1
+	      DstBlock		      "Enforce\nlow lim"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "SigIn"
+	      SrcPort		      1
+	      Points		      [10, 0; 0, -20]
+	      DstBlock		      "Enforce\nlow lim"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Enforce\nlow lim"
+	      SrcPort		      1
+	      DstBlock		      "Enforce\nup lim"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Constant2"
+	      SrcPort		      1
+	      Points		      [120, 0; 0, -45]
+	      DstBlock		      "Enforce\nup lim"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Enforce\nup lim"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  RequirementInfo	  "{} %GIDa_c2c23c63_6291_4bac_a67f_cece50fd07b3"
+	  Ports			  [2, 1]
+	  Position		  [125, 260, 145, 280]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|+-"
+	  InputSameDT		  off
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum3"
+	  RequirementInfo	  "{} %GIDa_abda5f80_1075_4cc6_bfe7_9e1cade77fe9"
+	  Ports			  [2, 1]
+	  Position		  [335, 115, 355, 135]
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  RequirementInfo	  "{} %GIDa_a81bded5_11a5_4d9b_8d99_08187593493d"
+	  Position		  [330, 263, 350, 317]
+	  ShowName		  off
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch1"
+	  Position		  [960, 395, 1010, 435]
+	  Criteria		  "u2 > Threshold"
+	  InputSameDT		  off
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Variable \nRate Limit"
+	  RequirementInfo	  "{} %GIDa_ca745fb3_1ac0_4f87_9ddc_ec0222d57c6c"
+	  Ports			  [4, 1]
+	  Position		  [615, 268, 685, 327]
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "hdotcLim"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "Variable \nRate Limit"
+	    Location		    [0, 47, 1280, 774]
+	    Open		    on
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "ratelim"
+	      RequirementInfo	      "{} %GIDa_8a409414_085c_4019_8b8a_edbb028e09c9"
+	      Position		      [45, 103, 75, 117]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "input"
+	      RequirementInfo	      "{} %GIDa_36ca4060_62d0_4794_bfac_efaeb948570f"
+	      Position		      [45, 158, 75, 172]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	      DataType		      "double"
+	      OutDataTypeStr	      "double"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "ICtrig"
+	      RequirementInfo	      "{} %GIDa_210448ec_8901_4d8b_9ae7_bf6603d5175a"
+	      Position		      [290, 103, 320, 117]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "IC"
+	      RequirementInfo	      "{} %GIDa_ed78ca41_0e9a_442c_9ce9_efe3f633ea2f"
+	      Position		      [310, 193, 340, 207]
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain"
+	      RequirementInfo	      "{} %GIDa_8ea2875b_9460_4c83_af15_3f6a067463fd"
+	      Position		      [145, 149, 215, 181]
+	      ShowName		      off
+	      Gain		      "20"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Gain1"
+	      RequirementInfo	      "{} %GIDa_d92d949d_b0f7_438c_933d_85950dded665"
+	      Position		      [160, 120, 190, 150]
+	      ShowName		      off
+	      Gain		      "-1"
+	    }
+	    Block {
+	      BlockType		      DiscreteIntegrator
+	      Name		      "Integrator1"
+	      Ports		      [3, 1]
+	      Position		      [410, 151, 450, 209]
+	      IntegratorMethod	      "Integration: Forward Euler"
+	      ExternalReset	      "level"
+	      InitialConditionSource  "external"
+	      SampleTime	      "0.1"
+	      ICPrevOutput	      "DiscIntNeverNeededParam"
+	      ICPrevScaledInput	      "DiscIntNeverNeededParam"
+	      MaskType		      "DiscretizedDiscreteIntegrator"
+	      MaskInitialization      "%zoh"
+	      MaskIconFrame	      on
+	      MaskIconOpaque	      on
+	      MaskIconRotate	      "none"
+	      MaskIconUnits	      "autoscale"
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      RequirementInfo	      "{} %GIDa_b334e623_37fe_4ac9_8a97_87088e45dc39"
+	      Ports		      [2, 1]
+	      Position		      [100, 155, 120, 175]
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|+-"
+	      InputSameDT	      off
+	      OutDataTypeMode	      "Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	    }
+	    Block {
+	      BlockType		      SubSystem
+	      Name		      "Variable Limit\nSaturation"
+	      RequirementInfo	      "{} %GIDa_455ee4b2_c105_48a1_b2ff_6f4ef26a2acf"
+	      Ports		      [3, 1]
+	      Position		      [255, 142, 295, 188]
+	      TreatAsAtomicUnit	      on
+	      MinAlgLoopOccurrences   off
+	      PropExecContextOutsideSubsystem off
+	      RTWSystemCode	      "Auto"
+	      FunctionWithSeparateData off
+	      Opaque		      off
+	      RequestExecContextInheritance off
+	      MaskHideContents	      off
+	      System {
+		Name			"Variable Limit\nSaturation"
+		Location		[-1, -13, 1647, 2427]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"usletter"
+		PaperUnits		"inches"
+		TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "up_lim"
+		  RequirementInfo	  "{} %GIDa_253765a1_7361_4d78_8d4d_1b11f15ce2fa"
+		  Position		  [20, 93, 50, 107]
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "SigIn"
+		  RequirementInfo	  "{} %GIDa_df6737d0_f7fe_4781_af6c_3ea749d3e5de"
+		  Position		  [20, 53, 50, 67]
+		  Port			  "2"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  Inport
+		  Name			  "Lo_lim"
+		  RequirementInfo	  "{} %GIDa_c8822ea1_e967_4622_a20b_57b5cefb7799"
+		  Position		  [20, 13, 50, 27]
+		  Port			  "3"
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  MinMax
+		  Name			  "Enforce\nlow lim"
+		  RequirementInfo	  "{} %GIDa_fd2a26e9_6c43_40d9_92a2_3b773c237580"
+		  Ports			  [2, 1]
+		  Position		  [100, 12, 130, 43]
+		  Function		  "max"
+		  Inputs		  "2"
+		  InputSameDT		  off
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  MinMax
+		  Name			  "Enforce\nup lim"
+		  RequirementInfo	  "{} %GIDa_ef782b40_f42e_44f8_8e6f_8bce9bd7a3f3"
+		  Ports			  [2, 1]
+		  Position		  [215, 22, 245, 53]
+		  Function		  "min"
+		  Inputs		  "2"
+		  InputSameDT		  off
+		  SaturateOnIntegerOverflow off
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Out1"
+		  RequirementInfo	  "{} %GIDa_dbecd57e_14da_4974_8aa6_dc0e6b8a6b18"
+		  Position		  [310, 33, 340, 47]
+		  ShowName		  off
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  SrcBlock		  "Enforce\nup lim"
+		  SrcPort		  1
+		  DstBlock		  "Out1"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "up_lim"
+		  SrcPort		  1
+		  Points		  [145, 0]
+		  DstBlock		  "Enforce\nup lim"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Enforce\nlow lim"
+		  SrcPort		  1
+		  DstBlock		  "Enforce\nup lim"
+		  DstPort		  1
+		}
+		Line {
+		  SrcBlock		  "SigIn"
+		  SrcPort		  1
+		  Points		  [15, 0; 0, -25]
+		  DstBlock		  "Enforce\nlow lim"
+		  DstPort		  2
+		}
+		Line {
+		  SrcBlock		  "Lo_lim"
+		  SrcPort		  1
+		  DstBlock		  "Enforce\nlow lim"
+		  DstPort		  1
+		}
+	      }
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "output"
+	      RequirementInfo	      "{} %GIDa_986bb623_f504_4c3d_99b4_2d7370fadfb9"
+	      Position		      [540, 173, 570, 187]
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      DstBlock		      "Gain"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "Gain"
+	      SrcPort		      1
+	      DstBlock		      "Variable Limit\nSaturation"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "ratelim"
+	      SrcPort		      1
+	      Points		      [10, 0]
+	      Branch {
+		Points			[0, 25]
+		DstBlock		"Gain1"
+		DstPort			1
+	      }
+	      Branch {
+		Points			[150, 0]
+		DstBlock		"Variable Limit\nSaturation"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "Gain1"
+	      SrcPort		      1
+	      Points		      [40, 0; 0, 45]
+	      DstBlock		      "Variable Limit\nSaturation"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Integrator1"
+	      SrcPort		      1
+	      Points		      [58, 0]
+	      Branch {
+		Points			[0, 45; -403, 0]
+		DstBlock		"Sum2"
+		DstPort			2
+	      }
+	      Branch {
+		DstBlock		"output"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      SrcBlock		      "input"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "ICtrig"
+	      SrcPort		      1
+	      Points		      [41, 0; 0, 70]
+	      DstBlock		      "Integrator1"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "IC"
+	      SrcPort		      1
+	      DstBlock		      "Integrator1"
+	      DstPort		      3
+	    }
+	    Line {
+	      SrcBlock		      "Variable Limit\nSaturation"
+	      SrcPort		      1
+	      Points		      [23, 0; 0, -5]
+	      DstBlock		      "Integrator1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  SubSystem
+	  Name			  "Variable Limit\nSaturation"
+	  RequirementInfo	  "{} %GIDa_ceaf2ff3_d3d5_4139_ac40_0e8f5fb26a06"
+	  Ports			  [3, 1]
+	  Position		  [450, 267, 490, 313]
+	  TreatAsAtomicUnit	  on
+	  MinAlgLoopOccurrences	  off
+	  PropExecContextOutsideSubsystem off
+	  RTWSystemCode		  "Auto"
+	  FunctionWithSeparateData off
+	  Opaque		  off
+	  RequestExecContextInheritance	off
+	  MaskHideContents	  off
+	  Port {
+	    PortNumber		    1
+	    Name		    "hdotc"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	  System {
+	    Name		    "Variable Limit\nSaturation"
+	    Location		    [3, 47, 1643, 1735]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "usletter"
+	    PaperUnits		    "inches"
+	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "up_lim"
+	      RequirementInfo	      "{} %GIDa_2e88107a_170e_4209_87ba_bbf099e30048"
+	      Position		      [20, 93, 50, 107]
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "SigIn"
+	      RequirementInfo	      "{} %GIDa_1009f7fd_18d1_47a6_bfe8_961b0527e63f"
+	      Position		      [20, 53, 50, 67]
+	      Port		      "2"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Lo_lim"
+	      RequirementInfo	      "{} %GIDa_25d3a119_7934_4f14_885f_e425c054d3b7"
+	      Position		      [20, 13, 50, 27]
+	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "Enforce\nlow lim"
+	      RequirementInfo	      "{} %GIDa_569de777_726d_4b4c_9368_c3dc4036e8ed"
+	      Ports		      [2, 1]
+	      Position		      [100, 12, 130, 43]
+	      Function		      "max"
+	      Inputs		      "2"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      MinMax
+	      Name		      "Enforce\nup lim"
+	      RequirementInfo	      "{} %GIDa_08ef4c7c_041a_47cf_8bce_d060e85fd321"
+	      Ports		      [2, 1]
+	      Position		      [215, 22, 245, 53]
+	      Function		      "min"
+	      Inputs		      "2"
+	      InputSameDT	      off
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Out1"
+	      RequirementInfo	      "{} %GIDa_e97969f5_319c_4569_953d_3be8dc8cd68b"
+	      Position		      [310, 33, 340, 47]
+	      ShowName		      off
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      SrcBlock		      "Lo_lim"
+	      SrcPort		      1
+	      DstBlock		      "Enforce\nlow lim"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "SigIn"
+	      SrcPort		      1
+	      Points		      [15, 0; 0, -25]
+	      DstBlock		      "Enforce\nlow lim"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Enforce\nlow lim"
+	      SrcPort		      1
+	      DstBlock		      "Enforce\nup lim"
+	      DstPort		      1
+	    }
+	    Line {
+	      SrcBlock		      "up_lim"
+	      SrcPort		      1
+	      Points		      [125, 0; 0, -55]
+	      DstBlock		      "Enforce\nup lim"
+	      DstPort		      2
+	    }
+	    Line {
+	      SrcBlock		      "Enforce\nup lim"
+	      SrcPort		      1
+	      DstBlock		      "Out1"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "k"
+	  RequirementInfo	  "{} %GIDa_44367ca2_97f6_4cb9_9c49_9c779fdc721d"
+	  Position		  [390, 292, 430, 318]
+	  Gain			  "-1"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "kts2fps"
+	  RequirementInfo	  "{} %GIDa_8207b08e_fddf_4c38_87c9_e2cb216813f3"
+	  Position		  [260, 353, 325, 387]
+	  Gain			  "1.6878"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "r2d"
+	  RequirementInfo	  "{} %GIDa_573f61a6_cdca_472b_9b49_60142d70b114"
+	  Position		  [800, 292, 885, 328]
+	  Gain			  "57.2958"
+	  ParameterDataTypeMode	  "Inherit via internal rule"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeMode	  "Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "altgamcmd"
+	  RequirementInfo	  "{} %GIDa_cfdf8567_1bf1_487f_8025_1fae61c9e97a"
+	  Position		  [1095, 303, 1125, 317]
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Kh"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "AltCmd"
+	  Labels		  [0, 0]
+	  SrcBlock		  "AltCmd"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "Alt"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Altitude"
+	  SrcPort		  1
+	  Points		  [80, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "hdot"
+	  SrcPort		  1
+	  Points		  [205, 0]
+	  Branch {
+	    Points		    [0, 218; 242, 0; 0, -23]
+	    DstBlock		    "Variable \nRate Limit"
+	    DstPort		    4
+	  }
+	  Branch {
+	    DstBlock		    "Abs"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Abs"
+	  SrcPort		  1
+	  DstBlock		  "Sum3"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant3"
+	  SrcPort		  1
+	  Points		  [5, 0]
+	  DstBlock		  "Sum3"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "k"
+	  SrcPort		  1
+	  DstBlock		  "Variable Limit\nSaturation"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Sum3"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 150]
+	  Branch {
+	    DstBlock		    "k"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Variable Limit\nSaturation"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Name			  "alteng"
+	  Labels		  [0, 0]
+	  SrcBlock		  "engage"
+	  SrcPort		  1
+	  Points		  [99, 0]
+	  Branch {
+	    Points		    [0, 330]
+	    DstBlock		    "Switch1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [91, 0]
+	    Branch {
+	      Points		      [0, 205]
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	    Branch {
+	      DstBlock		      "Logical\nOperator"
+	      DstPort		      1
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "gskts"
+	  SrcPort		  1
+	  DstBlock		  "kts2fps"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Divide"
+	  SrcPort		  1
+	  DstBlock		  "r2d"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "r2d"
+	  SrcPort		  1
+	  Points		  [32, 0; 0, 90]
+	  DstBlock		  "Switch1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Logical\nOperator"
+	  SrcPort		  1
+	  Points		  [4, 0; 0, 220]
+	  DstBlock		  "Variable \nRate Limit"
+	  DstPort		  3
+	}
+	Line {
+	  Name			  "hdotc"
+	  Labels		  [0, 0]
+	  SrcBlock		  "Variable Limit\nSaturation"
+	  SrcPort		  1
+	  DstBlock		  "Variable \nRate Limit"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "hdotChgRate"
+	  SrcPort		  1
+	  Points		  [453, 0; 0, 55]
+	  DstBlock		  "Variable \nRate Limit"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "hdotcLim"
+	  Labels		  [1, 0]
+	  SrcBlock		  "Variable \nRate Limit"
+	  SrcPort		  1
+	  DstBlock		  "Divide"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "kts2fps"
+	  SrcPort		  1
+	  DstBlock		  "Saturation1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Saturation1"
+	  SrcPort		  1
+	  Points		  [242, 0; 0, -55]
+	  DstBlock		  "Divide"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  DstBlock		  "Variable Limit\nSaturation"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Kh"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant1"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Switch1"
+	  SrcPort		  1
+	  Points		  [34, 0; 0, -105]
+	  DstBlock		  "altgamcmd"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "C2"
+	  SrcPort		  1
+	  Points		  [45, 0; 0, -55]
+	  DstBlock		  "Switch1"
+	  DstPort		  3
+	}
+	Annotation {
+	  Name			  "C1"
+	  Position		  [319, 192]
+	}
+      }
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "altgammacmd"
+      Position		      [700, 208, 730, 222]
+      IconDisplay	      "Port number"
+    }
+    Line {
+      SrcBlock		      "Alt"
+      SrcPort		      1
+      Points		      [72, 0; 0, 30]
+      DstBlock		      "Altitude Control"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "AltCmd"
+      SrcPort		      1
+      Points		      [72, 0; 0, 35]
+      DstBlock		      "Altitude Control"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Altitude Control"
+      SrcPort		      1
+      Points		      [22, 0; 0, -135]
+      DstBlock		      "altgammacmd"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "hdot"
+      SrcPort		      1
+      Points		      [72, 0; 0, 20]
+      DstBlock		      "Altitude Control"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "GsKts"
+      SrcPort		      1
+      Points		      [72, 0; 0, 25]
+      DstBlock		      "Altitude Control"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "AntEng"
+      SrcPort		      1
+      Points		      [0, 14; 79, 0; 76, 16]
+      DstBlock		      "Altitude Control"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "hdotChgRate"
+      SrcPort		      1
+      DstBlock		      "Altitude Control"
+      DstPort		      6
+    }
+  }
+}

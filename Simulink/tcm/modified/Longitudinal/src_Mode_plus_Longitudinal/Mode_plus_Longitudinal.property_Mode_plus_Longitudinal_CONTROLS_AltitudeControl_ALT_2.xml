@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+   <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <Property name="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_ALT_2">
+      <Date>2015-09-09 10:59</Date>
+      <Lustre2Horn unit="sec">0.04</Lustre2Horn>
+      <Parse unit="sec">0.01</Parse>
+      <Query unit="sec">0.96</Query>
+      <Answer>CEX</Answer>
+      <Counterexample>
+                 <Signal name="up_lim_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableRateLimit_VariableLimitSaturation" type="real">
+            <Value time="0">16/5</Value>
+         </Signal>
+         <Signal name="SigIn_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableRateLimit_VariableLimitSaturation" type="real">
+            <Value time="0">-200</Value>
+         </Signal>
+         <Signal name="Out1_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableRateLimit_VariableLimitSaturation" type="real">
+            <Value time="0">-16/5</Value>
+         </Signal>
+         <Signal name="Lo_lim_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableRateLimit_VariableLimitSaturation" type="real">
+            <Value time="0">-16/5</Value>
+         </Signal>
+         <Signal name="AltCmd_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl" type="real">
+            <Value time="0">-125</Value>
+         </Signal>
+         <Signal name="gskts_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="integrator_reset_Constant_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="integrator_reset_Sum1_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl" type="real">
+            <Value time="0">-16/5</Value>
+         </Signal>
+         <Signal name="altgamcmd_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl" type="real">
+            <Value time="0">-286479/5000</Value>
+         </Signal>
+         <Signal name="ICtrig_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="hdot_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="Altitude_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="engage_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="output_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableRateLimit" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="integrator_reset_Constant_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableRateLimit" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="integrator_reset_Sum1_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableRateLimit" type="real">
+            <Value time="0">-16/5</Value>
+         </Signal>
+         <Signal name="ratelim_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableRateLimit" type="real">
+            <Value time="0">16/5</Value>
+         </Signal>
+         <Signal name="ICtrig_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableRateLimit" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="IC_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableRateLimit" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="input_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableRateLimit" type="real">
+            <Value time="0">-10</Value>
+         </Signal>
+         <Signal name="up_lim_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableLimitSaturation" type="real">
+            <Value time="0">10</Value>
+         </Signal>
+         <Signal name="SigIn_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableLimitSaturation" type="real">
+            <Value time="0">-10</Value>
+         </Signal>
+         <Signal name="Out1_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableLimitSaturation" type="real">
+            <Value time="0">-10</Value>
+         </Signal>
+         <Signal name="Lo_lim_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_VariableLimitSaturation" type="real">
+            <Value time="0">-10</Value>
+         </Signal>
+         <Signal name="AltCmd_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_ALT_2" type="real">
+            <Value time="0">-125</Value>
+         </Signal>
+         <Signal name="gskts_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_ALT_2" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="integrator_reset_Constant_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_ALT_2" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="integrator_reset_Sum1_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_ALT_2" type="real">
+            <Value time="0">-16/5</Value>
+         </Signal>
+         <Signal name="ALT_2_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_ALT_2" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="ICtrig_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_ALT_2" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="hdot_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_ALT_2" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="Altitude_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_ALT_2" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="engage_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_ALT_2" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="SigIn_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_Saturation1" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="Out1_1_1" node="Mode_plus_Longitudinal_CONTROLS_AltitudeControl_Saturation1" type="real">
+            <Value time="0">1/10000</Value>
+         </Signal>
+
+      </Counterexample>
+     </Property>
+   </Results>
+

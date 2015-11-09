@@ -1,0 +1,6 @@
+ node cos (i:real) returns (o:real);
+ node sin (i:real) returns (o:real);
+ node sqrt (i:real) returns (o:real);
+ node atan (i:real) returns (o:real);
+ node fabs (i:real) returns (o:real);
+ node power (i:real; j:real) returns (o:real);

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+   <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <Property name="Mode_plus_Longitudinal_CONTROLS_FPAControl_FPA_1">
+      <Date>2015-09-09 10:59</Date>
+      <Lustre2Horn unit="sec">0.04</Lustre2Horn>
+      <Parse unit="sec">0.01</Parse>
+      <Query unit="sec">0.03</Query>
+      <Answer>UNKNOWN</Answer>
+     </Property>
+   </Results>
+

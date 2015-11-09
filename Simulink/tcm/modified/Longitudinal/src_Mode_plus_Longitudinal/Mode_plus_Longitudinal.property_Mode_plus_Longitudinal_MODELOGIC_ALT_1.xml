@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+   <Results xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+     <Property name="Mode_plus_Longitudinal_MODELOGIC_ALT_1">
+      <Date>2015-09-09 10:59</Date>
+      <Lustre2Horn unit="sec">0.03</Lustre2Horn>
+      <Parse unit="sec">0.01</Parse>
+      <Query unit="sec">0.91</Query>
+      <Answer>CEX</Answer>
+      <Counterexample>
+                 <Signal name="Actiavte_1_1" node="Mode_plus_Longitudinal_MODELOGIC_HeadingMode" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot__LogicalOperator1_1_1" node="Mode_plus_Longitudinal_MODELOGIC_HeadingMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="Deactivate_1_1" node="Mode_plus_Longitudinal_MODELOGIC_HeadingMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="HeadEng_1_1" node="Mode_plus_Longitudinal_MODELOGIC_HeadingMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot__LogicalOperator_1_1" node="Mode_plus_Longitudinal_MODELOGIC_HeadingMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="FPAEng_3_1" node="Mode_plus_Longitudinal_MODELOGIC" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="ailStick_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="real">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="elevStick_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="real">
+            <Value time="0">2</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot_1_LogicalOperator1_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="ATMode_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot__LogicalOperator1_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="CASCmd_5_1" node="Mode_plus_Longitudinal_MODELOGIC" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="CAS_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="real">
+            <Value time="0">3</Value>
+         </Signal>
+         <Signal name="HeadEng_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="Altitude_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="AltCmd_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="CASCmdMCP_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="real">
+            <Value time="0">4</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot_1_LogicalOperator_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="AltEng_2_1" node="Mode_plus_Longitudinal_MODELOGIC" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot__LogicalOperator_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="AltMode_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="ATEng_4_1" node="Mode_plus_Longitudinal_MODELOGIC" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="FPAMode_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="Switch_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="HeadMode_1_1" node="Mode_plus_Longitudinal_MODELOGIC" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="CASCmd_2_1" node="Mode_plus_Longitudinal_MODELOGIC_SpeedMode" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="AltEng_1_1" node="Mode_plus_Longitudinal_MODELOGIC_SpeedMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="CASCmdMCP_1_1" node="Mode_plus_Longitudinal_MODELOGIC_SpeedMode" type="real">
+            <Value time="0">4</Value>
+         </Signal>
+         <Signal name="ATEng_1_1" node="Mode_plus_Longitudinal_MODELOGIC_SpeedMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="Deactivate_1_1" node="Mode_plus_Longitudinal_MODELOGIC_SpeedMode" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot__LogicalOperator_1_1" node="Mode_plus_Longitudinal_MODELOGIC_SpeedMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="Actiavte_1_1" node="Mode_plus_Longitudinal_MODELOGIC_SpeedMode" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot__LogicalOperator1_1_1" node="Mode_plus_Longitudinal_MODELOGIC_SpeedMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="CAS_1_1" node="Mode_plus_Longitudinal_MODELOGIC_SpeedMode" type="real">
+            <Value time="0">3</Value>
+         </Signal>
+         <Signal name="Switch_1_1" node="Mode_plus_Longitudinal_MODELOGIC_SpeedMode" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="ALT_1_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="ailStick_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="real">
+            <Value time="0">Mode_plus_Longitudinal_MODELOGIC_ALT_1_init_1_0</Value>
+         </Signal>
+         <Signal name="elevStick_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="real">
+            <Value time="0">Mode_plus_Longitudinal_MODELOGIC_ALT_1_init_2_0</Value>
+         </Signal>
+         <Signal name="ATMode_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot__LogicalOperator1_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="CAS_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="real">
+            <Value time="0">Mode_plus_Longitudinal_MODELOGIC_ALT_1_init_8_0</Value>
+         </Signal>
+         <Signal name="Altitude_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="real">
+            <Value time="0">Mode_plus_Longitudinal_MODELOGIC_ALT_1_init_7_0</Value>
+         </Signal>
+         <Signal name="AltCmd_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="real">
+            <Value time="0">Mode_plus_Longitudinal_MODELOGIC_ALT_1_init_6_0</Value>
+         </Signal>
+         <Signal name="CASCmdMCP_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="real">
+            <Value time="0">Mode_plus_Longitudinal_MODELOGIC_ALT_1_init_9_0</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot_1_LogicalOperator_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot_1_LogicalOperator1_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot__LogicalOperator_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="AltMode_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="FPAMode_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="Switch_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="HeadMode_1_1" node="Mode_plus_Longitudinal_MODELOGIC_ALT_1" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="AltEng_1_1" node="Mode_plus_Longitudinal_MODELOGIC_AltAndFPAMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot__LogicalOperator1_1_1" node="Mode_plus_Longitudinal_MODELOGIC_AltAndFPAMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="Deactivate_1_1" node="Mode_plus_Longitudinal_MODELOGIC_AltAndFPAMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="Altitude_1_1" node="Mode_plus_Longitudinal_MODELOGIC_AltAndFPAMode" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="AltCmd_1_1" node="Mode_plus_Longitudinal_MODELOGIC_AltAndFPAMode" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot__LogicalOperator_1_1" node="Mode_plus_Longitudinal_MODELOGIC_AltAndFPAMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="FPAEng_2_1" node="Mode_plus_Longitudinal_MODELOGIC_AltAndFPAMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="ActiavteAlt_1_1" node="Mode_plus_Longitudinal_MODELOGIC_AltAndFPAMode" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot_1_LogicalOperator_1_1" node="Mode_plus_Longitudinal_MODELOGIC_AltAndFPAMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="SRFlipFlopRepl_dot_1_LogicalOperator1_1_1" node="Mode_plus_Longitudinal_MODELOGIC_AltAndFPAMode" type="bool">
+            <Value time="0">1</Value>
+         </Signal>
+         <Signal name="ActiavteFPA_1_1" node="Mode_plus_Longitudinal_MODELOGIC_AltAndFPAMode" type="real">
+            <Value time="0">0</Value>
+         </Signal>
+
+      </Counterexample>
+     </Property>
+   </Results>
+
