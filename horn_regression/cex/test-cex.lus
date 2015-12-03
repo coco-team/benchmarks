@@ -1,4 +1,4 @@
-node X() returns (o: int);
+node X(x: int) returns (o: int);
 let
   o = 1;
 tel
@@ -8,7 +8,7 @@ let
   y = pre x + 1;
 tel
 
-node top() returns (OK: bool);
+node top(z: int) returns (OK: bool);
 var l1, l2, l3, l4, l5: int;
 let
   l1 = l3 * 2;

@@ -1,8 +1,8 @@
 node top(in: real)
-returns (out: real ; check: bool) ;
+returns (check: bool) ;
 var
   inf_pos, inf_neg, inf_p_div_n, inf_p_sub_n,
-  inf_p_div_n_mul_3, one_div_inf_p, inf_p_sum_inf_n: real ;
+  inf_p_div_n_mul_3, one_div_inf_p, inf_p_sum_inf_n,  out: real ;
 let
   check = (in <> 0.0) or (out = 1.0) ;
   inf_pos = 1.0 / in ;
@@ -17,3 +17,4 @@ let
     one_div_inf_p + inf_p_sum_inf_n ;
   --!PROPERTY : check ;
 tel
+ 

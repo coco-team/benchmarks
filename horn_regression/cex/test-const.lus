@@ -1,4 +1,4 @@
-node X(x: int; const y: int) returns (z: int);
+node X(x: int; y: int) returns (z: int);
 let
   z = pre x + y;
 tel
