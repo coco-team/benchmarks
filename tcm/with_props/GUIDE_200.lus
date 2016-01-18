@@ -1,0 +1,212 @@
+node integrator_reset ( Fx  : real ; ResetLevel  : bool ; x0  : real  ) 
+   returns ( ir_out  : real  ) ;
+let
+  ir_out  = x0 -> if ( ResetLevel  ) then x0 else ( Fx * 1.0) + pre ( ir_out  );
+ tel 
+
+
+
+node VariableLimitSaturation ( up_lim  : real ; Signal  : real ; lo_lim  : real  ) 
+   returns ( out  : real  ) ;
+var enforce_lo_lim : real ;
+let
+  enforce_lo_lim = if Signal >= lo_lim then Signal else lo_lim;
+  out = if enforce_lo_lim <= up_lim then enforce_lo_lim else up_lim;
+ tel 
+
+
+node Saturation ( Signal  : real  ) 
+   returns ( s_out  : real  ) ;
+var enforce_lo_lim  : real ;
+let
+ enforce_lo_lim =  if 0.0001 >= Signal then 0.0001 else Signal;
+ s_out = if 1000.0 <= enforce_lo_lim then 1000.0 else enforce_lo_lim; 
+ tel 
+
+
+node VariableRateLimit ( ratelim_Out1_334  : real ; input_Out1_344  : real ; ICtrig_Out1_354  : bool ; IC_Out1_364  : real  ) 
+   returns ( output_In1_489  : real  ) ;
+var Gain_Out1_373  : real ;
+ Gain1_Out1_382  : real ;
+ Integrator1_Out1_391  : real ;
+ Sum2_Out1_401  : real ;
+ Variable_Limit_Saturation_Out1_410  : real ;
+ Gain_In1_372  : real ;
+ Gain1_In1_381  : real ;
+ Integrator1_In1_388  : real ;
+ Integrator1_In2_389  : bool ;
+ Integrator1_In3_390  : real ;
+ Sum2_In1_399  : real ;
+ Sum2_In2_400  : real ;
+ Variable_Limit_Saturation_In1_407  : real ;
+ Variable_Limit_Saturation_In2_408  : real ;
+ Variable_Limit_Saturation_In3_409  : real ;
+  
+let
+Gain_Out1_373  = 20.0 * Gain_In1_372;
+Gain1_Out1_382  = -(Gain1_In1_381);
+Integrator1_Out1_391  = Integrator1_In3_390 -> pre integrator_reset ( Integrator1_In1_388 , Integrator1_In2_389 , Integrator1_In3_390  );
+Sum2_Out1_401  = Sum2_In1_399 + - Sum2_In2_400;
+Variable_Limit_Saturation_Out1_410  = VariableLimitSaturation ( Variable_Limit_Saturation_In1_407 , Variable_Limit_Saturation_In2_408 , Variable_Limit_Saturation_In3_409  );
+Gain_In1_372  = Sum2_Out1_401;
+Variable_Limit_Saturation_In2_408  = Gain_Out1_373;
+Gain1_In1_381  = ratelim_Out1_334;
+Variable_Limit_Saturation_In1_407  = ratelim_Out1_334;
+Variable_Limit_Saturation_In3_409  = Gain1_Out1_382;
+Sum2_In2_400  = Integrator1_Out1_391;
+output_In1_489  = Integrator1_Out1_391;
+Sum2_In1_399  = input_Out1_344;
+Integrator1_In2_389  = ICtrig_Out1_354;
+Integrator1_In3_390  = IC_Out1_364;
+Integrator1_In1_388  = Variable_Limit_Saturation_Out1_410;
+ tel 
+
+
+node AltitudeControl ( AntEng_Out1_19  : real ; AltCmd_Out1_29  : real ; Alt_Out1_39  : real ; GsKts_Out1_49  : real ; hdot_Out1_59  : real ; hdotChgRate_Out1_69  : real  ) 
+   returns ( altgammacmd_In1_661  : real  ) ;
+var Abs_Out1_144  : real ;
+ Divide_Out1_184  : real ;
+ Kh_Out1_193  : real ;
+ Logical_Operator_Out1_198  : bool ;
+ Mux_Out1_202_0  : real ;
+ Mux_Out1_202_1  : real ;
+ Mux1_Out1_206_0  : real ;
+ Mux1_Out1_206_1  : real ;
+ Saturation1_Out1_213  : real ;
+ Sum_Out1_286  : real ;
+ Sum3_Out1_296  : real ;
+ Switch_Out1_305  : real ;
+ Switch1_Out1_314  : real ;
+ Variable__Rate_Limit_Out1_324  : real ;
+ Variable_Limit_Saturation_0_Out1_509  : real ;
+ k_Out1_585  : real ;
+ kts2fps_Out1_594  : real ;
+ r2d_Out1_603  : real ;
+ Abs_In1_143  : real ;
+ Divide_In1_182  : real ;
+ Divide_In2_183  : real ;
+ Kh_In1_192  : real ;
+ Logical_Operator_In1_197  : bool ;
+ Mux_In1_200  : real ;
+ Mux_In2_201  : real ;
+ Mux1_In1_204  : real ;
+ Mux1_In2_205  : real ;
+ Saturation1_In1_212  : real ;
+ Sum_In1_284  : real ;
+ Sum_In2_285  : real ;
+ Sum3_In1_294  : real ;
+ Sum3_In2_295  : real ;
+ Switch_In1_302  : real ;
+ Switch_In2_303  : bool ;
+ Switch_In3_304  : real ;
+ Switch1_In1_311  : real ;
+ Switch1_In2_312  : bool ;
+ Switch1_In3_313  : real ;
+ Variable__Rate_Limit_In1_320  : real ;
+ Variable__Rate_Limit_In2_321  : real ;
+ Variable__Rate_Limit_In3_322  : bool ;
+ Variable__Rate_Limit_In4_323  : real ;
+ Variable_Limit_Saturation_0_In1_506  : real ;
+ Variable_Limit_Saturation_0_In2_507  : real ;
+ Variable_Limit_Saturation_0_In3_508  : real ;
+ k_In1_584  : real ;
+ kts2fps_In1_593  : real ;
+ r2d_In1_602  : real ;
+  
+let
+Abs_Out1_144  = if Abs_In1_143 < 0.000000 then - Abs_In1_143 else Abs_In1_143;
+-- Divide_Out1_184  = Divide_In1_182 / Divide_In2_183;
+Divide_Out1_184  = Divide_In1_182 / 1.0;
+Kh_Out1_193  = 0.080000 * Kh_In1_192;
+Logical_Operator_Out1_198  = not Logical_Operator_In1_197;
+Mux_Out1_202_0  = Mux_In1_200;
+Mux_Out1_202_1  = Mux_In2_201;
+Mux1_Out1_206_0  = Mux1_In1_204;
+Mux1_Out1_206_1  = Mux1_In2_205;
+-- Saturation1_Out1_213  = Saturation( Saturation1_In1_212  );
+Saturation1_Out1_213  = 1.0;
+Sum_Out1_286  = Sum_In1_284 + - Sum_In2_285;
+Sum3_Out1_296  = Sum3_In1_294 + Sum3_In2_295;
+Switch_Out1_305  = if Switch_In2_303 then Switch_In1_302 else Switch_In3_304;
+Switch1_Out1_314  = if Switch1_In2_312 then Switch1_In1_311 else Switch1_In3_313;
+Variable__Rate_Limit_Out1_324  = VariableRateLimit ( Variable__Rate_Limit_In1_320 , Variable__Rate_Limit_In2_321 , Variable__Rate_Limit_In3_322 , Variable__Rate_Limit_In4_323  );
+Variable_Limit_Saturation_0_Out1_509  = VariableLimitSaturation( Variable_Limit_Saturation_0_In1_506 , Variable_Limit_Saturation_0_In2_507 , Variable_Limit_Saturation_0_In3_508  );
+k_Out1_585  = - (k_In1_584);
+kts2fps_Out1_594  = 1.687800 * kts2fps_In1_593;
+-- r2d_Out1_603  = 57.295800 * r2d_In1_602;
+r2d_Out1_603  = r2d_In1_602;
+altgammacmd_In1_661  = Switch1_Out1_314;
+Sum_In1_284  = AltCmd_Out1_29;
+Mux_In1_200  = AltCmd_Out1_29;
+Sum_In2_285  = Alt_Out1_39;
+Mux_In2_201  = Alt_Out1_39;
+Variable__Rate_Limit_In4_323  = hdot_Out1_59;
+Abs_In1_143  = hdot_Out1_59;
+Switch1_In2_312  = if AntEng_Out1_19 = 0.000000 then false else true;
+Switch_In2_303  = if AntEng_Out1_19 = 0.000000 then false else true;
+Logical_Operator_In1_197  = if AntEng_Out1_19 = 0.000000 then false else true;
+kts2fps_In1_593  = GsKts_Out1_49;
+Variable__Rate_Limit_In1_320  = hdotChgRate_Out1_69;
+Kh_In1_192  = Sum_Out1_286;
+Sum3_In1_294  = Abs_Out1_144;
+Sum3_In2_295  = 10.0;
+Variable_Limit_Saturation_0_In3_508  = k_Out1_585;
+k_In1_584  = Sum3_Out1_296;
+Variable_Limit_Saturation_0_In1_506  = Sum3_Out1_296;
+r2d_In1_602  = Divide_Out1_184;
+Switch1_In1_311  = r2d_Out1_603;
+Variable__Rate_Limit_In3_322  = Logical_Operator_Out1_198;
+Variable__Rate_Limit_In2_321  = Variable_Limit_Saturation_0_Out1_509;
+Mux1_In1_204  = Variable_Limit_Saturation_0_Out1_509;
+Divide_In1_182  = Variable__Rate_Limit_Out1_324;
+Mux1_In2_205  = Variable__Rate_Limit_Out1_324;
+Saturation1_In1_212  = kts2fps_Out1_594;
+Divide_In2_183  = Saturation1_Out1_213;
+Variable_Limit_Saturation_0_In2_507  = Switch_Out1_305;
+Switch_In1_302  = Kh_Out1_193;
+Switch_In3_304  = 0.0 ;
+Switch1_In3_313  = 0.0;
+ tel 
+
+
+
+
+node top (AltEng : bool; AltCmd : real ; Altitude : real ; gskts  : real ; hdot  : real ; hdotChgRate : real ) 
+   returns ( obs: bool) ;
+  var altgammaCmd  : real;
+    tempAlt : real;
+    preAltGammaCmd : real;
+    count : int;
+let
+
+  tempAlt = if AltEng then 1.0 else 0.0;
+  altgammaCmd =  AltitudeControl (tempAlt, AltCmd,  Altitude, gskts, hdot, hdotChgRate);
+  
+  assert (AltEng = true);
+  assert true -> AltCmd = pre (AltCmd);
+  -- assert AltCmd > 3000 ;
+  assert ((AltCmd - Altitude < 250) and (AltCmd - Altitude > -250)) -> true;
+
+  assert true -> (Altitude = pre(Altitude) + pre (hdot));
+  
+  assert (-40 < hdot) and (hdot < 40);  
+  
+  assert (-100.0 > Altitude - AltCmd) or (100.0 < Altitude - AltCmd);
+
+  -- assert true -> (((pre(altgammaCmd) > 0) and (hdot > 0)) or ((pre(altgammaCmd) < 0) and (hdot < 0)) or ((pre(altgammaCmd) = 0) and (hdot = 0)));
+  
+  assert (hdotChgRate = 3.2);
+
+  preAltGammaCmd = 0.0 -> pre(altgammaCmd);
+
+  count = 0 -> pre(count) + 1;
+
+  obs = true -> (count < 2) or ((AltCmd = Altitude) or 
+    ((AltCmd > Altitude) and ( (altgammaCmd > pre(preAltGammaCmd)) or (altgammaCmd > 0) )) or 
+    ((AltCmd < Altitude) and ( (altgammaCmd < pre(preAltGammaCmd)) or (altgammaCmd < 0) )) );
+ 
+ --!MAIN : true;
+--!PROPERTY: obs = true;
+
+tel
+

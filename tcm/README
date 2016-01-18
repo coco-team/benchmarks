@@ -1,0 +1,20 @@
+* Transport Class Model (TCM)
+
+** For a complete description of the TCM please refer to the paper: "Verifying the safety of a flight-critical system" Brat et. al (http://arxiv.org/pdf/1502.02605.pdf)
+
+** The original Simulink can be found here: https://github.com/coco-team/benchmarks/tree/master/Simulink/tcm
+
+** There are several generated version from the Simulink models.
+
+
+* Contents:
+** with_props/ :: Sliced models with a property
+** models/     :: Just models.
+
+
+* Contact:
+** Teme Kahsai (temesghen.kahsaiazene@nasa.gov)
+
+
+
+

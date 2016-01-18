@@ -1,0 +1,312 @@
+
+
+-- An integrator with reset
+node integrator_reset ( Fx  : real ; ResetLevel  : bool ; x0  : real  )  returns (o  : real  ) ;
+  let
+   o  = x0 -> if ( ResetLevel  ) then x0 else ( Fx * 1.000000  ) + pre ( o );
+  tel 
+
+node ANGL_sign ( SigIn_Out1_137  : real  ) returns ( Out2_In1_203  : real  ) ;
+ var Switch1_Out1_182  : real ;
+  let
+   Switch1_Out1_182  = if 0.000000 = SigIn_Out1_137 then 0.000000 else - 1.000000;
+  Out2_In1_203  = if SigIn_Out1_137 > 0.000000 then 1.000000 else Switch1_Out1_182;
+ tel 
+
+
+node ANGL ( in_Out1_76  : real  ) returns ( _180_In1_238  : real  ) ;
+var Abs_Out1_79  : real ;
+ Relational_Operator_ANGL_Out1_101  : bool ;
+ Sum6_Out1_111  : real ;
+ Switch1_ANGL_Out1_120  : real ;
+ sign_Out1_127  : real ;
+ times360_Out1_226  : real ;
+ Abs_In1_78  : real ;
+ Relational_Operator_ANGL_In1_99  : real ;
+ Sum6_In1_109  : real ;
+ Sum6_In2_110  : real ;
+ Switch1_ANGL_In1_117  : real ;
+ Switch1_ANGL_In2_118  : bool ;
+ Switch1_ANGL_In3_119  : real ;
+ sign_In1_126  : real ;
+  
+let
+Abs_Out1_79  = if Abs_In1_78 < 0.000000 then - Abs_In1_78 else Abs_In1_78;
+Relational_Operator_ANGL_Out1_101  = Relational_Operator_ANGL_In1_99 > 180.000000;
+Sum6_Out1_111  = - Sum6_In1_109 + Sum6_In2_110;
+Switch1_ANGL_Out1_120  = if Switch1_ANGL_In2_118 then Switch1_ANGL_In1_117 else Switch1_ANGL_In3_119;
+sign_Out1_127  = ANGL_sign ( sign_In1_126  );
+times360_Out1_226  = 360.000000 * sign_Out1_127;
+Relational_Operator_ANGL_In1_99  = Abs_Out1_79;
+Abs_In1_78  = in_Out1_76;
+Switch1_ANGL_In3_119  = in_Out1_76;
+Sum6_In2_110  = in_Out1_76;
+sign_In1_126  = in_Out1_76;
+_180_In1_238  = Switch1_ANGL_Out1_120;
+Sum6_In1_109  = times360_Out1_226;
+Switch1_ANGL_In1_117  = Sum6_Out1_111;
+Switch1_ANGL_In2_118  = Relational_Operator_ANGL_Out1_101;
+ tel 
+
+node DynamicSaturation ( up_Out1_293  : real ; u_Out1_303  : real ; lo_Out1_313  : real  ) 
+   returns ( y1_In1_355  : real  ) ;
+var LowerRelop1_Out1_319  : bool ;
+ UpperRelop_Out1_325  : bool ;
+ switch2_1_Out1_334  : real ;
+ switch2_2_Out1_343  : real ;
+ LowerRelop1_In1_317  : real ;
+ LowerRelop1_In2_318  : real ;
+ UpperRelop_In1_323  : real ;
+ UpperRelop_In2_324  : real ;
+ switch2_1_In1_331  : real ;
+ switch2_1_In2_332  : bool ;
+ switch2_1_In3_333  : real ;
+ switch2_2_In1_340  : real ;
+ switch2_2_In2_341  : bool ;
+ switch2_2_In3_342  : real ;
+  
+let
+LowerRelop1_Out1_319  = LowerRelop1_In1_317 > LowerRelop1_In2_318;
+UpperRelop_Out1_325  = UpperRelop_In1_323 < UpperRelop_In2_324;
+switch2_1_Out1_334  = if switch2_1_In2_332 then switch2_1_In1_331 else switch2_1_In3_333;
+switch2_2_Out1_343  = if switch2_2_In2_341 then switch2_2_In1_340 else switch2_2_In3_342;
+switch2_2_In1_340  = up_Out1_293;
+LowerRelop1_In2_318  = up_Out1_293;
+switch2_1_In3_333  = u_Out1_303;
+LowerRelop1_In1_317  = u_Out1_303;
+UpperRelop_In1_323  = u_Out1_303;
+switch2_1_In1_331  = lo_Out1_313;
+UpperRelop_In2_324  = lo_Out1_313;
+switch2_2_In3_342  = switch2_1_Out1_334;
+y1_In1_355  = switch2_2_Out1_343;
+switch2_2_In2_341  = LowerRelop1_Out1_319;
+switch2_1_In2_332  = UpperRelop_Out1_325;
+ tel 
+
+node Saturation ( signal  : real  ) returns ( saturated_signal  : real  ) ;
+var low_lim  : real ; 
+let
+  saturated_signal  = if ( low_lim <= 1000.000000  ) then low_lim else 1000.000000;
+  low_lim  = if ( 0.000100 >= signal  ) then 0.000100 else signal;
+ tel 
+
+node HgdCmdProcessor ( Vt_Out1_19  : real ; HdgCmdMCP_Out1_29  : real ; Heading_Out1_39  : real  ) 
+   returns ( HdgCmd_In1_947  : real ; HdgRteCmd_In1_959  : real  ) ;
+
+let
+  HdgCmd_In1_947 = HdgCmdMCP_Out1_29;
+  HdgRteCmd_In1_959 = 0.0;
+ tel 
+
+node HeadingControl ( HdgCmdMCP_Out1_19  : real ; Heading_Out1_29  : real ; psidot_Out1_39  : real ; Vt_Out1_49  : real ; Roll_Out1_59  : real ; HeadEng_Out1_69  : bool ; rollLimitinput_Out1_79  : real  ) 
+   returns ( RollCmd_In1_1442  : real  ) ;
+var HdgCmdProcessor_Out1_88  : real ;
+ HdgCmdProcessor_Out2_89  : real ;
+ Khdg_Out1_1105  : real ;
+ Khdg1_Out1_1114  : real ;
+ Khdg2_Out1_1123  : real ;
+ Khdgrte_Out1_1132  : real ;
+ Logical_Operator_Out1_1137  : bool ;
+ Max_Out1_1147  : real ;
+ Min_Out1_1157  : real ;
+ Mux_Out1_1161_0  : real ;
+ Mux_Out1_1161_1  : real ;
+ Sum_Out1_1171  : real ;
+ Sum1_Out1_1181  : real ;
+ Sum2_Out1_1191  : real ;
+ Sum3_Out1_1201  : real ;
+ Sum4_Out1_1211  : real ;
+ -- sgn_Out1_1430  : real ;
+ Integrator1_1_Out1_1305  : real ;
+ Logical_Operator1_1_Out1_1311  : bool ;
+ Logical_Operator1_2_Out1_1317  : bool ;
+ Logical_Operator1_3_Out1_1323  : bool ;
+ Relational_Operator_Out1_1329  : bool ;
+ Relational_Operator1_Out1_1335  : bool ;
+ Relational_Operator2_Out1_1341  : bool ;
+ Relational_Operator3_Out1_1347  : bool ;
+ Switch1_Out1_1356  : real ;
+ Switch2_Out1_1365  : real ;
+ Switch3_Out1_1374  : real ;
+ HdgCmdProcessor_In1_85  : real ;
+ HdgCmdProcessor_In2_86  : real ;
+ HdgCmdProcessor_In3_87  : real ;
+ Khdg_In1_1104  : real ;
+ Khdg1_In1_1113  : real ;
+ Khdg2_In1_1122  : real ;
+ Khdgrte_In1_1131  : real ;
+ Logical_Operator_In1_1136  : bool ;
+ Max_In1_1145  : real ;
+ Max_In2_1146  : real ;
+ Min_In1_1155  : real ;
+ Min_In2_1156  : real ;
+ Mux_In1_1159  : real ;
+ Mux_In2_1160  : real ;
+ Sum_In1_1169  : real ;
+ Sum_In2_1170  : real ;
+ Sum1_In1_1179  : real ;
+ Sum1_In2_1180  : real ;
+ Sum2_In1_1189  : real ;
+ Sum2_In2_1190  : real ;
+ Sum3_In1_1199  : real ;
+ Sum3_In2_1200  : real ;
+ Sum4_In1_1209  : real ;
+ Sum4_In2_1210  : real ;
+ -- sgn_In1_1429  : real ;
+ Integrator1_1_In1_1302  : real ;
+ Integrator1_1_In2_1303  : bool ;
+ Integrator1_1_In3_1304  : real ;
+ Logical_Operator1_1_In1_1309  : bool ;
+ Logical_Operator1_1_In2_1310  : bool ;
+ Logical_Operator1_2_In1_1315  : bool ;
+ Logical_Operator1_2_In2_1316  : bool ;
+ Logical_Operator1_3_In1_1321  : bool ;
+ Logical_Operator1_3_In2_1322  : bool ;
+ -- Relational_Operator_In1_1327  : real ;
+ Relational_Operator_In2_1328  : real ;
+ -- Relational_Operator1_In1_1333  : real ;
+ Relational_Operator1_In2_1334  : real ;
+ Relational_Operator2_In1_1339  : real ;
+ -- Relational_Operator2_In2_1340  : real ;
+ Relational_Operator3_In1_1345  : real ;
+ -- Relational_Operator3_In2_1346  : real ;
+ -- Switch1_In1_1353  : real ;
+ Switch1_In2_1354  : bool ;
+ Switch1_In3_1355  : real ;
+ -- Switch2_In1_1362  : real ;
+ Switch2_In2_1363  : bool ;
+ Switch2_In3_1364  : real ;
+ -- Switch3_In1_1371  : real ;
+ Switch3_In2_1372  : bool ;
+ Switch3_In3_1373  : real ;
+ integrator_out : real ;
+let
+HdgCmdProcessor_Out1_88 , HdgCmdProcessor_Out2_89  = HgdCmdProcessor ( HdgCmdProcessor_In1_85 , HdgCmdProcessor_In2_86 , HdgCmdProcessor_In3_87  );
+Khdg_Out1_1105  = 0.050000 * Khdg_In1_1104;
+-- Khdg1_Out1_1114  = int_to_real ( 1  ) *Khdg1_In1_1113;
+Khdg1_Out1_1114  = Khdg1_In1_1113;
+-- Khdg2_Out1_1123  = int_to_real ( 1  ) * Khdg2_In1_1122;
+Khdg2_Out1_1123  = Khdg2_In1_1122;
+Khdgrte_Out1_1132  = 3.0 * Khdgrte_In1_1131;
+Logical_Operator_Out1_1137  = not Logical_Operator_In1_1136;
+Max_Out1_1147  = if Max_In1_1145 >= Max_In2_1146 then Max_In1_1145 else Max_In2_1146;
+Min_Out1_1157  = if Min_In1_1155 <= Min_In2_1156 then Min_In1_1155 else Min_In2_1156;
+-- [ Mux_Out1_1161_0 , Mux_Out1_1161_1  ]  = [ Mux_In1_1159 , Mux_In2_1160  ];
+Mux_Out1_1161_0  = Mux_In1_1159 ;
+Mux_Out1_1161_1  =  Mux_In2_1160 ;  
+Sum_Out1_1171  = Sum_In1_1169 + - Sum_In2_1170;
+Sum1_Out1_1181  = Sum1_In1_1179 + Sum1_In2_1180;
+Sum2_Out1_1191  = Sum2_In1_1189 + - Sum2_In2_1190;
+Sum3_Out1_1201  = - Sum3_In1_1199 + - Sum3_In2_1200;
+Sum4_Out1_1211  = Sum4_In1_1209 + - Sum4_In2_1210;
+-- sgn_Out1_1430  = int_to_real ( - 1  ) * sgn_In1_1429;
+-- sgn_Out1_1430  = - 30.0;
+integrator_out = integrator_reset ( Integrator1_1_In1_1302 , Integrator1_1_In2_1303 , Integrator1_1_In3_1304);
+Integrator1_1_Out1_1305  = Integrator1_1_In3_1304 -> pre (integrator_out);
+Logical_Operator1_1_Out1_1311  = Logical_Operator1_1_In1_1309 and Logical_Operator1_1_In2_1310;
+Logical_Operator1_2_Out1_1317  = Logical_Operator1_2_In1_1315 and Logical_Operator1_2_In2_1316;
+Logical_Operator1_3_Out1_1323  = Logical_Operator1_3_In1_1321 or Logical_Operator1_3_In2_1322;
+-- Relational_Operator_Out1_1329  = Relational_Operator_In1_1327 <= Relational_Operator_In2_1328;
+Relational_Operator_Out1_1329  = rollLimitinput_Out1_79 <= Relational_Operator_In2_1328;
+-- Relational_Operator1_Out1_1335  = Relational_Operator1_In1_1333 >= Relational_Operator1_In2_1334;
+Relational_Operator1_Out1_1335  = -rollLimitinput_Out1_79 >= Relational_Operator1_In2_1334;
+-- Relational_Operator2_Out1_1341  = Relational_Operator2_In1_1339 > Relational_Operator2_In2_1340;
+Relational_Operator2_Out1_1341  = Relational_Operator2_In1_1339 > 0.0;
+-- Relational_Operator3_Out1_1347  = Relational_Operator3_In1_1345 < Relational_Operator3_In2_1346;
+Relational_Operator3_Out1_1347  = Relational_Operator3_In1_1345 < 0.0;
+-- Switch1_Out1_1356  = if Switch1_In2_1354 then Switch1_In1_1353 else Switch1_In3_1355;
+Switch1_Out1_1356  = if Switch1_In2_1354 then rollLimitinput_Out1_79 else Switch1_In3_1355;
+-- Switch2_Out1_1365  = if Switch2_In2_1363 then Switch2_In1_1362 else Switch2_In3_1364;
+Switch2_Out1_1365  = if Switch2_In2_1363 then -rollLimitinput_Out1_79 else Switch2_In3_1364;
+Switch3_Out1_1374  = if Switch3_In2_1372 then 0.0 else Switch3_In3_1373;
+HdgCmdProcessor_In3_87  = Heading_Out1_29;
+Sum_In2_1170  = Heading_Out1_29;
+Sum_In1_1169  = HdgCmdProcessor_Out1_88;
+Mux_In2_1160  = HdgCmdProcessor_Out1_88;
+Khdg_In1_1104  = Sum_Out1_1171;
+Sum1_In1_1179  = Khdg_Out1_1105;
+Sum1_In2_1180  = Sum2_Out1_1191;
+Sum2_In1_1189  = HdgCmdProcessor_Out2_89;
+Sum2_In2_1190  = psidot_Out1_39;
+HdgCmdProcessor_In1_85  = Vt_Out1_49;
+HdgCmdProcessor_In2_86  = HdgCmdMCP_Out1_19;
+Mux_In1_1159  = HdgCmdMCP_Out1_19;
+RollCmd_In1_1442  = Switch2_Out1_1365;
+Sum3_In1_1199  = Switch2_Out1_1365;
+Sum4_In2_1210  = Switch2_Out1_1365;
+Khdgrte_In1_1131  = Sum1_Out1_1181;
+Min_In1_1155  = Max_Out1_1147;
+Logical_Operator_In1_1136  = HeadEng_Out1_69;
+Khdg1_In1_1113  = Sum3_Out1_1201;
+Khdg2_In1_1122  = Sum4_Out1_1211;
+Max_In2_1146  = Khdg1_Out1_1114;
+Min_In2_1156  = Khdg2_Out1_1123;
+Max_In1_1145  = Khdgrte_Out1_1132;
+Sum3_In2_1200  = rollLimitinput_Out1_79;
+Sum4_In1_1209  = rollLimitinput_Out1_79;
+Integrator1_1_In3_1304  = Roll_Out1_59;
+Integrator1_1_In2_1303  = Logical_Operator_Out1_1137;
+Switch3_In3_1373  = Min_Out1_1157;
+Relational_Operator3_In1_1345  = Min_Out1_1157;
+Relational_Operator2_In1_1339  = Min_Out1_1157;
+Logical_Operator1_2_In2_1316  = Relational_Operator1_Out1_1335;
+Switch2_In2_1363  = Relational_Operator1_Out1_1335;
+Switch2_In3_1364  = Switch1_Out1_1356;
+Relational_Operator1_In2_1334  = Switch1_Out1_1356;
+Logical_Operator1_2_In1_1315  = Relational_Operator3_Out1_1347;
+Logical_Operator1_3_In2_1322  = Logical_Operator1_2_Out1_1317;
+Logical_Operator1_3_In1_1321  = Logical_Operator1_1_Out1_1311;
+Switch3_In2_1372  = Logical_Operator1_3_Out1_1323;
+Logical_Operator1_1_In2_1310  = Relational_Operator2_Out1_1341;
+Integrator1_1_In1_1302  = Switch3_Out1_1374;
+Logical_Operator1_1_In1_1309  = Relational_Operator_Out1_1329;
+Switch1_In2_1354  = Relational_Operator_Out1_1329;
+Relational_Operator_In2_1328  = Integrator1_1_Out1_1305;
+Switch1_In3_1355  = Integrator1_1_Out1_1305;
+ tel 
+
+
+
+
+
+
+node top ( HdgCmdMCP: real ; Heading : real ; psidot : real ; Vt : real ; Roll : real ; HeadEng : bool ; rollLimitInput : real  ) 
+   returns (obs : bool);
+  var  RollCmd : real;
+    right : bool;
+    preRollCmd : real;
+    count : int;
+let
+
+  RollCmd =  HeadingControl ( HdgCmdMCP , Heading , psidot , Vt , Roll , HeadEng , rollLimitInput);
+  
+  -- Put properties here
+
+  assert (rollLimitInput > 0.0) and (rollLimitInput <= 30.0);
+  assert (HeadEng = true);
+  assert rollLimitInput = 30.0;
+
+  assert psidot = 0.0;
+  
+  assert (HdgCmdMCP >= 0.0) and (HdgCmdMCP < 180.0);
+  assert (Heading >= 0.0) and (Heading < 180.0);
+
+  assert true -> HdgCmdMCP > Heading + 10.0;
+  assert true -> HdgCmdMCP = pre(HdgCmdMCP);
+  assert true -> Heading = pre(Heading);
+
+  assert Roll = 0.0 -> Roll = pre(RollCmd);
+
+  right = ((HdgCmdMCP - Heading > 0.0) and (HdgCmdMCP - Heading < 180.0)) or (Heading - HdgCmdMCP > 180.0);
+
+  preRollCmd = 0.0 -> pre(RollCmd);
+
+  count = 0 -> pre(count) + 1;
+
+  obs = true -> (count < 2) or (HdgCmdMCP = Heading) or
+    ((right = true)  and ((RollCmd > pre(preRollCmd)) or (RollCmd = rollLimitInput))) or
+    ((right = false) and ((RollCmd < pre(preRollCmd)) or (RollCmd = - rollLimitInput)));
+
+  --!MAIN : true;
+  --!PROPERTY: obs = true;
+tel
