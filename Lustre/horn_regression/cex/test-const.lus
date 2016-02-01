@@ -1,0 +1,13 @@
+node X(x: int; y: int) returns (z: int);
+let
+  z = pre x + y;
+tel
+
+node top(x: int) returns (out: bool);
+  var z: int;
+let
+  z = X(x, 0);
+  out=true -> z = pre z;
+  --!PROPERTY :  out;
+tel
+  

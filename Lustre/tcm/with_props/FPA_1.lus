@@ -1,0 +1,217 @@
+
+node DynamicSaturation ( up_Out1_74  : real ; u_Out1_84  : real ; lo_Out1_94  : real  ) 
+   returns ( y1_In1_136  : real  ) ;
+var LowerRelop1_Out1_100  : bool ;
+ Switch_Out1_109  : real ;
+ Switch2_Out1_118  : real ;
+ UpperRelop_Out1_124  : bool ;
+ LowerRelop1_In1_98  : real ;
+ LowerRelop1_In2_99  : real ;
+ Switch_In1_106  : real ;
+ Switch_In2_107  : bool ;
+ Switch_In3_108  : real ;
+ Switch2_In1_115  : real ;
+ Switch2_In2_116  : bool ;
+ Switch2_In3_117  : real ;
+ UpperRelop_In1_122  : real ;
+ UpperRelop_In2_123  : real ;
+  
+let
+LowerRelop1_Out1_100  = LowerRelop1_In1_98 > LowerRelop1_In2_99;
+Switch_Out1_109  = if Switch_In2_107 then Switch_In1_106 else Switch_In3_108;
+Switch2_Out1_118  = if Switch2_In2_116 then Switch2_In1_115 else Switch2_In3_117;
+UpperRelop_Out1_124  = UpperRelop_In1_122 < UpperRelop_In2_123;
+Switch2_In1_115  = up_Out1_74;
+LowerRelop1_In2_99  = up_Out1_74;
+Switch_In3_108  = u_Out1_84;
+LowerRelop1_In1_98  = u_Out1_84;
+UpperRelop_In1_122  = u_Out1_84;
+Switch_In1_106  = lo_Out1_94;
+UpperRelop_In2_123  = lo_Out1_94;
+Switch2_In3_117  = Switch_Out1_109;
+y1_In1_136  = Switch2_Out1_118;
+Switch2_In2_116  = LowerRelop1_Out1_100;
+Switch_In2_107  = UpperRelop_Out1_124;
+ tel 
+
+node IntegratorReset(Fx  : real ; ResetLevel  : bool ; x0: real  ) 
+   returns ( out  : real  ) ;
+let
+ out = x0 -> if (ResetLevel) then x0 else (Fx*1.0) + pre (out); 
+tel
+
+
+
+node FPAControl ( engage_Out1_15  : real ; gamcmd_Out1_25  : real ; gamma_Out1_35  : real ; thetadeg_Out1_45  : real ; VT_Out1_55  : real  ) 
+   returns ( PitchCmd_In1_487  : real ; integratorreset_Out1_242  : real ) ;
+var DynamicSaturation_Out1_64  : real ;
+ KIgamerr_Out1_161  : real ;
+ Kgamerr_Out1_170  : real ;
+ LogicalOperator_Out1_175  : bool ;
+ Mux_Out1_179_0  : real ;
+ Mux_Out1_179_1  : real ;
+ Mux1_Out1_183_0  : real ;
+ Mux1_Out1_183_1  : real ;
+ Product1_Out1_195  : real ;
+ Sum_Out1_205  : real ;
+ Sum1_Out1_215  : real ;
+ Sum2_Out1_225  : real ;
+ -- integratorreset_Out1_242  : real ;
+ kt2fps_Out1_466  : real ;
+ m1_Out1_475  : real ;
+ DynamicSaturation_In1_61  : real ;
+ DynamicSaturation_In2_62  : real ;
+ DynamicSaturation_In3_63  : real ;
+ FPAScope_In1_149  : real ;
+ FPAScope_In2_150_0  : real ;
+ FPAScope_In2_150_1  : real ;
+ FPAScope_In3_151_0  : real ;
+ FPAScope_In3_151_1  : real ;
+ FPAScope_In4_152  : real ;
+ KIgamerr_In1_160  : real ;
+ Kgamerr_In1_169  : real ;
+ LogicalOperator_In1_174  : bool ;
+ Mux_In1_177  : real ;
+ Mux_In2_178  : real ;
+ Mux1_In1_181  : real ;
+ Mux1_In2_182  : real ;
+ Product1_In2_194  : real ;
+ Sum_In1_203  : real ;
+ Sum_In2_204  : real ;
+ Sum1_In1_213  : real ;
+ Sum1_In2_214  : real ;
+ Sum2_In1_223  : real ;
+ Sum2_In2_224  : real ;
+ integratorreset_In1_239  : real ;
+ integratorreset_In2_240  : bool ;
+ integratorreset_In3_241  : real ;
+ kt2fps_In1_465  : real ;
+ m1_In1_474  : real ;
+  
+let
+DynamicSaturation_Out1_64  = DynamicSaturation ( DynamicSaturation_In1_61 , DynamicSaturation_In2_62 , DynamicSaturation_In3_63  );
+KIgamerr_Out1_161  = 1.0 * KIgamerr_In1_160;
+Kgamerr_Out1_170  = 1.400000 * Kgamerr_In1_169;
+LogicalOperator_Out1_175  = not LogicalOperator_In1_174;
+Mux_Out1_179_0  = Mux_In1_177;
+Mux_Out1_179_1  = Mux_In2_178;
+Mux1_Out1_183_0  = Mux1_In1_181;
+Mux1_Out1_183_1  = Mux1_In2_182;
+Product1_Out1_195  = 276.738714 * Product1_In2_194;
+Sum_Out1_205  = Sum_In1_203 + Sum_In2_204;
+Sum1_Out1_215  = Sum1_In1_213 + - Sum1_In2_214;
+Sum2_Out1_225  = Sum2_In1_223 + - Sum2_In2_224;
+integratorreset_Out1_242  = IntegratorReset( integratorreset_In1_239 , integratorreset_In2_240 , integratorreset_In3_241  );
+kt2fps_Out1_466  = 1.687800 * kt2fps_In1_465;
+m1_Out1_475  = -1.0 * m1_In1_474;
+PitchCmd_In1_487  = Sum1_Out1_215;
+FPAScope_In4_152  = Sum1_Out1_215;
+Sum1_In2_214  = Kgamerr_Out1_170;
+Sum_In2_204  = Kgamerr_Out1_170;
+Sum1_In1_213  = integratorreset_Out1_242;
+Kgamerr_In1_169  = gamma_Out1_35;
+Sum2_In2_224  = gamma_Out1_35;
+Mux_In2_178  = gamma_Out1_35;
+Sum_In1_203  = thetadeg_Out1_45;
+integratorreset_In3_241  = Sum_Out1_205;
+LogicalOperator_In1_174  = if engage_Out1_15 = 0.000000 then false else true;
+FPAScope_In1_149  = engage_Out1_15;
+integratorreset_In2_240  = LogicalOperator_Out1_175;
+Product1_In2_194  = kt2fps_Out1_466;
+m1_In1_474  = Product1_Out1_195;
+DynamicSaturation_In1_61  = Product1_Out1_195;
+kt2fps_In1_465  = VT_Out1_55;
+integratorreset_In1_239  = DynamicSaturation_Out1_64;
+Mux1_In2_182  = DynamicSaturation_Out1_64;
+DynamicSaturation_In2_62  = KIgamerr_Out1_161;
+DynamicSaturation_In3_63  = m1_Out1_475;
+KIgamerr_In1_160  = Sum2_Out1_225;
+Mux1_In1_181  = Sum2_Out1_225;
+Sum2_In1_223  = gamcmd_Out1_25;
+Mux_In1_177  = gamcmd_Out1_25;
+FPAScope_In2_150_0  = Mux_Out1_179_0;
+FPAScope_In2_150_1  = Mux_Out1_179_1;
+FPAScope_In3_151_0  = Mux1_Out1_183_0;
+FPAScope_In3_151_1  = Mux1_Out1_183_1;
+ tel 
+
+
+-- node top (gammaCmd  : real ; gamma  : real; VT : real) 
+--    returns (   PitchCmd : real;  integrator  : real; thetaDeg : real ) ;
+--     var   obs   : bool;
+     
+--      prePitch  : real;
+--      -- alpha : real ;
+-- let
+ 
+
+--   PitchCmd , integrator = FPAControl(1.0 , gammaCmd , gamma , thetaDeg, VT);
+  
+--   prePitch = 5.0 -> pre(PitchCmd);
+--   -- gamma = 0.0 -> pre(gamma) + (pre(PitchCmd) - pre(prePitch));
+--   thetaDeg = 5.0 -> pre(PitchCmd);
+
+
+--   -- alpha_0 = 3
+--   -- assert prePitch = 3 -> prePitch = pre(PitchCmd);
+
+--   -- immediate effect of pitch
+--   assert thetaDeg = prePitch;
+  
+--   -- we can prove it with this assumption on gamma/alpha
+--   assert gamma = prePitch / 1.4;
+  
+--   -- assert alpha = thetaDeg - pre(gamma); 
+--   -- assert gamma = 0.0 -> (gamma >= pre(gamma) + (alpha-3) * 2.0) and (gamma <= pre(gamma) + (alpha-3) * 20.0);
+
+--   assert VT = 100.0;
+
+--   assert  gamma > -10.0 and  gamma < 10.0;
+--   assert  thetaDeg > -10.0 and  thetaDeg < 10.0;  
+--   assert  true -> gammaCmd =  pre (gammaCmd);
+--   assert  gammaCmd > -5.0 and  gammaCmd < 5.0;
+
+--   obs = true -> (gammaCmd =  gamma) 
+--              or ((gammaCmd > gamma) and  (PitchCmd >  pre(prePitch)))
+--              or  ((gammaCmd < gamma) and  (PitchCmd < pre(prePitch)));
+
+--  --!MAIN : true;
+-- --!PROPERTY: obs = true;
+-- tel
+
+
+node top (gammaCmd  : real ; gamma  : real; VT : real; thetadeg: real) 
+   returns (obs   : bool; ) ;
+    var  
+      PitchCmd : real;  
+    integrator  : real; 
+     prePitch  : real;
+    
+let
+ 
+
+  PitchCmd , integrator = FPAControl(1.0 , gammaCmd , gamma , thetadeg, VT);
+  
+  prePitch = 5.0 -> pre(PitchCmd);
+
+  -- immediate effect of pitch
+  assert thetadeg = prePitch;
+  
+  -- we can prove it with this assumption on gamma/alpha
+  assert gamma = prePitch / 1.4;
+  
+  assert VT = 100.0;
+
+  assert  gamma > -10.0 and  gamma < 10.0;
+  assert  thetadeg > -10.0 and  thetadeg < 10.0;  
+  assert  true -> gammaCmd =  pre (gammaCmd);
+  assert  gammaCmd > -5.0 and  gammaCmd < 5.0;
+
+  obs = true ->(gammaCmd =  gamma) 
+             or ((gammaCmd > gamma) and  (PitchCmd >  pre(prePitch)))
+             or  ((gammaCmd < gamma) and  (PitchCmd < pre(prePitch)));
+
+ --!MAIN : true;
+--!PROPERTY: obs = true;
+tel
+

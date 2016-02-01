@@ -1,0 +1,57 @@
+-- different functions used accross the different component
+
+node DynamicSaturation ( up_Out1_74  : real ; u_Out1_84  : real ; lo_Out1_94  : real  ) 
+   returns ( y1_In1_136  : real  ) ;
+var LowerRelop1_Out1_100  : bool ;
+ Switch_Out1_109  : real ;
+ Switch2_Out1_118  : real ;
+ UpperRelop_Out1_124  : bool ;
+ LowerRelop1_In1_98  : real ;
+ LowerRelop1_In2_99  : real ;
+ Switch_In1_106  : real ;
+ Switch_In2_107  : bool ;
+ Switch_In3_108  : real ;
+ Switch2_In1_115  : real ;
+ Switch2_In2_116  : bool ;
+ Switch2_In3_117  : real ;
+ UpperRelop_In1_122  : real ;
+ UpperRelop_In2_123  : real ;
+  
+let
+LowerRelop1_Out1_100  = LowerRelop1_In1_98 > LowerRelop1_In2_99;
+Switch_Out1_109  = if Switch_In2_107 then Switch_In1_106 else Switch_In3_108;
+Switch2_Out1_118  = if Switch2_In2_116 then Switch2_In1_115 else Switch2_In3_117;
+UpperRelop_Out1_124  = UpperRelop_In1_122 < UpperRelop_In2_123;
+Switch2_In1_115  = up_Out1_74;
+LowerRelop1_In2_99  = up_Out1_74;
+Switch_In3_108  = u_Out1_84;
+LowerRelop1_In1_98  = u_Out1_84;
+UpperRelop_In1_122  = u_Out1_84;
+Switch_In1_106  = lo_Out1_94;
+UpperRelop_In2_123  = lo_Out1_94;
+Switch2_In3_117  = Switch_Out1_109;
+y1_In1_136  = Switch2_Out1_118;
+Switch2_In2_116  = LowerRelop1_Out1_100;
+Switch_In2_107  = UpperRelop_Out1_124;
+ tel 
+
+node IntegratorReset(Fx  : real ; ResetLevel  : bool ; x0: real  ) 
+   returns ( out  : real  ) ;
+let
+ out = x0 -> if (ResetLevel) then x0 else (Fx*1.0) + pre (out); 
+tel
+
+node EngageORzero ( engage  : bool ; signal  : real  )
+   returns ( out : real  ) ;
+let
+  out  = if engage then signal else 0.0;
+ tel
+
+node ManualOverride (manual  : real ; auto : real  )
+   returns ( manual_out  : real  ) ;
+var
+  temp  : bool ;
+let
+  temp  = if manual = 0.000000 then false else true;
+  manual_out = if temp then auto else manual;
+tel
