@@ -1,0 +1,852 @@
+Model {
+  Name			  "SetResetWaitOut"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Mon Jan  5 13:40:50 2004"
+  Creator		  "scaife"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "scaife"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Jan  7 10:51:08 2004"
+  ModelVersionFormat	  "1.%<AutoIncrement:6>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  RTWExpressionDepthLimit 5
+  SimulationMode	  "normal"
+  Solver		  "ode45"
+  SolverMode		  "Auto"
+  StartTime		  "0.0"
+  StopTime		  "10.0"
+  MaxOrder		  5
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  Refine		  "1"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  Decimation		  "1"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  SignalLoggingName	  "sigsOut"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  RTWInlineParameters	  off
+  BlockReductionOpt	  on
+  BooleanDataType	  on
+  ConditionallyExecuteInputs on
+  ParameterPooling	  on
+  OptimizeBlockIOStorage  on
+  ZeroCross		  on
+  AssertionControl	  "UseLocalSettings"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      ShowAdditionalParam     off
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      PulseType		      "Sample based"
+      Amplitude		      "1"
+      Period		      "2"
+      PulseWidth	      "1"
+      PhaseDelay	      "0"
+      SampleTime	      "1"
+      VectorParams1D	      on
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      ShowAdditionalParam     off
+      LatchInput	      off
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      PortCounts	      "[]"
+      SFunctionModules	      "''"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      ZeroCross		      on
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "SetResetWaitOut"
+    Location		    [2, 47, 582, 307]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Display
+      Name		      "Display"
+      Ports		      [1]
+      Position		      [405, 65, 495, 95]
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display1"
+      Ports		      [1]
+      Position		      [405, 120, 495, 150]
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      DiscretePulseGenerator
+      Name		      "Pulse\nGenerator"
+      Position		      [130, 13, 175, 47]
+      PulseType		      "Time based"
+      PulseWidth	      "50"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "SetResetWaitOut"
+      Ports		      [2, 2, 0, 1]
+      Position		      [200, 54, 330, 161]
+      TreatAsAtomicUnit	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Stateflow diagram"
+      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private'"
+",'sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl',"
+"'Center','VerticalAl','Bottom');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"SetResetWaitOut"
+	Location		[257, 457, 812, 717]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "off_val"
+	  Position		  [20, 101, 40, 119]
+	  PortDimensions	  "1"
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "on_val"
+	  Position		  [20, 136, 40, 154]
+	  Port			  "2"
+	  PortDimensions	  "1"
+	}
+	Block {
+	  BlockType		  TriggerPort
+	  Name			  " input events "
+	  Ports			  [0, 1]
+	  Position		  [20, 171, 40, 189]
+	  TriggerType		  "either"
+	  ShowOutputPort	  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  Ports			  [1, 1]
+	  Position		  [270, 180, 320, 220]
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  " SFunction "
+	  Tag			  "Stateflow S-Function SetResetWaitOut 1"
+	  Ports			  [3, 3]
+	  Position		  [180, 100, 230, 180]
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[3 3]"
+	  Port {
+	    PortNumber		    2
+	    Name		    "on_off"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "suspended"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  Position		  [460, 191, 480, 209]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "on_off"
+	  Position		  [460, 101, 480, 119]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "suspended"
+	  Position		  [460, 136, 480, 154]
+	  Port			  "2"
+	}
+	Line {
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  Points		  [0, 85]
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "on_off"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "on_off"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "suspended"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  3
+	  DstBlock		  "suspended"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "off_val"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "on_val"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  " input events "
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  3
+	}
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "off_val"
+      Position		      [70, 65, 100, 95]
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "on_val"
+      Position		      [70, 120, 100, 150]
+    }
+    Line {
+      SrcBlock		      "off_val"
+      SrcPort		      1
+      DstBlock		      "SetResetWaitOut"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "on_val"
+      SrcPort		      1
+      DstBlock		      "SetResetWaitOut"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "SetResetWaitOut"
+      SrcPort		      1
+      DstBlock		      "Display"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "SetResetWaitOut"
+      SrcPort		      2
+      DstBlock		      "Display1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Pulse\nGenerator"
+      SrcPort		      1
+      Points		      [85, 0]
+      DstBlock		      "SetResetWaitOut"
+      DstPort		      trigger
+    }
+  }
+}
+
+# Finite State Machines
+# -- File save dated 07-Jan-2004 10:51:09
+#
+#    Stateflow Version 5.0 (R13) dated Jun 21 2002, 05:03:37
+#
+#
+
+Stateflow {
+
+	machine {
+		id                   		1
+		name                 		"SetResetWaitOut"
+		created              		"05-Jan-2004 13:40:50"
+		isLibrary            		0
+		firstTarget          		21
+		sfVersion            		50013001.000001
+	}
+
+	chart {
+		id                       		2
+		name                     		"SetResetWaitOut"
+		windowPosition           		[1.8 84.6 416.7 348.3]
+		viewLimits               		[0 364.5 0 304.3]
+		screen                   		[1 1 1152 864 1.111111111111111]
+		treeNode                 		[0 5 0 0]
+		firstTransition          		11
+		viewObj                  		2
+		visible                  		1
+		machine                  		1
+		subviewS {
+		}
+		decomposition            		CLUSTER_CHART
+		firstEvent               		12
+		firstData                		16
+		chartFileNumber          		1
+	}
+
+	state {
+		id                  		3
+		labelString         		"Wait/\n"
+						"en: suspended=1;\n"
+						"ex: suspended=0;"
+		position            		[214.7844 103.3683 112.9 58.8676]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 0 5 4]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		4
+		labelString         		"Off/\n"
+						"en: on_off=0;"
+		position            		[64.4844 170.8683 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 0 3 0]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		5
+		labelString         		"On/\n"
+						"en: on_off=1;"
+		position            		[60.8844 32.2683 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 0 0 3]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	transition {
+		id             		6
+		labelPosition  		[44.745 199.968 8.1 16.158]
+		fontSize       		12
+		src {
+			intersection		[0 1 0 0 28.4844 199.9683 0 0]
+		}
+		dst {
+			id          		4
+			intersection		[4 -1 0 0.515 64.4844 199.9683 0 0]
+		}
+		midPoint       		[43.0063 199.9683]
+		chart          		2
+		linkNode       		[2 8 0]
+		dataLimits     		[28.484 64.484 197.568 202.368]
+		subviewer      		2
+	}
+
+	transition {
+		id             		7
+		labelString    		"Clear"
+		labelPosition  		[251.699 203.676 28.8 16.158]
+		fontSize       		12
+		src {
+			id          		3
+			intersection		[3 0 1 0.442 277.7844 162.2359 0 -63]
+		}
+		dst {
+			id          		4
+			intersection		[2 1 0 0.71 154.4844 213.4683 0 42.6]
+		}
+		midPoint       		[233.7598 205.4559]
+		chart          		2
+		linkNode       		[2 10 8]
+		dataLimits     		[154.484 277.784 162.236 215.868]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			mode          		MIRROR_SLIDE
+			sticky        		BOTH_STICK
+		}
+	}
+
+	transition {
+		id             		8
+		labelString    		"Suspend"
+		labelPosition  		[180.734 172.537 45.9 16.158]
+		fontSize       		12
+		src {
+			id          		4
+			intersection		[2 1 0 0.365 154.4844 192.7683 0 21.9]
+		}
+		dst {
+			id          		3
+			intersection		[3 0 1 0.8167 235.4844 162.2359 0 -20.7]
+		}
+		midPoint       		[207.9545 192.0374]
+		chart          		2
+		linkNode       		[2 7 6]
+		dataLimits     		[154.484 237.884 162.236 194.782]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			mode          		MIRROR_SLIDE
+			sticky        		BOTH_STICK
+		}
+	}
+
+	transition {
+		id             		9
+		labelString    		"Set"
+		labelPosition  		[53.349 123.866 18 16.158]
+		fontSize       		12
+		src {
+			id          		4
+			intersection		[1 0 -1 0.29 90.5844 170.8683 0 -18.9]
+		}
+		dst {
+			id          		5
+			intersection		[3 -0 1 0.67 90.5844 92.2683 0 18.9]
+		}
+		midPoint       		[90.5844 134.1203]
+		chart          		2
+		linkNode       		[2 11 10]
+		dataLimits     		[88.184 92.984 92.268 170.868]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		10
+		labelString    		"Reset"
+		labelPosition  		[137.924 123.863 30.6 16.158]
+		fontSize       		12
+		src {
+			id          		5
+			intersection		[3 -0 1 0.26 127.4844 92.2683 0 -21.6]
+		}
+		dst {
+			id          		4
+			intersection		[1 0 -1 0.7 127.4844 170.8683 0 21.6]
+		}
+		midPoint       		[127.4844 129.0163]
+		chart          		2
+		linkNode       		[2 9 7]
+		dataLimits     		[125.084 129.884 92.268 170.868]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		11
+		labelString    		"Suspend"
+		labelPosition  		[237.892 55.037 45.9 16.158]
+		fontSize       		12
+		src {
+			id          		5
+			intersection		[2 1 0 0.44 150.8844 58.6683 0 -33.6]
+		}
+		dst {
+			id          		3
+			intersection		[1 0 -1 0.3747 257.0844 103.3683 0 42.3]
+		}
+		midPoint       		[221.196 63.2135]
+		chart          		2
+		linkNode       		[2 0 9]
+		dataLimits     		[150.884 259.484 57.386 103.368]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			mode          		MIRROR_SLIDE
+			sticky        		BOTH_STICK
+		}
+	}
+
+	event {
+		id         		12
+		name       		"Clear"
+		linkNode   		[2 0 13]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	event {
+		id         		13
+		name       		"Suspend"
+		linkNode   		[2 12 14]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	event {
+		id         		14
+		name       		"Set"
+		linkNode   		[2 13 15]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	event {
+		id         		15
+		name       		"Reset"
+		linkNode   		[2 14 0]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	data {
+		id               		16
+		name             		"on_off"
+		linkNode         		[2 0 17]
+		scope            		OUTPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		1
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		17
+		name             		"suspended"
+		linkNode         		[2 16 18]
+		scope            		OUTPUT_DATA
+		machine          		1
+		dataType         		"uint32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		1
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		18
+		name             		"off_val"
+		linkNode         		[2 17 19]
+		scope            		INPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		0
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		19
+		name             		"on_val"
+		linkNode         		[2 18 0]
+		scope            		INPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		0
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	instance {
+		id     		20
+		name   		"SetResetWaitOut"
+		machine		1
+		chart  		2
+	}
+
+	target {
+		id               		21
+		name             		"sfun"
+		description      		"Default Simulink S-Function Target."
+		machine          		1
+		linkNode         		[1 0 0]
+	}
+}

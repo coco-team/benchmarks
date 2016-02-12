@@ -1,0 +1,569 @@
+Model {
+  Name			  "SetResetWait"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Mon Jan  5 13:15:45 2004"
+  Creator		  "scaife"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "scaife"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jan 12 13:38:51 2004"
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  RTWExpressionDepthLimit 5
+  SimulationMode	  "normal"
+  Solver		  "ode45"
+  SolverMode		  "Auto"
+  StartTime		  "0.0"
+  StopTime		  "10.0"
+  MaxOrder		  5
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  Refine		  "1"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  Decimation		  "1"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  SignalLoggingName	  "sigsOut"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  RTWInlineParameters	  off
+  BlockReductionOpt	  on
+  BooleanDataType	  on
+  ConditionallyExecuteInputs on
+  ParameterPooling	  on
+  OptimizeBlockIOStorage  on
+  ZeroCross		  on
+  AssertionControl	  "UseLocalSettings"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      PortCounts	      "[]"
+      SFunctionModules	      "''"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      ZeroCross		      on
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "SetResetWait"
+    Location		    [2, 47, 582, 307]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "SetResetWait"
+      Ports		      [0, 0, 0, 1]
+      Position		      [30, 14, 90, 66]
+      TreatAsAtomicUnit	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Stateflow diagram"
+      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private'"
+",'sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl',"
+"'Center','VerticalAl','Bottom');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"SetResetWait"
+	Location		[257, 457, 812, 717]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  TriggerPort
+	  Name			  " input events "
+	  Ports			  [0, 1]
+	  Position		  [20, 101, 40, 119]
+	  TriggerType		  "either"
+	  ShowOutputPort	  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  Ports			  [1, 1]
+	  Position		  [270, 100, 320, 140]
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  " SFunction "
+	  Tag			  "Stateflow S-Function SetResetWait 1"
+	  Ports			  [1, 1]
+	  Position		  [180, 100, 230, 140]
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 1]"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  Position		  [460, 111, 480, 129]
+	}
+	Line {
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " input events "
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}
+
+# Finite State Machines
+# -- File save dated 12-Jan-2004 13:38:51
+#
+#    Stateflow Version 5.0 (R13) dated Jun 21 2002, 05:03:37
+#
+#
+
+Stateflow {
+
+	machine {
+		id                   		1
+		name                 		"SetResetWait"
+		created              		"05-Jan-2004 13:15:46"
+		isLibrary            		0
+		firstTarget          		17
+		sfVersion            		50013001.000001
+	}
+
+	chart {
+		id                       		2
+		name                     		"SetResetWait"
+		windowPosition           		[1.8 84.6 416.7 348.3]
+		viewLimits               		[0 364.8 0 304.75]
+		screen                   		[1 1 1152 864 1.111111111111111]
+		treeNode                 		[0 3 0 0]
+		firstTransition          		6
+		viewObj                  		2
+		visible                  		1
+		machine                  		1
+		subviewS {
+		}
+		decomposition            		CLUSTER_CHART
+		firstEvent               		12
+		chartFileNumber          		1
+	}
+
+	state {
+		id                  		3
+		labelString         		"On"
+		position            		[58.7 34.85 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 0 0 5]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		4
+		labelString         		"Off"
+		position            		[62.3 173.45 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 0 5 0]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		5
+		labelString         		"Wait"
+		position            		[212.6 105.95 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 0 3 4]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	transition {
+		id             		6
+		labelString    		"Suspend"
+		labelPosition  		[227.9 55.55 45.938 16.181]
+		fontSize       		12
+		src {
+			id          		3
+			intersection		[2 1 0 0.44 148.7 61.25 0 -33.6]
+		}
+		dst {
+			id          		5
+			intersection		[1 0 -1 0.47 254.9 105.95 0 42.3]
+		}
+		midPoint       		[219.0116 65.7952]
+		chart          		2
+		linkNode       		[2 0 8]
+		dataLimits     		[148.7 257.3 59.968 105.95]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			mode          		MIRROR_SLIDE
+			sticky        		BOTH_STICK
+		}
+	}
+
+	transition {
+		id             		7
+		labelString    		"Reset"
+		labelPosition  		[135.74 126.444 30.625 16.181]
+		fontSize       		12
+		src {
+			id          		3
+			intersection		[3 0 1 0.26 125.3 94.85 0 -21.6]
+		}
+		dst {
+			id          		4
+			intersection		[1 0 -1 0.7 125.3 173.45 0 21.6]
+		}
+		midPoint       		[125.3 131.598]
+		chart          		2
+		linkNode       		[2 8 9]
+		dataLimits     		[122.9 127.7 94.85 173.45]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		8
+		labelString    		"Set"
+		labelPosition  		[51.164 126.448 18.015 16.181]
+		fontSize       		12
+		src {
+			id          		4
+			intersection		[1 0 -1 0.29 88.4 173.45 0 -18.9]
+		}
+		dst {
+			id          		3
+			intersection		[3 0 1 0.67 88.4 94.85 0 18.9]
+		}
+		midPoint       		[88.4 136.702]
+		chart          		2
+		linkNode       		[2 6 7]
+		dataLimits     		[86 90.8 94.85 173.45]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		9
+		labelString    		"Suspend"
+		labelPosition  		[173.453 176.798 45.938 16.181]
+		fontSize       		12
+		src {
+			id          		4
+			intersection		[2 1 0 0.365 152.3 195.35 0 21.9]
+		}
+		dst {
+			id          		5
+			intersection		[3 0 1 0.77 233.3 165.95 0 -20.7]
+		}
+		midPoint       		[205.7232 195.171]
+		chart          		2
+		linkNode       		[2 7 10]
+		dataLimits     		[152.3 235.7 165.95 197.624]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			mode          		MIRROR_SLIDE
+			sticky        		BOTH_STICK
+		}
+	}
+
+	transition {
+		id             		10
+		labelString    		"Clear"
+		labelPosition  		[241.851 209.18 28.824 16.181]
+		fontSize       		12
+		src {
+			id          		5
+			intersection		[3 0 1 0.3 275.6 165.95 0 -63]
+		}
+		dst {
+			id          		4
+			intersection		[2 1 0 0.71 152.3 216.05 0 42.6]
+		}
+		midPoint       		[231.5193 208.5155]
+		chart          		2
+		linkNode       		[2 9 11]
+		dataLimits     		[152.3 275.6 165.95 218.45]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			mode          		MIRROR_SLIDE
+			sticky        		BOTH_STICK
+		}
+	}
+
+	transition {
+		id             		11
+		labelPosition  		[42.561 202.55 8.107 16.181]
+		fontSize       		12
+		src {
+			intersection		[0 1 0 0 26.3 202.55 0 0]
+		}
+		dst {
+			id          		4
+			intersection		[4 -1 0 0.515 62.3 202.55 0 0]
+		}
+		midPoint       		[40.8219 202.55]
+		chart          		2
+		linkNode       		[2 10 0]
+		dataLimits     		[26.3 62.3 200.15 204.95]
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	event {
+		id         		12
+		name       		"Clear"
+		linkNode   		[2 0 13]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	event {
+		id         		13
+		name       		"Reset"
+		linkNode   		[2 12 14]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	event {
+		id         		14
+		name       		"Suspend"
+		linkNode   		[2 13 15]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	event {
+		id         		15
+		name       		"Set"
+		linkNode   		[2 14 0]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	instance {
+		id     		16
+		name   		"SetResetWait"
+		machine		1
+		chart  		2
+	}
+
+	target {
+		id               		17
+		name             		"sfun"
+		description      		"Default Simulink S-Function Target."
+		machine          		1
+		linkNode         		[1 0 0]
+	}
+}

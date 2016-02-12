@@ -1,0 +1,2108 @@
+Model {
+  Name			  "Hierarchy3"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Mon Feb  9 09:42:42 2004"
+  Creator		  "scaife"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "scaife"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed May 26 14:01:38 2004"
+  ModelVersionFormat	  "1.%<AutoIncrement:6>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  RTWExpressionDepthLimit 5
+  SimulationMode	  "normal"
+  Solver		  "ode45"
+  SolverMode		  "Auto"
+  StartTime		  "0.0"
+  StopTime		  "10.0"
+  MaxOrder		  5
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  Refine		  "1"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  Decimation		  "1"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  SignalLoggingName	  "sigsOut"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  RTWInlineParameters	  off
+  BlockReductionOpt	  on
+  BooleanDataType	  on
+  ConditionallyExecuteInputs on
+  ParameterPooling	  on
+  OptimizeBlockIOStorage  on
+  ZeroCross		  on
+  AssertionControl	  "UseLocalSettings"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      PortCounts	      "[]"
+      SFunctionModules	      "''"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      ZeroCross		      on
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "Hierarchy3"
+    Location		    [2, 47, 582, 307]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Hierarchy3"
+      Ports		      [0, 4, 0, 1]
+      Position		      [235, 89, 315, 171]
+      TreatAsAtomicUnit	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Stateflow diagram"
+      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private'"
+",'sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl',"
+"'Center','VerticalAl','Bottom');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Hierarchy3"
+	Location		[257, 457, 812, 717]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  TriggerPort
+	  Name			  " input events "
+	  Ports			  [0, 1]
+	  Position		  [20, 101, 40, 119]
+	  TriggerType		  "either"
+	  ShowOutputPort	  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  Ports			  [1, 1]
+	  Position		  [270, 245, 320, 285]
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  " SFunction "
+	  Tag			  "Stateflow S-Function Hierarchy3 1"
+	  Ports			  [1, 5]
+	  Position		  [180, 100, 230, 220]
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 5]"
+	  Port {
+	    PortNumber		    2
+	    Name		    "x"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "z"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "u"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "vv"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  Position		  [460, 256, 480, 274]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "x"
+	  Position		  [460, 101, 480, 119]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "z"
+	  Position		  [460, 136, 480, 154]
+	  Port			  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "u"
+	  Position		  [460, 171, 480, 189]
+	  Port			  "3"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "vv"
+	  Position		  [460, 206, 480, 224]
+	  Port			  "4"
+	}
+	Line {
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  Points		  [0, 155]
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " input events "
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "x"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "x"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "z"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  3
+	  DstBlock		  "z"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "u"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  4
+	  DstBlock		  "u"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "vv"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  5
+	  DstBlock		  "vv"
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}
+
+# Finite State Machines
+# -- File save dated 26-May-2004 14:01:39
+#
+#    Stateflow Version 5.0 (R13) dated Jun 21 2002, 05:03:37
+#
+#
+
+Stateflow {
+
+	machine {
+		id                   		1
+		name                 		"Hierarchy3"
+		created              		"09-Feb-2004 09:42:42"
+		isLibrary            		0
+		firstTarget          		82
+		sfVersion            		50013001.000001
+	}
+
+	chart {
+		id                       		2
+		name                     		"Hierarchy3"
+		windowPosition           		[21.176 36.159 736.2 405.9]
+		viewLimits               		[0 687.071 0 364.9]
+		screen                   		[1 1 1152 900 1.180555555555556]
+		treeNode                 		[0 9 0 0]
+		viewObj                  		2
+		visible                  		1
+		machine                  		1
+		subviewS {
+		}
+		decomposition            		SET_CHART
+		firstEvent               		71
+		firstData                		73
+		chartFileNumber          		1
+	}
+
+	state {
+		id                  		3
+		labelString         		"A"
+		position            		[64.95 31.95 113.8 65.4]
+		fontSize            		12
+		chart               		2
+		treeNode            		[9 4 0 6]
+		firstTransition     		32
+		firstJunction       		18
+		superState          		SUBCHART
+		visible             		0
+		subviewer           		9
+		subviewS {
+			x1        		-16.941
+			y1        		-16.941
+			pos       		[0 0 456.95 252.15]
+		}
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		4
+		labelString         		"A1/\n"
+						"en: x=0"
+		position            		[81.25 44.55 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[3 0 0 5]
+		visible             		0
+		subviewer           		3
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		5
+		labelString         		"A2/\n"
+						"en: x=5"
+		position            		[306.25 149.85 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[3 0 4 0]
+		visible             		0
+		subviewer           		3
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		6
+		labelString         		"B"
+		position            		[287.55 184.95 113.8 65.4]
+		fontSize            		12
+		chart               		2
+		treeNode            		[9 7 3 0]
+		firstTransition     		36
+		firstJunction       		19
+		superState          		SUBCHART
+		visible             		0
+		subviewer           		9
+		subviewS {
+			x1        		-16.941
+			y1        		-16.941
+			pos       		[0 0 456.95 252.15]
+		}
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		7
+		labelString         		"B1/\n"
+						"en: z=0"
+		position            		[81.25 44.55 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[6 0 0 8]
+		visible             		0
+		subviewer           		6
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		8
+		labelString         		"B2/\n"
+						"en: z=5"
+		position            		[306.25 149.85 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[6 0 7 0]
+		visible             		0
+		subviewer           		6
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		9
+		labelString         		"TOP1"
+		position            		[76.7 36.2 198.4 259.8]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 3 0 10]
+		firstTransition     		43
+		firstJunction       		22
+		superState          		SUBCHART
+		subviewer           		2
+		subviewS {
+			x1        		-16.941
+			y1        		-16.941
+			pos       		[0 0 486.65 288.15]
+		}
+		type                		AND_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		10
+		labelString         		"TOP2"
+		position            		[377.1 36.2 198.4 259.8]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 11 9 0]
+		firstTransition     		50
+		firstJunction       		23
+		superState          		SUBCHART
+		subviewer           		2
+		subviewS {
+			x1        		-16.941
+			y1        		-16.941
+			pos       		[0 0 486.65 288.15]
+		}
+		type                		AND_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		11
+		labelString         		"C"
+		position            		[64.95 31.95 113.8 65.4]
+		fontSize            		12
+		chart               		2
+		treeNode            		[10 12 0 14]
+		firstTransition     		57
+		firstJunction       		25
+		superState          		SUBCHART
+		visible             		0
+		subviewer           		10
+		subviewS {
+			x1        		-16.941
+			y1        		-16.941
+			pos       		[0 0 456.95 252.15]
+		}
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		12
+		labelString         		"C1/\n"
+						"en: vv=0"
+		position            		[81.25 44.55 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[11 0 0 13]
+		visible             		0
+		subviewer           		11
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		13
+		labelString         		"C2/\n"
+						"en:vv=5"
+		position            		[306.25 149.85 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[11 0 12 0]
+		visible             		0
+		subviewer           		11
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		14
+		labelString         		"D"
+		position            		[287.55 184.95 113.8 65.4]
+		fontSize            		12
+		chart               		2
+		treeNode            		[10 15 11 0]
+		firstTransition     		64
+		firstJunction       		27
+		superState          		SUBCHART
+		visible             		0
+		subviewer           		10
+		subviewS {
+			x1        		-16.941
+			y1        		-16.941
+			pos       		[0 0 456.95 252.15]
+		}
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		15
+		labelString         		"D1/\n"
+						"en: u=0"
+		position            		[81.25 44.55 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[14 0 0 16]
+		visible             		0
+		subviewer           		14
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		16
+		labelString         		"D2/\n"
+						"en: u=5"
+		position            		[306.25 149.85 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[14 0 15 0]
+		visible             		0
+		subviewer           		14
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	junction {
+		id         		17
+		position   		[195.55 157.35 7]
+		chart      		2
+		linkNode   		[3 18 0]
+		visible    		0
+		subviewer  		3
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	junction {
+		id         		18
+		position   		[263.05 96.15 7]
+		chart      		2
+		linkNode   		[3 0 17]
+		visible    		0
+		subviewer  		3
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	junction {
+		id         		19
+		position   		[263.05 96.15 7]
+		chart      		2
+		linkNode   		[6 0 20]
+		visible    		0
+		subviewer  		6
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	junction {
+		id         		20
+		position   		[195.55 157.35 7]
+		chart      		2
+		linkNode   		[6 19 0]
+		visible    		0
+		subviewer  		6
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	junction {
+		id         		21
+		position   		[169.2 160.5 7]
+		chart      		2
+		linkNode   		[9 22 0]
+		visible    		0
+		subviewer  		9
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	junction {
+		id         		22
+		position   		[300.35 105.15 7]
+		chart      		2
+		linkNode   		[9 0 21]
+		visible    		0
+		subviewer  		9
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	junction {
+		id         		23
+		position   		[300.35 105.15 7]
+		chart      		2
+		linkNode   		[10 0 24]
+		visible    		0
+		subviewer  		10
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	junction {
+		id         		24
+		position   		[169.2 160.5 7]
+		chart      		2
+		linkNode   		[10 23 0]
+		visible    		0
+		subviewer  		10
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	junction {
+		id         		25
+		position   		[263.05 96.15 7]
+		chart      		2
+		linkNode   		[11 0 26]
+		visible    		0
+		subviewer  		11
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	junction {
+		id         		26
+		position   		[195.55 157.35 7]
+		chart      		2
+		linkNode   		[11 25 0]
+		visible    		0
+		subviewer  		11
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	junction {
+		id         		27
+		position   		[263.05 96.15 7]
+		chart      		2
+		linkNode   		[14 0 28]
+		visible    		0
+		subviewer  		14
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	junction {
+		id         		28
+		position   		[195.55 157.35 7]
+		chart      		2
+		linkNode   		[14 27 0]
+		visible    		0
+		subviewer  		14
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	transition {
+		id             		29
+		labelString    		"E[x<5]{y=1}"
+		labelPosition  		[77.506 139.438 64.307 16.086]
+		fontSize       		12
+		src {
+			id          		4
+			intersection		[3 0 1 0.53 123.55 104.55 0 0]
+		}
+		dst {
+			id          		17
+			intersection		[0 -0.9923 0.124 -1 188.6041 158.2182 0 0]
+		}
+		midPoint       		[143.0746 145.0878]
+		chart          		2
+		linkNode       		[3 34 30]
+		visible        		0
+		dataLimits     		[123.55 188.604 104.55 161.592]
+		stampAngle     		1.2638
+		subviewer      		3
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		47.7
+		}
+	}
+
+	transition {
+		id             		30
+		labelString    		"[x>=5]"
+		labelPosition  		[228.452 186.682 35.538 16.086]
+		fontSize       		12
+		src {
+			id          		17
+			intersection		[0 0.6402 0.7682 -1 200.0313 162.7275 0 0]
+		}
+		dst {
+			id          		5
+			intersection		[4 -1 0 0.41 306.25 185.25 0 0]
+		}
+		midPoint       		[246.501 184.6773]
+		chart          		2
+		linkNode       		[3 29 0]
+		visible        		0
+		dataLimits     		[200.031 306.25 162.727 187.65]
+		stampAngle     		-0.8761
+		subviewer      		3
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-27.9
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		31
+		labelString    		"E[x>0]{y=-1}"
+		labelPosition  		[329.672 89.562 71.922 16.086]
+		fontSize       		12
+		src {
+			id          		5
+			intersection		[1 0 -1 0.52 353.05 149.85 0 0]
+		}
+		dst {
+			id          		18
+			intersection		[0 0.9965 0.083 -1 270.0258 96.7313 0 0]
+		}
+		midPoint       		[325.8657 111.2167]
+		chart          		2
+		linkNode       		[3 33 35]
+		visible        		0
+		dataLimits     		[270.026 353.05 95.004 149.85]
+		stampAngle     		0.8102
+		subviewer      		3
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		46.8
+		}
+	}
+
+	transition {
+		id             		32
+		labelString    		"[x<=0]"
+		labelPosition  		[203.474 47.785 35.538 16.086]
+		fontSize       		12
+		src {
+			id          		18
+			intersection		[0 -0.1644 -0.9864 -1 261.8992 89.2452 0 0]
+		}
+		dst {
+			id          		4
+			intersection		[2 1 0 0.38 171.25 67.35 0 0]
+		}
+		midPoint       		[228.1924 66.6064]
+		chart          		2
+		linkNode       		[3 0 33]
+		visible        		0
+		dataLimits     		[171.25 261.899 64.95 89.245]
+		stampAngle     		-1.4056
+		subviewer      		3
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-28.8
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		33
+		labelPosition  		[61.511 73.65 8.461 16.086]
+		fontSize       		12
+		src {
+			intersection		[0 1 0 0 45.25 73.65 0 0]
+		}
+		dst {
+			id          		4
+			intersection		[4 -1 0 0.515 81.25 73.65 0 0]
+		}
+		midPoint       		[59.7719 73.65]
+		chart          		2
+		linkNode       		[3 32 31]
+		visible        		0
+		dataLimits     		[45.25 81.25 71.25 76.05]
+		subviewer      		3
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		34
+		labelString    		"{x+=y}"
+		labelPosition  		[265.25 121.95 37.23 16.086]
+		fontSize       		12
+		src {
+			id          		17
+			intersection		[0 0.9952 0.0977 -1 202.5165 158.0337 0 0]
+		}
+		dst {
+			id          		18
+			intersection		[0 0 1 -1 263.05 103.15 0 0]
+		}
+		midPoint       		[248.9909 148.8317]
+		chart          		2
+		linkNode       		[3 35 29]
+		visible        		0
+		dataLimits     		[202.517 265.45 103.15 159.072]
+		stampAngle     		0.8343
+		subviewer      		3
+		drawStyle      		SMART
+		slide {
+			sticky        		SRC_STICK
+		}
+	}
+
+	transition {
+		id             		35
+		labelString    		"{x+=y}"
+		labelPosition  		[171 116.1 37.23 16.086]
+		fontSize       		12
+		src {
+			id          		18
+			intersection		[0 -0.9813 0.1924 -1 256.1808 97.497 0 0]
+		}
+		dst {
+			id          		17
+			intersection		[0 0.2873 -0.9578 -1 197.5614 150.6452 0 0]
+		}
+		midPoint       		[216.248 112.0818]
+		chart          		2
+		linkNode       		[3 31 34]
+		visible        		0
+		dataLimits     		[197.561 256.181 97.497 150.645]
+		stampAngle     		0.5429
+		subviewer      		3
+		drawStyle      		SMART
+		slide {
+			sticky        		SRC_STICK
+		}
+	}
+
+	transition {
+		id             		36
+		labelString    		"[z<=0]"
+		labelPosition  		[203.474 47.785 35.538 16.086]
+		fontSize       		12
+		src {
+			id          		19
+			intersection		[0 -0.1644 -0.9864 -1 261.8992 89.2452 0 0]
+		}
+		dst {
+			id          		7
+			intersection		[2 1 0 0.38 171.25 67.35 0 0]
+		}
+		midPoint       		[228.1924 66.6064]
+		chart          		2
+		linkNode       		[6 0 37]
+		visible        		0
+		dataLimits     		[171.25 261.899 64.95 89.245]
+		stampAngle     		-1.4056
+		subviewer      		6
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-28.8
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		37
+		labelPosition  		[61.511 73.65 8.461 16.086]
+		fontSize       		12
+		src {
+			intersection		[0 1 0 0 45.25 73.65 0 0]
+		}
+		dst {
+			id          		7
+			intersection		[4 -1 0 0.515 81.25 73.65 0 0]
+		}
+		midPoint       		[59.7719 73.65]
+		chart          		2
+		linkNode       		[6 36 38]
+		visible        		0
+		dataLimits     		[45.25 81.25 71.25 76.05]
+		subviewer      		6
+	}
+
+	transition {
+		id             		38
+		labelString    		"E[z>0]{y=-1}"
+		labelPosition  		[329.672 89.562 71.922 16.086]
+		fontSize       		12
+		src {
+			id          		8
+			intersection		[1 0 -1 0.52 353.05 149.85 0 0]
+		}
+		dst {
+			id          		19
+			intersection		[0 0.9965 0.083 -1 270.0258 96.7313 0 0]
+		}
+		midPoint       		[325.8657 111.2167]
+		chart          		2
+		linkNode       		[6 37 39]
+		visible        		0
+		dataLimits     		[270.026 353.05 95.004 149.85]
+		stampAngle     		0.8102
+		subviewer      		6
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		46.8
+		}
+	}
+
+	transition {
+		id             		39
+		labelString    		"{z+=y}"
+		labelPosition  		[171 116.1 37.23 16.086]
+		fontSize       		12
+		src {
+			id          		19
+			intersection		[0 -0.9813 0.1924 -1 256.1808 97.497 0 0]
+		}
+		dst {
+			id          		20
+			intersection		[0 0.2873 -0.9578 -1 197.5614 150.6452 0 0]
+		}
+		midPoint       		[216.248 112.0818]
+		chart          		2
+		linkNode       		[6 38 40]
+		visible        		0
+		dataLimits     		[197.561 256.181 97.497 150.645]
+		stampAngle     		0.5429
+		subviewer      		6
+		drawStyle      		SMART
+		slide {
+			sticky        		SRC_STICK
+		}
+	}
+
+	transition {
+		id             		40
+		labelString    		"{z+=y}"
+		labelPosition  		[265.25 121.95 37.23 16.086]
+		fontSize       		12
+		src {
+			id          		20
+			intersection		[0 0.9952 0.0977 -1 202.5165 158.0337 0 0]
+		}
+		dst {
+			id          		19
+			intersection		[0 0 1 -1 263.05 103.15 0 0]
+		}
+		midPoint       		[248.9909 148.8317]
+		chart          		2
+		linkNode       		[6 39 41]
+		visible        		0
+		dataLimits     		[202.517 265.45 103.15 159.072]
+		stampAngle     		0.8343
+		subviewer      		6
+		drawStyle      		SMART
+		slide {
+			sticky        		SRC_STICK
+		}
+	}
+
+	transition {
+		id             		41
+		labelString    		"E[z<5]{y=1}"
+		labelPosition  		[77.506 139.438 64.307 16.086]
+		fontSize       		12
+		src {
+			id          		7
+			intersection		[3 0 1 0.53 123.55 104.55 0 0]
+		}
+		dst {
+			id          		20
+			intersection		[0 -0.9923 0.124 -1 188.6041 158.2182 0 0]
+		}
+		midPoint       		[143.0746 145.0878]
+		chart          		2
+		linkNode       		[6 40 42]
+		visible        		0
+		dataLimits     		[123.55 188.604 104.55 161.592]
+		stampAngle     		1.2638
+		subviewer      		6
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		47.7
+		}
+	}
+
+	transition {
+		id             		42
+		labelString    		"[z>=5]"
+		labelPosition  		[228.452 186.682 35.538 16.086]
+		fontSize       		12
+		src {
+			id          		20
+			intersection		[0 0.6402 0.7682 -1 200.0313 162.7275 0 0]
+		}
+		dst {
+			id          		8
+			intersection		[4 -1 0 0.41 306.25 185.25 0 0]
+		}
+		midPoint       		[246.501 184.6773]
+		chart          		2
+		linkNode       		[6 41 0]
+		visible        		0
+		dataLimits     		[200.031 306.25 162.727 187.65]
+		stampAngle     		-0.8761
+		subviewer      		6
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-27.9
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		43
+		labelPosition  		[45.211 57.9 8.461 16.086]
+		fontSize       		12
+		src {
+			intersection		[0 1 0 0 28.95 57.9 0 0]
+		}
+		dst {
+			id          		3
+			intersection		[4 -1 0 0.6032 64.95 57.9 0 0]
+		}
+		midPoint       		[43.4719 57.9]
+		chart          		2
+		linkNode       		[9 0 47]
+		visible        		0
+		dataLimits     		[28.95 64.95 55.5 60.3]
+		subviewer      		9
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		44
+		labelString    		"F{i=0}"
+		labelPosition  		[127.8 114.3 33.846 16.086]
+		fontSize       		12
+		src {
+			id          		3
+			intersection		[3 0 1 0.4873 123.3 97.35 0 0]
+		}
+		dst {
+			id          		21
+			intersection		[0 -0.9939 -0.1104 -1 162.2428 159.727 0 0]
+		}
+		midPoint       		[130.291 137.8192]
+		chart          		2
+		linkNode       		[9 47 49]
+		visible        		0
+		dataLimits     		[123.289 162.243 97.35 161.229]
+		stampAngle     		-4.823
+		subviewer      		9
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		45.9
+		}
+	}
+
+	transition {
+		id             		45
+		labelPosition  		[220.292 212.743 8.461 16.086]
+		fontSize       		12
+		src {
+			id          		21
+			intersection		[0 -0.2023 0.9793 -1 167.7838 167.3552 0 0]
+		}
+		dst {
+			id          		6
+			intersection		[4 -1 0 0.4931 287.55 218.1 0 0]
+		}
+		midPoint       		[207.2346 209.5831]
+		chart          		2
+		linkNode       		[9 48 0]
+		visible        		0
+		dataLimits     		[167.473 287.55 167.355 220.5]
+		stampAngle     		-1.5708
+		subviewer      		9
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-33.15
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		46
+		labelString    		"F{i=3}"
+		labelPosition  		[350.75 133.65 33.846 16.086]
+		fontSize       		12
+		src {
+			id          		6
+			intersection		[1 0 -1 0.5022 344.7 184.95 0 0]
+		}
+		dst {
+			id          		22
+			intersection		[0 0.9913 0.1318 -1 307.2889 106.0729 0 0]
+		}
+		midPoint       		[340.2649 134.583]
+		chart          		2
+		linkNode       		[9 49 48]
+		visible        		0
+		dataLimits     		[307.289 345.171 104.748 184.95]
+		stampAngle     		1.4386
+		subviewer      		9
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		44.35
+		}
+	}
+
+	transition {
+		id             		47
+		labelPosition  		[242.395 60.372 8.461 16.086]
+		fontSize       		12
+		src {
+			id          		22
+			intersection		[0 -0.0959 -0.9954 -1 299.679 98.1822 0 0]
+		}
+		dst {
+			id          		3
+			intersection		[2 1 0 0.4106 178.75 58.8 0 0]
+		}
+		midPoint       		[254.6369 62.1]
+		chart          		2
+		linkNode       		[9 43 44]
+		visible        		0
+		dataLimits     		[178.75 299.679 56.4 98.182]
+		stampAngle     		-1.4107
+		subviewer      		9
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-38.55
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		48
+		labelString    		"[i<3]{i++}"
+		labelPosition  		[201.35 156.15 50.769 16.086]
+		fontSize       		12
+		src {
+			id          		21
+			intersection		[0 0.1961 -0.9806 -1 170.5728 153.6359 0 0]
+		}
+		dst {
+			id          		21
+			intersection		[0 0.9398 0.3417 -1 175.7786 162.8922 0 0]
+		}
+		midPoint       		[215.1 139.8]
+		chart          		2
+		linkNode       		[9 46 45]
+		visible        		0
+		dataLimits     		[170.573 215.031 138.007 167.881]
+		stampAngle     		NaN
+		subviewer      		9
+		slide {
+			sticky        		SRC_STICK
+			midPointSticky		1
+		}
+	}
+
+	transition {
+		id             		49
+		labelString    		"[i>0]{i--}"
+		labelPosition  		[226.55 100.35 50.769 16.086]
+		fontSize       		12
+		src {
+			id          		22
+			intersection		[0 -0.9979 -0.0646 -1 293.3646 104.6977 0 0]
+		}
+		dst {
+			id          		22
+			intersection		[0 0.1929 0.9812 -1 301.7002 112.0185 0 0]
+		}
+		midPoint       		[253.8 138]
+		chart          		2
+		linkNode       		[9 44 46]
+		visible        		0
+		dataLimits     		[253.61 305.598 104.698 139.071]
+		stampAngle     		NaN
+		subviewer      		9
+		slide {
+			sticky        		SRC_STICK
+			midPointSticky		1
+		}
+	}
+
+	transition {
+		id             		50
+		labelPosition  		[45.211 57.9 8.461 16.086]
+		fontSize       		12
+		src {
+			intersection		[0 1 0 0 28.95 57.9 0 0]
+		}
+		dst {
+			id          		11
+			intersection		[4 -1 0 0.6032 64.95 57.9 0 0]
+		}
+		midPoint       		[43.4719 57.9]
+		chart          		2
+		linkNode       		[10 0 51]
+		visible        		0
+		dataLimits     		[28.95 64.95 55.5 60.3]
+		subviewer      		10
+	}
+
+	transition {
+		id             		51
+		labelPosition  		[242.395 60.372 8.461 16.086]
+		fontSize       		12
+		src {
+			id          		23
+			intersection		[0 -0.0959 -0.9954 -1 299.679 98.1822 0 0]
+		}
+		dst {
+			id          		11
+			intersection		[2 1 0 0.4106 178.75 58.8 0 0]
+		}
+		midPoint       		[254.6369 62.1]
+		chart          		2
+		linkNode       		[10 50 52]
+		visible        		0
+		dataLimits     		[178.75 299.679 56.4 98.182]
+		stampAngle     		-1.4107
+		subviewer      		10
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-38.55
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		52
+		labelString    		"F{j=0}"
+		labelPosition  		[127.8 114.3 33.846 16.086]
+		fontSize       		12
+		src {
+			id          		11
+			intersection		[3 0 1 0.4873 123.3 97.35 0 0]
+		}
+		dst {
+			id          		24
+			intersection		[0 -0.9939 -0.1104 -1 162.2428 159.727 0 0]
+		}
+		midPoint       		[130.291 137.8192]
+		chart          		2
+		linkNode       		[10 51 53]
+		visible        		0
+		dataLimits     		[123.289 162.243 97.35 161.229]
+		stampAngle     		-4.823
+		subviewer      		10
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		45.9
+		}
+	}
+
+	transition {
+		id             		53
+		labelString    		"[j>0]{j--}"
+		labelPosition  		[226.55 100.35 50.769 16.086]
+		fontSize       		12
+		src {
+			id          		23
+			intersection		[0 -0.9979 -0.0646 -1 293.3646 104.6977 0 0]
+		}
+		dst {
+			id          		23
+			intersection		[0 0.1929 0.9812 -1 301.7002 112.0185 0 0]
+		}
+		midPoint       		[253.8 138]
+		chart          		2
+		linkNode       		[10 52 54]
+		visible        		0
+		dataLimits     		[253.61 305.598 104.698 139.071]
+		stampAngle     		NaN
+		subviewer      		10
+		slide {
+			sticky        		SRC_STICK
+			midPointSticky		1
+		}
+	}
+
+	transition {
+		id             		54
+		labelString    		"F{j=3}"
+		labelPosition  		[350.75 133.65 33.846 16.086]
+		fontSize       		12
+		src {
+			id          		14
+			intersection		[1 0 -1 0.5022 344.7 184.95 0 0]
+		}
+		dst {
+			id          		23
+			intersection		[0 0.9913 0.1318 -1 307.2889 106.0729 0 0]
+		}
+		midPoint       		[340.2649 134.583]
+		chart          		2
+		linkNode       		[10 53 55]
+		visible        		0
+		dataLimits     		[307.289 345.171 104.748 184.95]
+		stampAngle     		1.4386
+		subviewer      		10
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		44.35
+		}
+	}
+
+	transition {
+		id             		55
+		labelString    		"[j<3]{j++}"
+		labelPosition  		[201.35 156.15 50.769 16.086]
+		fontSize       		12
+		src {
+			id          		24
+			intersection		[0 0.1961 -0.9806 -1 170.5728 153.6359 0 0]
+		}
+		dst {
+			id          		24
+			intersection		[0 0.9398 0.3417 -1 175.7786 162.8922 0 0]
+		}
+		midPoint       		[215.1 139.8]
+		chart          		2
+		linkNode       		[10 54 56]
+		visible        		0
+		dataLimits     		[170.573 215.031 138.007 167.881]
+		stampAngle     		NaN
+		subviewer      		10
+		slide {
+			sticky        		SRC_STICK
+			midPointSticky		1
+		}
+	}
+
+	transition {
+		id             		56
+		labelPosition  		[220.292 212.743 8.461 16.086]
+		fontSize       		12
+		src {
+			id          		24
+			intersection		[0 -0.2023 0.9793 -1 167.7838 167.3552 0 0]
+		}
+		dst {
+			id          		14
+			intersection		[4 -1 0 0.4931 287.55 218.1 0 0]
+		}
+		midPoint       		[207.2346 209.5831]
+		chart          		2
+		linkNode       		[10 55 0]
+		visible        		0
+		dataLimits     		[167.473 287.55 167.355 220.5]
+		stampAngle     		-1.5708
+		subviewer      		10
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-33.15
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		57
+		labelString    		"[vv<=0]"
+		labelPosition  		[203.474 47.785 41.461 16.086]
+		fontSize       		12
+		src {
+			id          		25
+			intersection		[0 -0.1644 -0.9864 -1 261.8992 89.2452 0 0]
+		}
+		dst {
+			id          		12
+			intersection		[2 1 0 0.38 171.25 67.35 0 0]
+		}
+		midPoint       		[228.1924 66.6064]
+		chart          		2
+		linkNode       		[11 0 58]
+		visible        		0
+		dataLimits     		[171.25 261.899 64.95 89.245]
+		stampAngle     		-1.4056
+		subviewer      		11
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-28.8
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		58
+		labelPosition  		[61.511 73.65 8.461 16.086]
+		fontSize       		12
+		src {
+			intersection		[0 1 0 0 45.25 73.65 0 0]
+		}
+		dst {
+			id          		12
+			intersection		[4 -1 0 0.515 81.25 73.65 0 0]
+		}
+		midPoint       		[59.7719 73.65]
+		chart          		2
+		linkNode       		[11 57 59]
+		visible        		0
+		dataLimits     		[45.25 81.25 71.25 76.05]
+		subviewer      		11
+	}
+
+	transition {
+		id             		59
+		labelString    		"E[vv>0]{w=-1}"
+		labelPosition  		[329.672 89.562 80.384 16.086]
+		fontSize       		12
+		src {
+			id          		13
+			intersection		[1 0 -1 0.52 353.05 149.85 0 0]
+		}
+		dst {
+			id          		25
+			intersection		[0 0.9965 0.083 -1 270.0258 96.7313 0 0]
+		}
+		midPoint       		[325.8657 111.2167]
+		chart          		2
+		linkNode       		[11 58 60]
+		visible        		0
+		dataLimits     		[270.026 353.05 95.004 149.85]
+		stampAngle     		0.8102
+		subviewer      		11
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		46.8
+		}
+	}
+
+	transition {
+		id             		60
+		labelString    		"{vv+=w}"
+		labelPosition  		[171 116.1 45.692 16.086]
+		fontSize       		12
+		src {
+			id          		25
+			intersection		[0 -0.9813 0.1924 -1 256.1808 97.497 0 0]
+		}
+		dst {
+			id          		26
+			intersection		[0 0.2873 -0.9578 -1 197.5614 150.6452 0 0]
+		}
+		midPoint       		[216.248 112.0818]
+		chart          		2
+		linkNode       		[11 59 61]
+		visible        		0
+		dataLimits     		[197.561 256.181 97.497 150.645]
+		stampAngle     		0.5429
+		subviewer      		11
+		drawStyle      		SMART
+		slide {
+			sticky        		SRC_STICK
+		}
+	}
+
+	transition {
+		id             		61
+		labelString    		"{vv+=w}"
+		labelPosition  		[265.25 121.95 45.692 16.086]
+		fontSize       		12
+		src {
+			id          		26
+			intersection		[0 0.9952 0.0977 -1 202.5165 158.0337 0 0]
+		}
+		dst {
+			id          		25
+			intersection		[0 0 1 -1 263.05 103.15 0 0]
+		}
+		midPoint       		[248.9909 148.8317]
+		chart          		2
+		linkNode       		[11 60 62]
+		visible        		0
+		dataLimits     		[202.517 265.45 103.15 159.072]
+		stampAngle     		0.8343
+		subviewer      		11
+		drawStyle      		SMART
+		slide {
+			sticky        		SRC_STICK
+		}
+	}
+
+	transition {
+		id             		62
+		labelString    		"E[vv<5]{w=1}"
+		labelPosition  		[61.156 142.197 72.769 16.086]
+		fontSize       		12
+		src {
+			id          		12
+			intersection		[3 0 1 0.53 123.55 104.55 0 0]
+		}
+		dst {
+			id          		26
+			intersection		[0 -0.9923 0.124 -1 188.6041 158.2182 0 0]
+		}
+		midPoint       		[143.0746 145.0878]
+		chart          		2
+		linkNode       		[11 61 63]
+		visible        		0
+		dataLimits     		[123.55 188.604 104.55 161.592]
+		stampAngle     		1.2638
+		subviewer      		11
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		47.7
+		}
+	}
+
+	transition {
+		id             		63
+		labelString    		"[vv>=5]"
+		labelPosition  		[228.452 186.682 41.461 16.086]
+		fontSize       		12
+		src {
+			id          		26
+			intersection		[0 0.6402 0.7682 -1 200.0313 162.7275 0 0]
+		}
+		dst {
+			id          		13
+			intersection		[4 -1 0 0.41 306.25 185.25 0 0]
+		}
+		midPoint       		[246.501 184.6773]
+		chart          		2
+		linkNode       		[11 62 0]
+		visible        		0
+		dataLimits     		[200.031 306.25 162.727 187.65]
+		stampAngle     		-0.876
+		subviewer      		11
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-27.9
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		64
+		labelString    		"[u<=0]"
+		labelPosition  		[203.474 47.785 35.538 16.086]
+		fontSize       		12
+		src {
+			id          		27
+			intersection		[0 -0.1644 -0.9864 -1 261.8992 89.2452 0 0]
+		}
+		dst {
+			id          		15
+			intersection		[2 1 0 0.38 171.25 67.35 0 0]
+		}
+		midPoint       		[228.1924 66.6064]
+		chart          		2
+		linkNode       		[14 0 65]
+		visible        		0
+		dataLimits     		[171.25 261.899 64.95 89.245]
+		stampAngle     		-1.4056
+		subviewer      		14
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-28.8
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		65
+		labelPosition  		[61.511 73.65 8.461 16.086]
+		fontSize       		12
+		src {
+			intersection		[0 1 0 0 45.25 73.65 0 0]
+		}
+		dst {
+			id          		15
+			intersection		[4 -1 0 0.515 81.25 73.65 0 0]
+		}
+		midPoint       		[59.7719 73.65]
+		chart          		2
+		linkNode       		[14 64 66]
+		visible        		0
+		dataLimits     		[45.25 81.25 71.25 76.05]
+		subviewer      		14
+	}
+
+	transition {
+		id             		66
+		labelString    		"E[u>0]{w=-1}"
+		labelPosition  		[329.672 89.562 74.461 16.086]
+		fontSize       		12
+		src {
+			id          		16
+			intersection		[1 0 -1 0.52 353.05 149.85 0 0]
+		}
+		dst {
+			id          		27
+			intersection		[0 0.9965 0.083 -1 270.0258 96.7313 0 0]
+		}
+		midPoint       		[325.8657 111.2167]
+		chart          		2
+		linkNode       		[14 65 67]
+		visible        		0
+		dataLimits     		[270.026 353.05 95.004 149.85]
+		stampAngle     		0.8102
+		subviewer      		14
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		46.8
+		}
+	}
+
+	transition {
+		id             		67
+		labelString    		"{u+=w}"
+		labelPosition  		[171 116.1 39.769 16.086]
+		fontSize       		12
+		src {
+			id          		27
+			intersection		[0 -0.9813 0.1924 -1 256.1808 97.497 0 0]
+		}
+		dst {
+			id          		28
+			intersection		[0 0.2873 -0.9578 -1 197.5614 150.6452 0 0]
+		}
+		midPoint       		[216.248 112.0818]
+		chart          		2
+		linkNode       		[14 66 68]
+		visible        		0
+		dataLimits     		[197.561 256.181 97.497 150.645]
+		stampAngle     		0.5429
+		subviewer      		14
+		drawStyle      		SMART
+		slide {
+			sticky        		SRC_STICK
+		}
+	}
+
+	transition {
+		id             		68
+		labelString    		"{u+=w}"
+		labelPosition  		[265.25 121.95 39.769 16.086]
+		fontSize       		12
+		src {
+			id          		28
+			intersection		[0 0.9952 0.0977 -1 202.5165 158.0337 0 0]
+		}
+		dst {
+			id          		27
+			intersection		[0 0 1 -1 263.05 103.15 0 0]
+		}
+		midPoint       		[248.9909 148.8317]
+		chart          		2
+		linkNode       		[14 67 69]
+		visible        		0
+		dataLimits     		[202.517 265.45 103.15 159.072]
+		stampAngle     		0.8343
+		subviewer      		14
+		drawStyle      		SMART
+		slide {
+			sticky        		SRC_STICK
+		}
+	}
+
+	transition {
+		id             		69
+		labelString    		"E[u<5]{w=1}"
+		labelPosition  		[77.506 139.438 66.846 16.086]
+		fontSize       		12
+		src {
+			id          		15
+			intersection		[3 0 1 0.53 123.55 104.55 0 0]
+		}
+		dst {
+			id          		28
+			intersection		[0 -0.9923 0.124 -1 188.6041 158.2182 0 0]
+		}
+		midPoint       		[143.0746 145.0878]
+		chart          		2
+		linkNode       		[14 68 70]
+		visible        		0
+		dataLimits     		[123.55 188.604 104.55 161.592]
+		stampAngle     		1.2638
+		subviewer      		14
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		47.7
+		}
+	}
+
+	transition {
+		id             		70
+		labelString    		"[u>=5]"
+		labelPosition  		[228.452 186.682 35.538 16.086]
+		fontSize       		12
+		src {
+			id          		28
+			intersection		[0 0.6402 0.7682 -1 200.0313 162.7275 0 0]
+		}
+		dst {
+			id          		16
+			intersection		[4 -1 0 0.41 306.25 185.25 0 0]
+		}
+		midPoint       		[246.501 184.6773]
+		chart          		2
+		linkNode       		[14 69 0]
+		visible        		0
+		dataLimits     		[200.031 306.25 162.727 187.65]
+		stampAngle     		-0.8761
+		subviewer      		14
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-27.9
+			arcClockDir   		1
+		}
+	}
+
+	event {
+		id         		71
+		name       		"E"
+		linkNode   		[2 0 72]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	event {
+		id         		72
+		name       		"F"
+		linkNode   		[2 71 0]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	data {
+		id               		73
+		name             		"y"
+		linkNode         		[2 0 74]
+		scope            		LOCAL_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		1
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		74
+		name             		"x"
+		linkNode         		[2 73 75]
+		scope            		OUTPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		1
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		75
+		name             		"z"
+		linkNode         		[2 74 76]
+		scope            		OUTPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		0
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		76
+		name             		"i"
+		linkNode         		[2 75 77]
+		scope            		LOCAL_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		0
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		77
+		name             		"j"
+		linkNode         		[2 76 78]
+		scope            		LOCAL_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		0
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		78
+		name             		"w"
+		linkNode         		[2 77 79]
+		scope            		LOCAL_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		0
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		79
+		name             		"u"
+		linkNode         		[2 78 80]
+		scope            		OUTPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		0
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		80
+		name             		"vv"
+		linkNode         		[2 79 0]
+		scope            		OUTPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		0
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	instance {
+		id     		81
+		name   		"Hierarchy3"
+		machine		1
+		chart  		2
+	}
+
+	target {
+		id               		82
+		name             		"sfun"
+		description      		"Default Simulink S-Function Target."
+		machine          		1
+		linkNode         		[1 0 0]
+	}
+}

@@ -1,0 +1,605 @@
+Model {
+  Name			  "Parallel4"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Thu Jan 29 14:48:22 2004"
+  Creator		  "scaife"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "scaife"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Mar 17 13:34:55 2004"
+  ModelVersionFormat	  "1.%<AutoIncrement:9>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  RTWExpressionDepthLimit 5
+  SimulationMode	  "normal"
+  Solver		  "ode45"
+  SolverMode		  "Auto"
+  StartTime		  "0.0"
+  StopTime		  "10.0"
+  MaxOrder		  5
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  Refine		  "1"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  Decimation		  "1"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  SignalLoggingName	  "sigsOut"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  RTWInlineParameters	  off
+  BlockReductionOpt	  on
+  BooleanDataType	  on
+  ConditionallyExecuteInputs on
+  ParameterPooling	  on
+  OptimizeBlockIOStorage  on
+  ZeroCross		  on
+  AssertionControl	  "UseLocalSettings"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      PortCounts	      "[]"
+      SFunctionModules	      "''"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      ZeroCross		      on
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "Parallel4"
+    Location		    [2, 47, 582, 307]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Parallel4"
+      Ports		      [0, 0, 0, 1]
+      Position		      [30, 14, 90, 66]
+      TreatAsAtomicUnit	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Stateflow diagram"
+      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private'"
+",'sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl',"
+"'Center','VerticalAl','Bottom');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Parallel4"
+	Location		[257, 457, 812, 717]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  TriggerPort
+	  Name			  " input events "
+	  Ports			  [0, 1]
+	  Position		  [20, 101, 40, 119]
+	  TriggerType		  "either"
+	  ShowOutputPort	  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  Ports			  [1, 1]
+	  Position		  [270, 100, 320, 140]
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  " SFunction "
+	  Tag			  "Stateflow S-Function Parallel4 1"
+	  Ports			  [1, 1]
+	  Position		  [180, 100, 230, 160]
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 1]"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  Position		  [460, 111, 480, 129]
+	}
+	Line {
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  Points		  [0, -10]
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " input events "
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+      }
+    }
+  }
+}
+
+# Finite State Machines
+# -- File save dated 17-Mar-2004 13:34:55
+#
+#    Stateflow Version 5.0 (R13) dated Jun 21 2002, 05:03:37
+#
+#
+
+Stateflow {
+
+	machine {
+		id                   		1
+		name                 		"Parallel4"
+		created              		"29-Jan-2004 14:48:23"
+		isLibrary            		0
+		firstTarget          		20
+		debug {
+			breakOn              		[1 1 1]
+		}
+		sfVersion            		50013001.000001
+	}
+
+	chart {
+		id                       		2
+		name                     		"Parallel4"
+		windowPosition           		[4.8 155.2 416.8 348.8]
+		viewLimits               		[11.839 344.458 0 278.2]
+		zoomFactor               		0.898
+		screen                   		[1 1 1280 1024 1.25]
+		treeNode                 		[0 3 0 0]
+		viewObj                  		2
+		visible                  		1
+		machine                  		1
+		subviewS {
+		}
+		decomposition            		SET_CHART
+		firstEvent               		15
+		chartFileNumber          		1
+	}
+
+	state {
+		id                  		3
+		labelString         		"N1/"
+		position            		[22.7 15.5819 146.2258 239.2935]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 5 0 4]
+		firstTransition     		9
+		subviewer           		2
+		type                		AND_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		4
+		labelString         		"N2/"
+		position            		[182.8816 16.7106 150.7158 240.1017]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 7 3 0]
+		firstTransition     		10
+		subviewer           		2
+		type                		AND_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		5
+		labelString         		"A/"
+		position            		[48.4696 75.1694 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[3 0 0 6]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		6
+		labelString         		"B/"
+		position            		[48.438 181.6676 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[3 0 5 0]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		7
+		labelString         		"C/"
+		position            		[212.14 76.0672 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[4 0 0 8]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		8
+		labelString         		"D/"
+		position            		[212.6622 183.4378 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[4 0 7 0]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	transition {
+		id             		9
+		labelPosition  		[114.077 55.294 7.902 15.774]
+		fontSize       		12
+		src {
+			intersection		[0 0 1 0 114.0764 41.4356 0 0]
+		}
+		dst {
+			id          		5
+			intersection		[1 0 -1 0.729 114.0764 75.1694 0 0]
+		}
+		midPoint       		[114.0764 54.7752]
+		chart          		2
+		linkNode       		[3 0 11]
+		dataLimits     		[111.676 116.476 41.436 75.169]
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		10
+		labelPosition  		[278.141 56.153 7.902 15.774]
+		fontSize       		12
+		src {
+			intersection		[0 0 1 0 278.141 42.2439 0 0]
+		}
+		dst {
+			id          		7
+			intersection		[1 0 -1 0.7333 278.141 76.0672 0 0]
+		}
+		midPoint       		[278.141 55.6301]
+		chart          		2
+		linkNode       		[4 0 13]
+		dataLimits     		[275.741 280.541 42.244 76.067]
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		11
+		labelString    		"S1"
+		labelPosition  		[58.446 152.52 15.805 15.774]
+		fontSize       		12
+		src {
+			id          		5
+			intersection		[3 0 1 0.5868 85.6579 135.1694 0 10.1497]
+		}
+		dst {
+			id          		6
+			intersection		[1 0 -1 0.4136 85.6579 181.6676 0 -10.1497]
+		}
+		midPoint       		[85.6579 155.1686]
+		chart          		2
+		linkNode       		[3 9 12]
+		dataLimits     		[83.258 88.058 135.169 181.668]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+		}
+	}
+
+	transition {
+		id             		12
+		labelString    		"R1"
+		labelPosition  		[115.778 152.765 16.523 15.774]
+		fontSize       		12
+		src {
+			id          		6
+			intersection		[1 0 -1 0.6211 104.3363 181.6676 0 10.8983]
+		}
+		dst {
+			id          		5
+			intersection		[3 0 1 0.3793 104.3363 135.1694 0 -10.8983]
+		}
+		midPoint       		[104.3363 161.6684]
+		chart          		2
+		linkNode       		[3 11 0]
+		dataLimits     		[101.936 106.736 135.169 181.668]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+		}
+	}
+
+	transition {
+		id             		13
+		labelString    		"S2"
+		labelPosition  		[219.473 155.801 15.805 15.774]
+		fontSize       		12
+		src {
+			id          		7
+			intersection		[3 0 1 0.5967 248.4405 136.0672 0 11.4617]
+		}
+		dst {
+			id          		8
+			intersection		[1 0 -1 0.3975 248.4405 183.4378 0 -11.4617]
+		}
+		midPoint       		[248.4405 156.5216]
+		chart          		2
+		linkNode       		[4 10 14]
+		dataLimits     		[246.041 250.841 136.067 183.438]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+		}
+	}
+
+	transition {
+		id             		14
+		labelString    		"R2"
+		labelPosition  		[285.581 156.644 16.523 15.774]
+		fontSize       		12
+		src {
+			id          		8
+			intersection		[1 0 -1 0.5891 265.6821 183.4378 0 8.0199]
+		}
+		dst {
+			id          		7
+			intersection		[3 0 1 0.4051 265.6821 136.0672 0 -8.0199]
+		}
+		midPoint       		[265.6821 162.9834]
+		chart          		2
+		linkNode       		[4 13 0]
+		dataLimits     		[263.282 268.082 136.067 183.438]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+		}
+	}
+
+	event {
+		id         		15
+		name       		"S1"
+		linkNode   		[2 0 16]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	event {
+		id         		16
+		name       		"R1"
+		linkNode   		[2 15 17]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	event {
+		id         		17
+		name       		"S2"
+		linkNode   		[2 16 18]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	event {
+		id         		18
+		name       		"R2"
+		linkNode   		[2 17 0]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	instance {
+		id     		19
+		name   		"Parallel4"
+		machine		1
+		chart  		2
+	}
+
+	target {
+		id               		20
+		name             		"sfun"
+		description      		"Default Simulink S-Function Target."
+		codeFlags        		" debug=1 overflow=1 echo=1"
+		machine          		1
+		linkNode         		[1 0 0]
+	}
+}

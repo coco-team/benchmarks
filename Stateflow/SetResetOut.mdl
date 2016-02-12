@@ -1,0 +1,903 @@
+Model {
+  Name			  "SetResetOut"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed Jan  7 15:31:08 2004"
+  Creator		  "scaife"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "scaife"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Mar  3 14:31:08 2004"
+  ModelVersionFormat	  "1.%<AutoIncrement:17>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  RTWExpressionDepthLimit 5
+  SimulationMode	  "normal"
+  Solver		  "FixedStepDiscrete"
+  SolverMode		  "Auto"
+  StartTime		  "0.0"
+  StopTime		  "10000.0"
+  MaxOrder		  5
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  Refine		  "1"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  Decimation		  "1"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  SignalLoggingName	  "sigsOut"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  RTWInlineParameters	  off
+  BlockReductionOpt	  on
+  BooleanDataType	  on
+  ConditionallyExecuteInputs on
+  ParameterPooling	  on
+  OptimizeBlockIOStorage  on
+  ZeroCross		  on
+  AssertionControl	  "UseLocalSettings"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      ShowAdditionalParam     off
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      ShowAdditionalParam     off
+      LatchInput	      off
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      PortCounts	      "[]"
+      SFunctionModules	      "''"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Switch
+      Criteria		      "u2 >= Threshold"
+      Threshold		      "0"
+      ShowAdditionalParam     off
+      InputSameDT	      on
+      OutDataTypeMode	      "Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	on
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      ZeroCross		      on
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "SetResetOut"
+    Location		    [2, 47, 582, 307]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      Position		      [20, 15, 50, 45]
+      Value		      "0"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant1"
+      Position		      [20, 95, 50, 125]
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux1"
+      Ports		      [2, 1]
+      Position		      [195, 16, 200, 54]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Reset"
+      Ports		      [2, 1]
+      Position		      [120, 92, 150, 128]
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      sw		      "1"
+      action		      "0"
+      Port {
+	PortNumber		1
+	Name			"Reset\n"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Set"
+      Ports		      [2, 1]
+      Position		      [120, 17, 150, 53]
+      SourceBlock	      "simulink/Signal\nRouting/Manual Switch"
+      SourceType	      "Manual Switch"
+      sw		      "1"
+      action		      "0"
+      Port {
+	PortNumber		1
+	Name			"Set"
+	TestPoint		off
+	LinearAnalysisOutput	off
+	LinearAnalysisInput	off
+	RTWStorageClass		"Auto"
+	DataLogging		off
+	DataLoggingNameMode	"SignalName"
+	DataLoggingDecimateData	off
+	DataLoggingDecimation	"2"
+	DataLoggingLimitDataPoints off
+	DataLoggingMaxPoints	"5000"
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "SetResetOut"
+      Ports		      [0, 4, 0, 1]
+      Position		      [215, 55, 300, 145]
+      TreatAsAtomicUnit	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Stateflow diagram"
+      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private'"
+",'sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl',"
+"'Center','VerticalAl','Bottom');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"SetResetOut"
+	Location		[257, 457, 812, 717]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  TriggerPort
+	  Name			  " input events "
+	  Ports			  [0, 1]
+	  Position		  [20, 101, 40, 119]
+	  TriggerType		  "either"
+	  ShowOutputPort	  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  Ports			  [1, 1]
+	  Position		  [270, 245, 320, 285]
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  " SFunction "
+	  Tag			  "Stateflow S-Function SetResetOut 1"
+	  Ports			  [1, 5]
+	  Position		  [180, 100, 230, 220]
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 5]"
+	  Port {
+	    PortNumber		    2
+	    Name		    "is_set"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    3
+	    Name		    "oncnt"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    4
+	    Name		    "offcnt"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	  Port {
+	    PortNumber		    5
+	    Name		    "is_reset"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  Position		  [460, 256, 480, 274]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "is_set"
+	  Position		  [460, 101, 480, 119]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "oncnt"
+	  Position		  [460, 136, 480, 154]
+	  Port			  "2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "offcnt"
+	  Position		  [460, 171, 480, 189]
+	  Port			  "3"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "is_reset"
+	  Position		  [460, 206, 480, 224]
+	  Port			  "4"
+	}
+	Line {
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  Points		  [0, 155]
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "is_set"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "is_set"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "oncnt"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  3
+	  DstBlock		  "oncnt"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "offcnt"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  4
+	  DstBlock		  "offcnt"
+	  DstPort		  1
+	}
+	Line {
+	  Name			  "is_reset"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  5
+	  DstBlock		  "is_reset"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " input events "
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Display
+      Name		      "is_reset"
+      Ports		      [1]
+      Position		      [410, 185, 500, 215]
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "is_set"
+      Ports		      [1]
+      Position		      [410, 25, 500, 55]
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "offcnt"
+      Ports		      [1]
+      Position		      [410, 130, 500, 160]
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "oncnt"
+      Ports		      [1]
+      Position		      [410, 80, 500, 110]
+      Decimation	      "1"
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      Points		      [50, 0]
+      DstBlock		      "SetResetOut"
+      DstPort		      trigger
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	Points			[0, -5]
+	DstBlock		"Set"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 70]
+	DstBlock		"Reset"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Constant1"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	Points			[0, 10]
+	DstBlock		"Reset"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -65]
+	DstBlock		"Set"
+	DstPort			2
+      }
+    }
+    Line {
+      Name		      "Set"
+      Labels		      [0, 0]
+      SrcBlock		      "Set"
+      SrcPort		      1
+      Points		      [10, 0; 0, -10]
+      DstBlock		      "Mux1"
+      DstPort		      1
+    }
+    Line {
+      Name		      "Reset\n"
+      Labels		      [0, 0]
+      SrcBlock		      "Reset"
+      SrcPort		      1
+      Points		      [25, 0]
+      DstBlock		      "Mux1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "SetResetOut"
+      SrcPort		      4
+      Points		      [45, 0; 0, 70]
+      DstBlock		      "is_reset"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "SetResetOut"
+      SrcPort		      3
+      Points		      [90, 0]
+      DstBlock		      "offcnt"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "SetResetOut"
+      SrcPort		      2
+      Points		      [45, 0; 0, 5]
+      DstBlock		      "oncnt"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "SetResetOut"
+      SrcPort		      1
+      Points		      [45, 0; 0, -30]
+      DstBlock		      "is_set"
+      DstPort		      1
+    }
+  }
+}
+
+# Finite State Machines
+# -- File save dated 03-Mar-2004 14:31:08
+#
+#    Stateflow Version 5.0 (R13) dated Jun 21 2002, 05:03:37
+#
+#
+
+Stateflow {
+
+	machine {
+		id                   		1
+		name                 		"SetResetOut"
+		created              		"07-Jan-2004 15:31:08"
+		isLibrary            		0
+		firstTarget          		15
+		debug {
+			breakOn              		[1 1 1]
+		}
+		sfVersion            		50013001.000001
+	}
+
+	chart {
+		id                       		2
+		name                     		"SetResetOut"
+		windowPosition           		[4.8 155.2 416.8 348.8]
+		viewLimits               		[0 370.3 0 309.3]
+		screen                   		[1 1 1280 1024 1.25]
+		treeNode                 		[0 4 0 0]
+		firstTransition          		5
+		viewObj                  		2
+		visible                  		1
+		machine                  		1
+		subviewS {
+		}
+		decomposition            		CLUSTER_CHART
+		firstEvent               		8
+		firstData                		10
+		chartFileNumber          		1
+	}
+
+	state {
+		id                  		3
+		labelString         		"On/\n"
+						"en: is_set=1; oncnt++;\n"
+						"du: oncnt++;\n"
+						"ex: is_reset=1;"
+		position            		[199.5148 91.3843 120.35 62.25]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 0 4 0]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		4
+		labelString         		"Off/\n"
+						"en: is_set=2; offcnt++;\n"
+						"du: offcnt++;\n"
+						"ex: is_reset=2;"
+		position            		[21.9648 89.5843 114.55 58.65]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 0 0 3]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	transition {
+		id             		5
+		labelPosition  		[76.949 69.236 7.998 15.185]
+		fontSize       		12
+		src {
+			intersection		[0 0 1 0 76.9488 53.5843 0 0]
+		}
+		dst {
+			id          		4
+			intersection		[1 0 -1 0.48 76.9488 89.5843 0 0]
+		}
+		midPoint       		[76.9488 68.1062]
+		chart          		2
+		linkNode       		[2 0 7]
+		dataLimits     		[74.549 79.349 53.584 89.584]
+		subviewer      		2
+	}
+
+	transition {
+		id             		6
+		labelString    		"Reset"
+		labelPosition  		[156.679 141.567 31.192 15.185]
+		fontSize       		12
+		src {
+			id          		3
+			intersection		[4 -1 0 0.2723 199.5148 136.6843 0 -15.3]
+		}
+		dst {
+			id          		4
+			intersection		[2 1 -0 0.8031 136.5148 136.6843 0 15.3]
+		}
+		midPoint       		[170.9059 136.6843]
+		chart          		2
+		linkNode       		[2 7 0]
+		dataLimits     		[136.515 199.515 134.284 139.084]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		7
+		labelString    		"Set"
+		labelPosition  		[157.883 86.692 18.395 15.185]
+		fontSize       		12
+		src {
+			id          		4
+			intersection		[2 1 -0 0.266 136.5148 105.1843 0 -14.4]
+		}
+		dst {
+			id          		3
+			intersection		[4 -1 0 0.7783 199.5148 105.1843 0 14.4]
+		}
+		midPoint       		[165.1237 105.1843]
+		chart          		2
+		linkNode       		[2 5 6]
+		dataLimits     		[136.515 199.515 102.784 107.584]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	event {
+		id         		8
+		name       		"Set"
+		linkNode   		[2 0 9]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	event {
+		id         		9
+		name       		"Reset"
+		linkNode   		[2 8 0]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	data {
+		id               		10
+		name             		"is_set"
+		linkNode         		[2 0 11]
+		scope            		OUTPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		1
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		11
+		name             		"oncnt"
+		linkNode         		[2 10 12]
+		scope            		OUTPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		1
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		12
+		name             		"offcnt"
+		linkNode         		[2 11 13]
+		scope            		OUTPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		1
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		13
+		name             		"is_reset"
+		linkNode         		[2 12 0]
+		scope            		OUTPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		1
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	instance {
+		id     		14
+		name   		"SetResetOut"
+		machine		1
+		chart  		2
+	}
+
+	target {
+		id               		15
+		name             		"sfun"
+		description      		"Default Simulink S-Function Target."
+		codeFlags        		" debug=1 overflow=1 echo=1"
+		machine          		1
+		linkNode         		[1 0 0]
+	}
+}

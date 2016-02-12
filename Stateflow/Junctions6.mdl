@@ -1,0 +1,768 @@
+Model {
+  Name			  "Junctions6"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Wed Feb  4 10:37:43 2004"
+  Creator		  "scaife"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "scaife"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Tue Jun  1 11:01:33 2004"
+  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  RTWExpressionDepthLimit 5
+  SimulationMode	  "normal"
+  Solver		  "ode45"
+  SolverMode		  "Auto"
+  StartTime		  "0.0"
+  StopTime		  "10.0"
+  MaxOrder		  5
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  Refine		  "1"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  Decimation		  "1"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  SignalLoggingName	  "sigsOut"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  RTWInlineParameters	  off
+  BlockReductionOpt	  on
+  BooleanDataType	  on
+  ConditionallyExecuteInputs on
+  ParameterPooling	  on
+  OptimizeBlockIOStorage  on
+  ZeroCross		  on
+  AssertionControl	  "UseLocalSettings"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      ShowAdditionalParam     off
+      OutDataTypeMode	      "Inherit from 'Constant value'"
+      OutDataType	      "sfix(16)"
+      ConRadixGroup	      "Use specified scaling"
+      OutScaling	      "2^0"
+    }
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Display
+      Format		      "short"
+      Decimation	      "10"
+      Floating		      off
+      SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      ShowAdditionalParam     off
+      LatchInput	      off
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Outport
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      PortCounts	      "[]"
+      SFunctionModules	      "''"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "Junctions6"
+    Location		    [2, 47, 582, 307]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      Position		      [110, 115, 140, 145]
+      Value		      "6"
+    }
+    Block {
+      BlockType		      Display
+      Name		      "Display"
+      Ports		      [1]
+      Position		      [380, 115, 470, 145]
+      Format		      "long"
+      Decimation	      "1"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Junctions6"
+      Ports		      [1, 1]
+      Position		      [230, 104, 290, 156]
+      TreatAsAtomicUnit	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Stateflow diagram"
+      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private'"
+",'sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl',"
+"'Center','VerticalAl','Bottom');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Junctions6"
+	Location		[257, 457, 812, 717]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "x"
+	  Position		  [20, 101, 40, 119]
+	  PortDimensions	  "1"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  Ports			  [1, 1]
+	  Position		  [270, 160, 320, 200]
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  " SFunction "
+	  Tag			  "Stateflow S-Function Junctions6 1"
+	  Ports			  [1, 2]
+	  Position		  [180, 100, 230, 160]
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[1 2]"
+	  Port {
+	    PortNumber		    2
+	    Name		    "y"
+	    TestPoint		    off
+	    LinearAnalysisOutput    off
+	    LinearAnalysisInput	    off
+	    RTWStorageClass	    "Auto"
+	    DataLogging		    off
+	    DataLoggingNameMode	    "SignalName"
+	    DataLoggingDecimateData off
+	    DataLoggingDecimation   "2"
+	    DataLoggingLimitDataPoints off
+	    DataLoggingMaxPoints    "5000"
+	  }
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  Position		  [460, 171, 480, 189]
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "y"
+	  Position		  [460, 101, 480, 119]
+	}
+	Line {
+	  Name			  "y"
+	  Labels		  [0, 0]
+	  SrcBlock		  " SFunction "
+	  SrcPort		  2
+	  DstBlock		  "y"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "x"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  Points		  [0, 65]
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      DstBlock		      "Junctions6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Junctions6"
+      SrcPort		      1
+      DstBlock		      "Display"
+      DstPort		      1
+    }
+  }
+}
+
+# Finite State Machines
+# -- File save dated 01-Jun-2004 11:01:33
+#
+#    Stateflow Version 5.0 (R13) dated Jun 21 2002, 05:03:37
+#
+#
+
+Stateflow {
+
+	machine {
+		id                   		1
+		name                 		"Junctions6"
+		created              		"04-Feb-2004 10:37:44"
+		isLibrary            		0
+		firstTarget          		21
+		sfVersion            		50013001.000001
+	}
+
+	chart {
+		id                       		2
+		name                     		"Junctions6"
+		windowPosition           		[5.082 28.8 473.506 383.718]
+		viewLimits               		[9.992 427.154 0 336.891]
+		zoomFactor               		0.983
+		screen                   		[1 1 1152 900 1.180555555555556]
+		treeNode                 		[0 7 0 0]
+		firstTransition          		16
+		viewObj                  		2
+		visible                  		1
+		machine                  		1
+		subviewS {
+		}
+		decomposition            		CLUSTER_CHART
+		firstData                		18
+		chartFileNumber          		1
+	}
+
+	state {
+		id                  		3
+		labelString         		"A"
+		position            		[82.5184 83.1387 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[7 0 0 4]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		4
+		labelString         		"B"
+		position            		[243.6184 84.0387 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[7 0 3 5]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		5
+		labelString         		"C"
+		position            		[80.7184 227.1387 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[7 0 4 6]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		6
+		labelString         		"D"
+		position            		[246.3184 228.9387 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[7 0 5 0]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		7
+		labelString         		"TOP"
+		position            		[34.0652 19.8088 380.646 296.1491]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 3 0 0]
+		firstTransition     		9
+		firstJunction       		8
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	junction {
+		id         		8
+		position   		[204.0184 182.4387 7]
+		chart      		2
+		linkNode   		[7 0 0]
+		subviewer  		2
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	transition {
+		id             		9
+		labelString    		"[x<4]{y+=1}"
+		labelPosition  		[137.072 57.269 63.128 15.811]
+		fontSize       		12
+		src {
+			intersection		[0 0 1 0 127.5184 47.1387 0 0]
+		}
+		dst {
+			id          		3
+			intersection		[1 0 -1 0.5 127.5184 83.1387 0 0]
+		}
+		midPoint       		[127.5184 61.6606]
+		chart          		2
+		linkNode       		[7 0 10]
+		dataLimits     		[125.118 129.918 47.139 83.139]
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		10
+		labelString    		"[x>=4]{y+=10}"
+		labelPosition  		[298.038 57.269 77.248 15.811]
+		fontSize       		12
+		src {
+			intersection		[0 0 1 0 289.5184 48.0387 0 0]
+		}
+		dst {
+			id          		4
+			intersection		[1 0 -1 0.51 289.5184 84.0387 0 0]
+		}
+		midPoint       		[289.5184 62.5606]
+		chart          		2
+		linkNode       		[7 9 11]
+		dataLimits     		[287.118 291.918 48.039 84.039]
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		11
+		labelString    		"[x<=2]{y+=100}"
+		labelPosition  		[66.032 156.545 83.893 15.811]
+		fontSize       		12
+		src {
+			id          		3
+			intersection		[3 0 1 0.48 129.3184 143.1387 0 0]
+		}
+		dst {
+			id          		8
+			intersection		[0 -0.7071 -0.7071 -1 199.0687 177.489 0 0]
+		}
+		midPoint       		[156.2964 160.5417]
+		chart          		2
+		linkNode       		[7 10 12]
+		dataLimits     		[129.318 199.069 143.139 177.489]
+		stampAngle     		0.1097
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		43.2
+		}
+	}
+
+	transition {
+		id             		12
+		labelString    		"[x>=6]{y+=1000}"
+		labelPosition  		[282.951 156.091 90.538 15.811]
+		fontSize       		12
+		src {
+			id          		4
+			intersection		[3 0 1 0.47 291.3184 144.0387 0 0]
+		}
+		dst {
+			id          		8
+			intersection		[0 0.7071 -0.7071 -1 208.9681 177.489 0 0]
+		}
+		midPoint       		[258.6549 161.2661]
+		chart          		2
+		linkNode       		[7 11 14]
+		dataLimits     		[208.968 291.318 144.039 177.489]
+		stampAngle     		0.0154
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-47.7
+		}
+	}
+
+	transition {
+		id             		13
+		labelString    		"[x %% 3 == 1]{y+=10000}"
+		labelPosition  		[52.764 183.044 137.884 15.811]
+		fontSize       		12
+		src {
+			id          		8
+			intersection		[0 -0.6402 0.7682 -1 199.537 187.8161 0 0]
+		}
+		dst {
+			id          		5
+			intersection		[1 0 -1 0.46 122.1184 227.1387 0 0]
+		}
+		midPoint       		[151.6709 201.1543]
+		chart          		2
+		linkNode       		[7 14 15]
+		dataLimits     		[119.718 199.537 187.816 227.139]
+		stampAngle     		-0.0545
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-48.6
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		14
+		labelString    		"[x %% 3 == 0]{y+=100000}"
+		labelPosition  		[261.821 185.065 144.529 15.811]
+		fontSize       		12
+		src {
+			id          		8
+			intersection		[0 0.7071 0.7071 -1 208.9681 187.3884 0 0]
+		}
+		dst {
+			id          		6
+			intersection		[1 0 -1 0.53 294.0184 228.9387 0 0]
+		}
+		midPoint       		[262.2526 200.9214]
+		chart          		2
+		linkNode       		[7 12 13]
+		dataLimits     		[208.968 296.418 187.388 228.939]
+		stampAngle     		0.0473
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		47.7
+		}
+	}
+
+	transition {
+		id             		15
+		labelString    		"[1]"
+		labelPosition  		[202.149 239.985 14.951 15.811]
+		fontSize       		12
+		src {
+			id          		6
+			intersection		[4 -1 0 0.4939 246.3184 259.3047 0 -1.252]
+		}
+		dst {
+			id          		5
+			intersection		[2 1 0 0.5361 170.7184 259.3047 0 0.3671]
+		}
+		midPoint       		[211.1356 259.3058]
+		chart          		2
+		linkNode       		[7 13 17]
+		dataLimits     		[170.718 246.318 256.905 261.705]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+		}
+	}
+
+	transition {
+		id             		16
+		labelPosition  		[22.459 92.693 8.327 15.805]
+		fontSize       		12
+		src {
+			intersection		[0 1 0 0 18.3831 92.6927 0 0]
+		}
+		dst {
+			id          		7
+			intersection		[4 -1 0 0.7539 34.0652 92.6927 0 0]
+		}
+		midPoint       		[22.3044 92.6927]
+		chart          		2
+		linkNode       		[2 0 0]
+		dataLimits     		[18.383 34.065 90.293 95.093]
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+		}
+	}
+
+	transition {
+		id             		17
+		labelPosition  		[117.59 299.397 8.327 15.805]
+		fontSize       		12
+		src {
+			id          		5
+			intersection		[3 0 1 0.5903 117.59 287.1387 0 8.1284]
+		}
+		dst {
+			id          		7
+			intersection		[3 0 -1 0.7806 117.59 315.9579 0 8.1284]
+		}
+		midPoint       		[117.59 297.9141]
+		chart          		2
+		linkNode       		[7 15 0]
+		dataLimits     		[115.19 119.99 287.139 315.958]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+		}
+	}
+
+	data {
+		id               		18
+		name             		"x"
+		linkNode         		[2 0 19]
+		scope            		INPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		1
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	data {
+		id               		19
+		name             		"y"
+		linkNode         		[2 18 0]
+		scope            		OUTPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		1
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+			initialValue		"111111"
+		}
+	}
+
+	instance {
+		id     		20
+		name   		"Junctions6"
+		machine		1
+		chart  		2
+	}
+
+	target {
+		id               		21
+		name             		"sfun"
+		description      		"Default Simulink S-Function Target."
+		machine          		1
+		linkNode         		[1 0 0]
+	}
+}
