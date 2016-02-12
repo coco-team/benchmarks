@@ -16,7 +16,7 @@ Model {
       BusOutputAsStruct	      "off"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.16"
+    ComputedModelVersion    "1.17"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -38,7 +38,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [157.0, 23.0, 1770.0, 1243.0]
+      Location		      [-24.0, 23.0, 1280.0, 773.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -62,9 +62,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1546.0, 1069.0]
-	ZoomFactor		[0.8]
-	Offset			[0.0, 0.0]
+	Extents			[1056.0, 603.0]
+	ZoomFactor		[0.5338904363974003]
+	Offset			[-115.060706521739, 134.77739130434782]
       }
     }
   }
@@ -72,11 +72,11 @@ Model {
   Creator		  "mddavies"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "teme"
+  LastModifiedBy	  "Teme"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Sep 15 16:07:05 2015"
-  RTWModifiedTimeStamp	  364234021
-  ModelVersionFormat	  "1.%<AutoIncrement:16>"
+  LastModifiedDate	  "Fri Feb 12 12:16:54 2016"
+  RTWModifiedTimeStamp	  377180184
+  ModelVersionFormat	  "1.%<AutoIncrement:17>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -209,8 +209,8 @@ Model {
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "ode45"
-	  SolverName		  "ode45"
+	  Solver		  "FixedStepDiscrete"
+	  SolverName		  "FixedStepDiscrete"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
@@ -474,7 +474,7 @@ Model {
 	  Version		  "1.15.0"
 	  Array {
 	    Type		    "Cell"
-	    Dimension		    15
+	    Dimension		    16
 	    Cell		    "IncludeHyperlinkInReport"
 	    Cell		    "GenerateTraceInfo"
 	    Cell		    "GenerateTraceReport"
@@ -490,6 +490,7 @@ Model {
 	    Cell		    "CodeExecutionProfiling"
 	    Cell		    "CodeProfilingSaveOptions"
 	    Cell		    "CodeProfilingInstrumentation"
+	    Cell		    "GenerateMissedCodeReplacementReport"
 	    PropName		    "DisabledProps"
 	  }
 	  SystemTargetFile	  "grt.tlc"
@@ -553,7 +554,7 @@ Model {
 	      Version		      "1.15.0"
 	      Array {
 		Type			"Cell"
-		Dimension		22
+		Dimension		24
 		Cell			"IgnoreCustomStorageClasses"
 		Cell			"IgnoreTestpoints"
 		Cell			"InsertBlockDesc"
@@ -576,6 +577,8 @@ Model {
 		Cell			"CustomSymbolStrTmpVar"
 		Cell			"CustomSymbolStrMacro"
 		Cell			"ReqsInCode"
+		Cell			"ParameterTuningSideEffectCode"
+		Cell			"CustomSymbolStrUtil"
 		PropName		"DisabledProps"
 	      }
 	      ForceParamTrailComments off
@@ -707,8 +710,9 @@ Model {
 	PropName		"Components"
       }
       Name		      "Configuration"
+      ExtraOptions	      "-aGenerateTraceInfo=0 -aIgnoreTestpoints=0 "
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 190, 135, 1250, 765 ] 
+      ConfigPrmDlgPosition     [ 130, 68, 1210, 730 ] 
     }
     PropName		    "ConfigurationSets"
   }
@@ -1118,7 +1122,7 @@ Model {
   }
   System {
     Name		    "ControlsWithAutopilot"
-    Location		    [157, 23, 1927, 1266]
+    Location		    [-24, 23, 1256, 796]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -1130,7 +1134,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "80"
+    ZoomFactor		    "53"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "674"
     Block {

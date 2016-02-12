@@ -52,4 +52,4 @@ default_rate=1e-3;
 theclock=default_rate/100;
 
 %generation codes Lustre et prelude
-cocoSim('blocs_rosace',simulink_model,initial_conditions,'allrates',default_rate,theclock);
+%cocoSim('blocs_rosace',simulink_model,initial_conditions,'allrates',default_rate,theclock);
