@@ -1,0 +1,732 @@
+Model {
+  Name			  "Super11"
+  Version		  5.0
+  SaveDefaultBlockParams  on
+  SampleTimeColors	  off
+  LibraryLinkDisplay	  "none"
+  WideLines		  off
+  ShowLineDimensions	  off
+  ShowPortDataTypes	  off
+  ShowLoopsOnError	  on
+  IgnoreBidirectionalLines off
+  ShowStorageClass	  off
+  ExecutionOrder	  off
+  RecordCoverage	  off
+  CovPath		  "/"
+  CovSaveName		  "covdata"
+  CovMetricSettings	  "dw"
+  CovNameIncrementing	  off
+  CovHtmlReporting	  on
+  covSaveCumulativeToWorkspaceVar on
+  CovSaveSingleToWorkspaceVar on
+  CovCumulativeVarName	  "covCumulativeData"
+  CovCumulativeReport	  off
+  DataTypeOverride	  "UseLocalSettings"
+  MinMaxOverflowLogging	  "UseLocalSettings"
+  MinMaxOverflowArchiveMode "Overwrite"
+  BlockNameDataTip	  off
+  BlockParametersDataTip  off
+  BlockDescriptionStringDataTip	off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  Created		  "Fri Apr 23 15:02:32 2004"
+  Creator		  "scaife"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "scaife"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Jun  9 10:32:50 2004"
+  ModelVersionFormat	  "1.%<AutoIncrement:8>"
+  ConfigurationManager	  "None"
+  SimParamPage		  "Solver"
+  LinearizationMsg	  "none"
+  Profile		  off
+  ParamWorkspaceSource	  "MATLABWorkspace"
+  AccelSystemTargetFile	  "accel.tlc"
+  AccelTemplateMakefile	  "accel_default_tmf"
+  AccelMakeCommand	  "make_rtw"
+  TryForcingSFcnDF	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "normal"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  on
+  ExtModeSkipDownloadWhenConnect off
+  ExtModeLogAll		  on
+  ExtModeAutoUpdateStatusClock off
+  BufferReuse		  on
+  RTWExpressionDepthLimit 5
+  SimulationMode	  "normal"
+  Solver		  "ode45"
+  SolverMode		  "Auto"
+  StartTime		  "0.0"
+  StopTime		  "10.0"
+  MaxOrder		  5
+  MaxStep		  "auto"
+  MinStep		  "auto"
+  MaxNumMinSteps	  "-1"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  RelTol		  "1e-3"
+  AbsTol		  "auto"
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  Refine		  "1"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Array"
+  Decimation		  "1"
+  LimitDataPoints	  on
+  MaxDataPoints		  "1000"
+  SignalLoggingName	  "sigsOut"
+  ConsistencyChecking	  "none"
+  ArrayBoundsChecking	  "none"
+  AlgebraicLoopMsg	  "warning"
+  BlockPriorityViolationMsg "warning"
+  MinStepSizeMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  DiscreteInheritContinuousMsg "warning"
+  MultiTaskRateTransMsg	  "error"
+  SingleTaskRateTransMsg  "none"
+  CheckForMatrixSingularity "none"
+  IntegerOverflowMsg	  "warning"
+  Int32ToFloatConvMsg	  "warning"
+  ParameterDowncastMsg	  "error"
+  ParameterOverflowMsg	  "error"
+  ParameterPrecisionLossMsg "warning"
+  UnderSpecifiedDataTypeMsg "none"
+  UnnecessaryDatatypeConvMsg "none"
+  VectorMatrixConversionMsg "none"
+  InvalidFcnCallConnMsg	  "error"
+  SignalLabelMismatchMsg  "none"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  SfunCompatibilityCheckMsg "none"
+  RTWInlineParameters	  off
+  BlockReductionOpt	  on
+  BooleanDataType	  on
+  ConditionallyExecuteInputs on
+  ParameterPooling	  on
+  OptimizeBlockIOStorage  on
+  ZeroCross		  on
+  AssertionControl	  "UseLocalSettings"
+  ProdHWDeviceType	  "Microprocessor"
+  ProdHWWordLengths	  "8,16,32,32"
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  RTWRetainRTWFile	  off
+  TLCProfiler		  off
+  TLCDebug		  off
+  TLCCoverage		  off
+  TLCAssertion		  off
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  BlockParameterDefaults {
+    Block {
+      BlockType		      Demux
+      Outputs		      "4"
+      DisplayOption	      "none"
+      BusSelectionMode	      off
+    }
+    Block {
+      BlockType		      Inport
+      Port		      "1"
+      PortDimensions	      "-1"
+      SampleTime	      "-1"
+      ShowAdditionalParam     off
+      LatchInput	      off
+      DataType		      "auto"
+      OutDataType	      "sfix(16)"
+      OutScaling	      "2^0"
+      SignalType	      "auto"
+      SamplingMode	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      "S-Function"
+      FunctionName	      "system"
+      PortCounts	      "[]"
+      SFunctionModules	      "''"
+    }
+    Block {
+      BlockType		      SubSystem
+      ShowPortLabels	      on
+      Permissions	      "ReadWrite"
+      RTWSystemCode	      "Auto"
+      RTWFcnNameOpts	      "Auto"
+      RTWFileNameOpts	      "Auto"
+      SimViewingDevice	      off
+      DataTypeOverride	      "UseLocalSettings"
+      MinMaxOverflowLogging   "UseLocalSettings"
+    }
+    Block {
+      BlockType		      Terminator
+    }
+    Block {
+      BlockType		      TriggerPort
+      TriggerType	      "rising"
+      ShowOutputPort	      off
+      OutputDataType	      "auto"
+      ZeroCross		      on
+    }
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "Super11"
+    Location		    [6, 54, 586, 314]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      SubSystem
+      Name		      "Super11"
+      Ports		      [1, 0, 0, 1]
+      Position		      [30, 14, 90, 66]
+      TreatAsAtomicUnit	      off
+      MaskType		      "Stateflow"
+      MaskDescription	      "Stateflow diagram"
+      MaskDisplay	      "plot(sf('Private','sfblk','xIcon'),sf('Private'"
+",'sfblk','yIcon'));text(0.5,0,sf('Private', 'sfblk', 'tIcon'),'HorizontalAl',"
+"'Center','VerticalAl','Bottom');"
+      MaskSelfModifiable      on
+      MaskIconFrame	      off
+      MaskIconOpaque	      off
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"Super11"
+	Location		[257, 457, 812, 717]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "x"
+	  Position		  [20, 101, 40, 119]
+	  PortDimensions	  "1"
+	}
+	Block {
+	  BlockType		  TriggerPort
+	  Name			  "E"
+	  Ports			  [0, 1]
+	  Position		  [20, 136, 40, 154]
+	  TriggerType		  "either"
+	  ShowOutputPort	  on
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  " Demux "
+	  Ports			  [1, 1]
+	  Position		  [270, 100, 320, 140]
+	  Outputs		  "1"
+	}
+	Block {
+	  BlockType		  "S-Function"
+	  Name			  " SFunction "
+	  Tag			  "Stateflow S-Function Super11 1"
+	  Ports			  [2, 1]
+	  Position		  [180, 100, 230, 160]
+	  FunctionName		  "sf_sfun"
+	  PortCounts		  "[2 1]"
+	}
+	Block {
+	  BlockType		  Terminator
+	  Name			  " Terminator "
+	  Position		  [460, 111, 480, 129]
+	}
+	Line {
+	  SrcBlock		  " Demux "
+	  SrcPort		  1
+	  DstBlock		  " Terminator "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  " SFunction "
+	  SrcPort		  1
+	  Points		  [0, -10]
+	  DstBlock		  " Demux "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "x"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "E"
+	  SrcPort		  1
+	  DstBlock		  " SFunction "
+	  DstPort		  2
+	}
+      }
+    }
+  }
+}
+
+# Finite State Machines
+# -- File save dated 09-Jun-2004 10:32:51
+#
+#    Stateflow Version 5.0 (R13) dated Jun 21 2002, 05:03:37
+#
+#
+
+Stateflow {
+
+	machine {
+		id                   		1
+		name                 		"Super11"
+		created              		"23-Apr-2004 15:02:33"
+		isLibrary            		0
+		firstTarget          		23
+		sfVersion            		50013001.000001
+	}
+
+	chart {
+		id                       		2
+		name                     		"Super11"
+		windowPosition           		[21.176 121.976 472.659 300.706]
+		viewLimits               		[0 423.53 0 259.706]
+		chartColor               		[0.991 0.991 0.991]
+		screen                   		[1 1 1152 900 1.180555555555556]
+		treeNode                 		[0 4 0 0]
+		firstTransition          		14
+		firstJunction            		8
+		viewObj                  		2
+		visible                  		1
+		machine                  		1
+		subviewS {
+		}
+		decomposition            		CLUSTER_CHART
+		firstEvent               		20
+		firstData                		21
+		chartFileNumber          		1
+	}
+
+	state {
+		id                  		3
+		labelString         		"A"
+		position            		[24.2052 100.2432 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 0 4 0]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		4
+		labelString         		"B"
+		position            		[152.9865 5.4849 233.0315 222.0834]
+		fontSize            		12
+		chart               		2
+		treeNode            		[2 5 0 3]
+		firstTransition     		16
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		5
+		labelString         		"B1"
+		position            		[208.7164 9.6785 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[4 0 0 6]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		6
+		labelString         		"B2"
+		position            		[207.5118 88.7224 169.2254 130.8292]
+		fontSize            		12
+		chart               		2
+		treeNode            		[4 7 5 0]
+		firstTransition     		17
+		firstJunction       		9
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	state {
+		id                  		7
+		labelString         		"B2a"
+		position            		[261.8235 138.1059 90 60]
+		fontSize            		12
+		chart               		2
+		treeNode            		[6 0 0 0]
+		subviewer           		2
+		type                		OR_STATE
+		decomposition       		CLUSTER_STATE
+	}
+
+	junction {
+		id         		8
+		position   		[99.753 20.4665 7]
+		chart      		2
+		linkNode   		[2 0 0]
+		subviewer  		2
+		quantum    		[0 14 0 0]
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	junction {
+		id         		9
+		position   		[272.0941 112.2 7]
+		chart      		2
+		linkNode   		[6 0 0]
+		subviewer  		2
+		quantum    		[0 0 18 0]
+		type       		CONNECTIVE_JUNCTION
+	}
+
+	transition {
+		id             		10
+		labelPosition  		[11.418 129.212 8.471 16.073]
+		fontSize       		12
+		src {
+			intersection		[0 1 0 0 5.9834 129.5503 0 0]
+		}
+		dst {
+			id          		3
+			intersection		[4 -1 0 0.5115 24.2052 129.5503 0 0]
+		}
+		midPoint       		[11.2297 129.5503]
+		chart          		2
+		linkNode       		[2 12 0]
+		dataLimits     		[5.983 24.205 127.15 131.95]
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		11
+		labelString    		"E"
+		labelPosition  		[60.791 21.63 9.318 16.073]
+		fontSize       		12
+		src {
+			id          		3
+			intersection		[1 0 -1 0.4378 63.6101 100.2432 0 -4.1546]
+		}
+		dst {
+			id          		8
+			intersection		[0 -0.8804 0.4742 -1 93.5901 23.786 0 27.5477]
+		}
+		midPoint       		[66.4128 56.8128]
+		chart          		2
+		linkNode       		[2 14 15]
+		dataLimits     		[63.312 93.59 23.786 100.243]
+		stampAngle     		-1.0767
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			mode          		MIRROR_SLIDE
+			sticky        		BOTH_STICK
+			arcL          		-36.1429
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		12
+		labelString    		"[x==0]"
+		labelPosition  		[211.644 108.401 36.424 16.073]
+		fontSize       		12
+		src {
+			id          		9
+			intersection		[0 -0.9363 0.3511 -1 265.5398 114.6579 0 0]
+		}
+		dst {
+			id          		3
+			intersection		[2 1 0 0.7075 114.2052 142.6941 0 0]
+		}
+		midPoint       		[192.0407 136.0389]
+		chart          		2
+		linkNode       		[2 15 10]
+		dataLimits     		[114.205 265.54 114.658 145.094]
+		stampAngle     		0.3588
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		30.4941
+		}
+	}
+
+	transition {
+		id             		13
+		labelString    		"E"
+		labelPosition  		[260.868 73.885 9.318 16.073]
+		fontSize       		12
+		src {
+			id          		5
+			intersection		[3 0 1 0.5445 249.7128 69.6785 0 1.9517]
+		}
+		dst {
+			id          		6
+			intersection		[1 0 -1 0.2494 249.7128 88.7224 0 -1.9517]
+		}
+		midPoint       		[249.7128 75.3537]
+		chart          		2
+		linkNode       		[4 16 19]
+		dataLimits     		[247.313 252.113 69.678 88.722]
+		stampAngle     		NaN
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		14
+		labelString    		"[x==0]"
+		labelPosition  		[108.206 3.51 36.424 16.073]
+		fontSize       		12
+		src {
+			id          		8
+			intersection		[0 1 0 -1 106.753 20.4665 0 0]
+		}
+		dst {
+			id          		4
+			intersection		[4 -1 0 0.9302 152.9865 20.9815 0 0]
+		}
+		midPoint       		[126.6141 20.7408]
+		chart          		2
+		linkNode       		[2 0 11]
+		dataLimits     		[106.753 152.987 18.582 23.381]
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			sticky        		DST_STICK
+		}
+	}
+
+	transition {
+		id             		15
+		labelString    		"[x<>0]"
+		labelPosition  		[91.9 60.021 34.729 16.073]
+		fontSize       		12
+		src {
+			id          		8
+			intersection		[0 0.5746 0.8185 -1 103.775 26.1957 0 0]
+		}
+		dst {
+			id          		7
+			intersection		[4 -1 0 0.7541 261.8235 152.8588 0 0]
+		}
+		midPoint       		[171.2086 113.4379]
+		chart          		2
+		linkNode       		[2 11 12]
+		dataLimits     		[103.775 261.824 26.196 155.259]
+		stampAngle     		-0.3309
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-14.7529
+			arcClockDir   		1
+		}
+	}
+
+	transition {
+		id             		16
+		labelPosition  		[194.583 24.106 8.471 16.073]
+		fontSize       		12
+		src {
+			intersection		[0 1 0 0 187.3882 24.1057 0 0]
+		}
+		dst {
+			id          		5
+			intersection		[4 -1 0 0.7595 208.7164 24.1057 0 0]
+		}
+		midPoint       		[194.2553 24.1057]
+		chart          		2
+		linkNode       		[4 0 13]
+		dataLimits     		[187.388 208.716 21.706 26.506]
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		17
+		labelPosition  		[305.976 124.192 8.471 16.073]
+		fontSize       		12
+		src {
+			intersection		[0 0 1 0 305.9765 117.2824 0 0]
+		}
+		dst {
+			id          		7
+			intersection		[1 0 -1 0.4906 305.9765 138.1059 0 0]
+		}
+		midPoint       		[305.9765 123.8861]
+		chart          		2
+		linkNode       		[6 0 18]
+		dataLimits     		[303.577 308.376 117.282 138.106]
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		18
+		labelString    		"E"
+		labelPosition  		[281.053 123.64 9.318 16.073]
+		fontSize       		12
+		src {
+			id          		7
+			intersection		[1 0 -1 0.1141 272.0941 138.1059 0 0]
+		}
+		dst {
+			id          		9
+			intersection		[0 0 1 -1 272.0941 119.2 0 0]
+		}
+		midPoint       		[272.0941 132.5026]
+		chart          		2
+		linkNode       		[6 17 0]
+		dataLimits     		[269.694 274.494 119.2 138.106]
+		subviewer      		2
+		drawStyle      		SMART
+	}
+
+	transition {
+		id             		19
+		labelString    		"[x<>0]"
+		labelPosition  		[287.79 93.209 34.729 16.073]
+		fontSize       		12
+		src {
+			id          		9
+			intersection		[0 0.3939 -0.9191 -1 274.8516 105.766 0 0]
+		}
+		dst {
+			id          		5
+			intersection		[3 0 1 0.1546 284.8 69.6785 0 0]
+		}
+		midPoint       		[281.9097 91.5742]
+		chart          		2
+		linkNode       		[4 13 0]
+		dataLimits     		[274.852 287.2 69.678 105.766]
+		stampAngle     		-0.4049
+		subviewer      		2
+		drawStyle      		SMART
+		slide {
+			sticky        		BOTH_STICK
+			arcL          		-12.7059
+			arcClockDir   		1
+		}
+	}
+
+	event {
+		id         		20
+		name       		"E"
+		linkNode   		[2 0 0]
+		scope      		INPUT_EVENT
+		trigger    		EITHER_EDGE_EVENT
+		machine    		1
+	}
+
+	data {
+		id               		21
+		name             		"x"
+		linkNode         		[2 0 0]
+		scope            		INPUT_DATA
+		machine          		1
+		dataType         		"int32"
+		fixptType {
+			bias    		0
+			slope   		1
+			exponent		0
+			baseType		6
+		}
+		dlgFixptMode     		0
+		props {
+			range {
+				minimum		""
+				maximum		""
+			}
+		}
+	}
+
+	instance {
+		id     		22
+		name   		"Super11"
+		machine		1
+		chart  		2
+	}
+
+	target {
+		id               		23
+		name             		"sfun"
+		description      		"Default Simulink S-Function Target."
+		machine          		1
+		linkNode         		[1 0 0]
+	}
+}
