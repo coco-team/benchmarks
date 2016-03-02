@@ -1,0 +1,4 @@
+
+type toto = enum { Up, Down };
+
+const titi = [1, 2];

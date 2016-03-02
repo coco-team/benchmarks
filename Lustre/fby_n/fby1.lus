@@ -1,0 +1,6 @@
+node toto (x:int) returns (y: bool);
+var intv: int;
+let
+  y = fbyn((pre y || x>10), 10, x>10);
+intv = fbyn(pre (x+ intv), 0, 3);
+tel

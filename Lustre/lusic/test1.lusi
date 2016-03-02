@@ -1,0 +1,14 @@
+(* Generated Lustre Interface file from test1.lusi *)
+(* by Lustre-C compiler version 323, 2014/6/23, 19:11:53 *)
+(* Feel free to mask some of the definitions by removing them from this file. *)
+
+#open "test2"
+
+type prod = struct {a : int; b : toto clock; }; 
+
+type sum = enum {One, Two, Three }; 
+
+function bool2float (x: bool) returns (y: real);
+
+node as_soon_as (x: bool) returns (y: bool);
+

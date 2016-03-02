@@ -1,0 +1,15 @@
+#open "test2"
+
+type prod = struct { a : int; b : toto clock; };
+
+type sum = enum { One, Two, Three };
+
+node bool2float (x:bool) returns (y:float)
+let
+  y = if x then 0. else 1.;
+tel
+
+node as_soon_as (x:bool) returns (y:bool)
+let
+  y = x || (false -> pre y);
+tel

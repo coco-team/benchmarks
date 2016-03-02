@@ -1,0 +1,8 @@
+(* Generated Lustre Interface file from test2.lusi *)
+(* by Lustre-C compiler version 323, 2014/6/23, 18:25:31 *)
+(* Feel free to mask some of the definitions by removing them from this file. *)
+
+type toto = enum {Up, Down }; 
+
+const titi = [1,2];
+
