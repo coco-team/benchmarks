@@ -28,8 +28,6 @@ Abs_Out1_79  = if Abs_In1_78 < 0.000000 then - Abs_In1_78 else Abs_In1_78;
 Relational_Operator_ANGL_Out1_101  = Relational_Operator_ANGL_In1_99 > 180.0;
 Sum6_Out1_111  = - Sum6_In1_109 + Sum6_In2_110;
 Switch1_ANGL_Out1_120  = if Switch1_ANGL_In2_118 then Switch1_ANGL_In1_117 else Switch1_ANGL_In3_119;
--- sign_Out1_127  = ANGL_sign ( sign_In1_126  );
--- times360_Out1_226  = 360.0 *  sign_Out1_127;
 times360_Out1_226  = if (sign_In1_126 >= 0.0) then 360.0 else -360.0;
 Relational_Operator_ANGL_In1_99  = Abs_Out1_79;
 Abs_In1_78  = in_Out1_76;
@@ -209,66 +207,3 @@ Integrator1 = Integrator1_1_Out1_598;
  tel 
 
 
-node top ( Vt : real ; HdgCmdMCP  : real ; Heading  : real)
-returns (obs : bool);
-  var  HdgCmd  : real ; 
-  HdgRteCmd  : real;
-  preCmd : real;
-  prePreCmd : real;
-  prePrePreCmd : real;
-  count : int;
-  integ : real;
-  preInteg : real;
-  dsat : real;
-let
-
-  -- HdgCmd, HdgRteCmd, integ, dsat =  HgdCmdProcessor ( Vt, HdgCmdMCP , Heading);
-  
-  HdgCmd, HdgRteCmd, integ, dsat =  HgdCmdProcessor ( Vt, 30.0 , 20.0);
-
-   assert (Vt >= 0.005) and (Vt <= 0.01);
-  -- assert true -> Vt = pre(Vt);
-
-  -- assert (HdgCmdMCP > 10.0) and (HdgCmdMCP < 170.0);
-  -- assert (Heading > 0.0) and (Heading < 180.0);
-
-  --assert Heading = 20.0;
-  --assert HdgCmdMCP = 30.0;
-
-  --assert true -> (HdgCmdMCP = pre(HdgCmdMCP));
-
-  assert (HdgCmdMCP >= Heading + 10.0);
-
-  count = 0 -> 1 + pre(count);
-  
-  preCmd = 0.0 -> pre(HdgCmd);
-  prePreCmd = 0.0 -> pre(preCmd);
-  prePrePreCmd = 0.0 -> pre(prePreCmd);  
-  preInteg = 0.0 -> pre(integ);
-  
-  -- TIMEOUT
-  -- obs = true -> (count < 5) or
-  --  (((not (HdgCmdMCP > prePrePreCmd and prePrePreCmd > prePreCmd  )) or ((HdgRteCmd > pre(HdgRteCmd)) or (HdgRteCmd > 0.0)) ) 
-  --  and ((not (HdgCmdMCP < prePrePreCmd and prePrePreCmd < prePreCmd )) or ((HdgRteCmd < pre(HdgRteCmd)) or (HdgRteCmd < 0.0)) ));
-
-  -- TIMEOUT
-  -- obs = true -> (count < 5) or ((HdgCmdMCP - HdgCmd < 10.0) and (HdgCmdMCP - HdgCmd > -10.0));
-
-  -- TIMEOUT
-  -- obs = true -> (count < 5) or
-  --  (((not (HdgCmdMCP > prePrePreCmd and prePrePreCmd > prePreCmd  )) or ((integ > pre(integ)) or (integ > 0.0)) ) and 
-  --  ((not (HdgCmdMCP < prePrePreCmd and prePrePreCmd < prePreCmd )) or ((integ < pre(integ)) or (integ < 0.0)) ));
-
-  -- TIMEOUT
-  -- obs = ((not (HdgRteCmd < 1.0)) and (HdgRteCmd > -1.0)) and
-   -- ((HdgCmdMCP = Heading) or
-   -- ((HdgCmdMCP > Heading) and (HdgCmd > Heading)) or
-   -- ((HdgCmdMCP < Heading) and (HdgCmd < Heading))); 
-
-  obs = true -> (count < 2) or
-    ((HdgCmdMCP > preCmd) and (dsat > 0.0)) or 
-    ((HdgCmdMCP < preCmd) and (dsat < 0.01)); 
-
-  --!MAIN : true;
-  --!PROPERTY: obs = true;
-tel
