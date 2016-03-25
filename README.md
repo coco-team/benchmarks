@@ -1,3 +1,3 @@
-# CoCo Benchmarks
+# Benchmarks
 
-A set of benchmarks for CoCoSim, Zustre and LustreC.
+This repo contains different set of Lustre, Simulink and Statflow benchmarks.
