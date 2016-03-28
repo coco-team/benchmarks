@@ -1,0 +1,138 @@
+node main(
+  start : bool;
+  clear : bool;
+  seconds_to_cook : int;
+  door_closed : bool;
+  st_pr : bool;
+  cl_pr : bool;
+  sm : int;
+  is_cooking : bool;
+  is_setup : bool;
+  is_suspended : bool;
+  is_running : bool;
+  cooking_mode : int
+) returns (
+
+);
+var
+  __GUARANTEE0 : bool;
+  __GUARANTEE1 : bool;
+  __GUARANTEE2 : bool;
+  __GUARANTEE3 : bool;
+  __GUARANTEE4 : bool;
+  __GUARANTEE5 : bool;
+  __GUARANTEE6 : bool;
+  __GUARANTEE7 : bool;
+  __GUARANTEE8 : bool;
+let
+  --%MAIN;
+  __GUARANTEE0 = ((cooking_mode >= 1) and (cooking_mode <= 3));
+
+  __GUARANTEE1 = (is_cooking => door_closed);
+
+  __GUARANTEE2 = defs__initially_true(is_setup);
+
+  __GUARANTEE3 = ((defs__rising_edge(is_running) and door_closed) => is_cooking);
+
+  __GUARANTEE4 = ((defs__rising_edge(is_running) and (not door_closed)) => is_suspended);
+
+  __GUARANTEE5 = (true -> ((defs__rising_edge(clear) and (pre is_cooking)) => (not is_cooking)));
+
+  __GUARANTEE6 = (true -> ((defs__rising_edge(clear) and (pre is_suspended)) => is_setup));
+
+  __GUARANTEE7 = (true -> (((((defs__rising_edge(start) and (pre is_suspended)) and door_closed) and (seconds_to_cook > 0)) and (not clear)) => is_cooking));
+
+  __GUARANTEE8 = ((seconds_to_cook = 0) => is_setup);
+
+  assert (seconds_to_cook >= 0);
+
+  assert (cooking_mode = sm);
+
+  assert (st_pr = defs__rising_edge(start));
+
+  assert (cl_pr = defs__rising_edge(clear));
+
+  assert (sm = (1 -> (if (((pre defs__is_setup(sm)) and st_pr) and (seconds_to_cook > 0)) then (if door_closed then 3 else 2) else (if ((pre defs__is_running(sm)) and (seconds_to_cook <= 0)) then 1 else (if ((pre defs__is_cooking(sm)) and (cl_pr or (not door_closed))) then 2 else (if ((pre defs__is_suspended(sm)) and cl_pr) then 1 else (if ((pre defs__is_suspended(sm)) and door_closed) then 3 else (pre sm))))))));
+
+  assert (is_cooking = defs__is_cooking(cooking_mode));
+
+  assert (is_setup = defs__is_setup(cooking_mode));
+
+  assert (is_suspended = defs__is_suspended(cooking_mode));
+
+  assert (is_running = defs__is_running(cooking_mode));
+
+  assert true;
+
+  --%PROPERTY __GUARANTEE0;
+  --%PROPERTY __GUARANTEE1;
+  --%PROPERTY __GUARANTEE2;
+  --%PROPERTY __GUARANTEE3;
+  --%PROPERTY __GUARANTEE4;
+  --%PROPERTY __GUARANTEE5;
+  --%PROPERTY __GUARANTEE6;
+  --%PROPERTY __GUARANTEE7;
+  --%PROPERTY __GUARANTEE8;
+
+tel;
+
+node defs__rising_edge(
+  signal : bool
+) returns (
+  re : bool
+);
+let
+  re = (signal and (not (false -> (pre signal))));
+
+tel;
+
+node defs__is_setup(
+  m : int
+) returns (
+  _outvar : bool
+);
+let
+  _outvar = (m = 1);
+
+tel;
+
+node defs__is_running(
+  m : int
+) returns (
+  _outvar : bool
+);
+let
+  _outvar = ((m = 3) or (m = 2));
+
+tel;
+
+node defs__is_cooking(
+  m : int
+) returns (
+  _outvar : bool
+);
+let
+  _outvar = (m = 3);
+
+tel;
+
+node defs__is_suspended(
+  m : int
+) returns (
+  _outvar : bool
+);
+let
+  _outvar = (m = 2);
+
+tel;
+
+node defs__initially_true(
+  b : bool
+) returns (
+  result : bool
+);
+let
+  result = (b -> (pre true));
+
+tel;
+
