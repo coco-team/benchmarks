@@ -1,0 +1,66 @@
+node abs(in: real) returns (out: real) ;
+let
+  out = if in <= 0.0 then -in else in ;
+tel
+
+node switch( on, off: bool ) returns ( out: bool ) ;
+let
+  out = not off and (on -> on or pre out);
+tel
+
+contract ml_spec (
+  altRequest, fpaRequest, deactivate : bool ; altitude, targetAlt : real
+) returns ( altEngaged, fpaEngaged: bool ) ;
+let
+  var altRequested: bool = switch(altRequest, deactivate) ;
+  var fpaRequested: bool = switch(fpaRequest, deactivate) ;
+  var smallGap: bool = abs(altitude - targetAlt) < 200.0 ;
+
+  assume altitude >= 0.0 ; assume targetAlt >= 0.0 ;
+  guarantee not altEngaged or not fpaEngaged ;
+  mode guide210Alt (
+    require smallGap ; require altRequested ;
+    ensure altEngaged ;
+  ) ;
+  mode guide210FPA (
+    require smallGap ; require fpaRequested ; require not altRequested ;
+    ensure fpaEngaged ;
+  ) ;
+  mode guide180 (
+    require not smallGap ; require fpaRequested ;
+    ensure fpaEngaged ;
+  ) ;
+  mode guide170 (
+    require not smallGap ; require altRequested ; require not fpaRequested ;
+    ensure altEngaged ;
+  ) ;
+  mode noAlt (
+    require not altRequested ;
+    ensure not altEngaged ;
+  ) ;
+  mode noFPA (
+    require not fpaRequested ;
+    ensure not fpaEngaged ;
+  ) ;
+
+tel
+
+node ml (
+  altRequest, fpaRequest, deactivate : bool ; altitude, targetAlt : real
+) returns ( altEngaged, fpaEngaged: bool ) ;
+(*@contract
+
+  import ml_spec (
+    altRequest, fpaRequest, deactivate, altitude, targetAlt
+  ) returns (
+    altEngaged, fpaEngaged
+  ) ;
+*)
+var altRequested, fpaRequested, smallGap: bool ;
+let
+  altRequested = switch(altRequest, deactivate) ;
+  fpaRequested = switch(fpaRequest, deactivate) ;
+  smallGap = abs(altitude - targetAlt) < 200.0 ;
+  altEngaged = altRequested and (smallGap or not fpaRequested) ;
+  fpaEngaged = fpaRequested and not (smallGap and altRequested) ;
+tel

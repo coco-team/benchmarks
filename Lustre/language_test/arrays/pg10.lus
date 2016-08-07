@@ -1,0 +1,40 @@
+type char = subrange [32,254] of int;
+
+node pg1 (m : bool^10^9) returns (ok : bool);
+var
+all_allocated : bool;
+exists_shared_hole : bool;
+v_98 : bool^10;
+v_100 : bool^10;
+v_80_x104 : bool^10^9;
+v_78_x105 : bool^10^9;
+v_64_x106 : bool^10;
+v_112 : bool^9^10;
+v_116 : bool^9;
+v_118 : bool^9;
+v_94_x122 : int^9^10;
+v_92_x123 : int^9^10;
+o_x70_x124 : int^9;
+pigeons_x69_x125 : bool^9^10;
+v_66_x126 : int^9;
+
+let
+ok = (not all_allocated) or exists_shared_hole;
+all_allocated = v_98[9];
+exists_shared_hole = v_116[8];
+v_98[i1] = v_100[i1] and v_64_x106[i1];
+v_100[i1] = if i1 = 0 then true else v_98[i1 - 1];
+v_80_x104[i1][i2] = if i2 = 0 then false else v_78_x105[i1][i2 - 1];
+v_78_x105[i1][i2] = v_80_x104[i1][i2] or m[i1][i2];
+v_64_x106[i1] = v_78_x105[i1][8];
+v_112[i1][i2] = m[i2][i1];
+v_116[i1] = v_118[i1] or (v_66_x126[i1] > 1);
+v_118[i1] = if i1 = 0 then false else v_116[i1 - 1];
+v_94_x122[i1][i2] = if i2 = 0 then 0 else v_92_x123[i1][i2 - 1];
+v_92_x123[i1][i2] =
+  if pigeons_x69_x125[i1][i2] then v_94_x122[i1][i2] + 1 else v_94_x122[i1][i2];
+o_x70_x124[i1] = v_92_x123[i1][9];
+pigeons_x69_x125[i1][i2] = v_112[i1][i2];
+v_66_x126[i1] = o_x70_x124[i1];
+--%PROPERTY ok;
+tel

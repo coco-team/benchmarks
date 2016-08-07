@@ -1,0 +1,648 @@
+node top
+  (onOff: bool;
+  decelSet: bool;
+  accelResume: bool;
+  cancel: bool;
+  brakePedal: bool;
+  carGear: int;
+  carSpeed: real;
+  validInputs: bool)
+returns
+  (OK: bool);
+
+var
+  V11_mode: int;
+  V12_cruiseThrottle: real;
+  V13_desiredSpeed: real;
+  V14_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeDecreaseInDesiredSpeed_rlt_clock: bool;
+  V15_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeDecreaseInDesiredSpeed_rlt_init_step: bool;
+  V16_newDesiredSpeed1: real;
+  V17_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeIncreaseInDesiredSpeed_rlt_clock: bool;
+  V18_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeIncreaseInDesiredSpeed_rlt_init_step: bool;
+  V19_newDesiredSpeed: real;
+  V20_chart_CruiseController_ModeLogic_mode_logic_onOff: int;
+  V21_chart_CruiseController_ModeLogic_mode_logic_decel: int;
+  V22_chart_CruiseController_ModeLogic_mode_logic_set: int;
+  V23_chart_CruiseController_ModeLogic_mode_logic_accel: int;
+  V24_chart_CruiseController_ModeLogic_mode_logic_safetyCondition: int;
+  V26_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0: 
+  bool;
+  V27_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root: int;
+  V28_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed: int;
+  V29_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root: int;
+  V30_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_1: 
+  bool;
+  V31_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_1: 
+  bool;
+  V32_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root: int;
+  V33_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode: int;
+  V34_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed: int;
+  V35_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root: int;
+  V36_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_2: 
+  bool;
+  V37_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_2: 
+  bool;
+  V38_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root: int;
+  V39_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode: int;
+  V40_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root: int;
+  V41_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_3: 
+  bool;
+  V42_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_3: 
+  bool;
+  V43_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root: int;
+  V44_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_outports_mode: int;
+  V45_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root: int;
+  V46_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode: int;
+  V47_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_4: 
+  bool;
+  V48_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root: int;
+  V49_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root: int;
+  V50_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2: int;
+  V51_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02: 
+  bool;
+  V52_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rltCheckEntryStateConsistency_02: bool;
+  V53_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2: int;
+  V54_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root1: int;
+  V55_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_01: 
+  bool;
+  V56_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rltCheckEntryStateConsistency_01: bool;
+  V57_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root1: int;
+  V58_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root: int;
+  V59_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0: 
+  bool;
+  V60_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rltCheckEntryStateConsistency_0: bool;
+  V61_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root: int;
+  V62_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0: bool;
+  V63_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root: int;
+  V64_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root: int;
+  V65_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1: bool;
+  V66_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_1: bool;
+  V67_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root: int;
+  V68_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_4_outports_mode: int;
+  V69_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root: int;
+  V70_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2: bool;
+  V71_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_2: bool;
+  V72_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root: int;
+  V73_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode: int;
+  V74_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root: int;
+  V75_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3: bool;
+  V76_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_3: bool;
+  V77_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode: int;
+  V78_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root: int;
+  V79_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed: int;
+  V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root: int;
+  V81_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode: int;
+  V82_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root: int;
+  V83_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0: bool;
+  V84_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rltCheckEntryStateConsistency_0: bool;
+  V85_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root: int;
+  V86_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_0: bool;
+  V87_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root: 
+  int;
+  V88_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root: 
+  int;
+  V89_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed: int;
+  V90_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_1: bool;
+  V91_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_complete_1: bool;
+  V92_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root: 
+  int;
+  V93_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_outports_mode: 
+  int;
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root: 
+  int;
+  V95_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_outports_mode: 
+  int;
+  V96_rlt_enter_CruiseController_ModeLogic_mode_logic_rltCheckEntryStateConsistency_0: bool;
+  V97_rlt_enter_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root
+  : int;
+  V98_chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep: bool;
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root: 
+  int;
+  V100_chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode: 
+  int;
+  V101_chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed: int;
+  V102_chart_CruiseController_ModeLogic_mode_logic_final_state_states___root: 
+  int;
+  V103_chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed: int;
+  V104_cruise_controller_CruiseController_ModeLogic_DelayOnsetAccel_Bounded_Count_Out: int;
+  V105_cruise_controller_CruiseController_ModeLogic_DelayOnsetDecel_Bounded_Count_Out: int;
+  V106_cruise_controller_CruiseController_ModeLogic_resumeEvent_Out: bool;
+  V107_cruise_controller_CruiseController_ModeLogic_safetyCondition_safetyCondition: bool;
+  V108_cruise_controller_CruiseController_ModeLogic_setEvent_Out: bool;
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed: bool;
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed: 
+  real;
+  V111_cruise_controller_CruiseController_SetDesiredSpeed_GOTOL_prevDesiredSpeed: real;
+  V112_cruise_controller_CruiseController_SetThrottle_cruiseThrottlePrevPlusDelta: real;
+
+let
+  OK = ((not (V11_mode = 6)) or (V13_desiredSpeed >= (0.000000E+00 -> (pre 
+  V13_desiredSpeed))));
+  V11_mode = (if 
+  V98_chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep then (if (not 
+  (V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root = 
+  1)) then 1 else 
+  V100_chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode) 
+  else (if ((not 
+  V91_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_complete_1) and ((
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  >= 2) and (
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  <= 8))) then (if ((not 
+  V76_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_3) and ((V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root >= 3) and (V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root <= 6))) then (if 
+  V47_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_4 then 
+  (if (not (V48_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root = 4)) then 4 else V46_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode) else V46_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode) else V81_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode) else 
+  V95_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_outports_mode)
+  );
+  V12_cruiseThrottle = (if (((if (V11_mode = 4) then true else false) or (if (
+  V11_mode = 5) then true else false)) or (if (V11_mode = 6) then true else 
+  false)) then (if (V112_cruise_controller_CruiseController_SetThrottle_cruiseThrottlePrevPlusDelta < 0.000000E+00) then 0.000000E+00 else (if (V112_cruise_controller_CruiseController_SetThrottle_cruiseThrottlePrevPlusDelta > 
+  1.000000E+02) then 1.000000E+02 else V112_cruise_controller_CruiseController_SetThrottle_cruiseThrottlePrevPlusDelta)) else 0.000000E+00);
+  V13_desiredSpeed = (if ((if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  < 0.000000E+00) then 0.000000E+00 else (if ((if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  > 1.000000E+02) then 1.000000E+02 else (if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed)
+  ));
+  V14_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeDecreaseInDesiredSpeed_rlt_clock = (if (V11_mode = 5) then true else false);
+  V15_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeDecreaseInDesiredSpeed_rlt_init_step = (true -> (if (pre V14_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeDecreaseInDesiredSpeed_rlt_clock) then false else (pre V15_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeDecreaseInDesiredSpeed_rlt_init_step)));
+  V16_newDesiredSpeed1 = ((if (V15_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeDecreaseInDesiredSpeed_rlt_init_step and (not V14_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeDecreaseInDesiredSpeed_rlt_clock)) then 0.000000E+00 else (V111_cruise_controller_CruiseController_SetDesiredSpeed_GOTOL_prevDesiredSpeed - 5.000000E-02)) -> 
+  (if (V15_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeDecreaseInDesiredSpeed_rlt_init_step and (not V14_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeDecreaseInDesiredSpeed_rlt_clock)) 
+  then 0.000000E+00 else (if V14_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeDecreaseInDesiredSpeed_rlt_clock then (V111_cruise_controller_CruiseController_SetDesiredSpeed_GOTOL_prevDesiredSpeed - 5.000000E-02
+  ) else (pre V16_newDesiredSpeed1))));
+  V17_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeIncreaseInDesiredSpeed_rlt_clock = (if (V11_mode = 6) then true else false);
+  V18_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeIncreaseInDesiredSpeed_rlt_init_step = (true -> (if (pre V17_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeIncreaseInDesiredSpeed_rlt_clock) then false else (pre V18_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeIncreaseInDesiredSpeed_rlt_init_step)));
+  V19_newDesiredSpeed = ((if (V18_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeIncreaseInDesiredSpeed_rlt_init_step and (not V17_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeIncreaseInDesiredSpeed_rlt_clock)) then 0.000000E+00 else (V111_cruise_controller_CruiseController_SetDesiredSpeed_GOTOL_prevDesiredSpeed + 5.000000E-02)) -> 
+  (if (V18_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeIncreaseInDesiredSpeed_rlt_init_step and (not V17_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeIncreaseInDesiredSpeed_rlt_clock)) 
+  then 0.000000E+00 else (if V17_rlt_condact_cruise_controller_CruiseController_SetDesiredSpeed_computeIncreaseInDesiredSpeed_rlt_clock then (V111_cruise_controller_CruiseController_SetDesiredSpeed_GOTOL_prevDesiredSpeed + 5.000000E-02
+  ) else (pre V19_newDesiredSpeed))));
+  V20_chart_CruiseController_ModeLogic_mode_logic_onOff = (if (onOff = false) 
+  then 0 else 1);
+  V21_chart_CruiseController_ModeLogic_mode_logic_decel = (if ((if (V105_cruise_controller_CruiseController_ModeLogic_DelayOnsetDecel_Bounded_Count_Out = 20) 
+  then true else false) = false) then 0 else 1);
+  V22_chart_CruiseController_ModeLogic_mode_logic_set = (if (
+  V108_cruise_controller_CruiseController_ModeLogic_setEvent_Out = false) then 
+  0 else 1);
+  V23_chart_CruiseController_ModeLogic_mode_logic_accel = (if ((if (V104_cruise_controller_CruiseController_ModeLogic_DelayOnsetAccel_Bounded_Count_Out = 20) 
+  then true else false) = false) then 0 else 1);
+  V24_chart_CruiseController_ModeLogic_mode_logic_safetyCondition = (if (V107_cruise_controller_CruiseController_ModeLogic_safetyCondition_safetyCondition = 
+  false) then 0 else 1);
+  V26_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0 = ((V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root = 4) and (V22_chart_CruiseController_ModeLogic_mode_logic_set = 1));
+  V27_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root = (if 
+  V26_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0 then 
+  (if (V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root = 4) then 3 else V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root) else V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root);
+  V28_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed = (if 
+  V26_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0 then 
+  1 else V79_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed);
+  V29_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root = (if 
+  V26_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0 then 
+  (if (not (V27_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root = 4)) then 4 else V27_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root) else V27_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root);
+  V30_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_1 = ((V29_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root = 4) and ((V23_chart_CruiseController_ModeLogic_mode_logic_accel = 1
+  ) and (not 
+  V26_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0)));
+  V31_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_1 = 
+  (V30_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_1 or 
+  V26_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0);
+  V32_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root = (if 
+  V30_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_1 then 
+  (if (V29_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root = 4) then 3 else V29_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root) else V29_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root);
+  V33_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode = (if 
+  V26_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0 then 
+  (if (not (V27_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_states___root = 4)) then 4 else V81_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode) else V81_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode);
+  V34_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed = (if 
+  V30_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_1 then 
+  (if (V29_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root = 4) then 0 else V28_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed) else V28_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_2_outports_setDesiredSpeed)
+  ;
+  V35_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root = (if 
+  V30_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_1 then 
+  (if (not (V32_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root = 5)) then 5 else V32_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root) else V32_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root);
+  V36_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_2 = ((V35_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root = 4) and ((V21_chart_CruiseController_ModeLogic_mode_logic_decel = 1
+  ) and (not 
+  V31_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_1))
+  );
+  V37_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_2 = 
+  (V36_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_2 or 
+  V31_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_1);
+  V38_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root = (if 
+  V36_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_2 then 
+  (if (V35_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root = 4) then 3 else V35_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root) else V35_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root);
+  V39_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode = (if 
+  V30_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_1 then 
+  (if (not (V32_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_states___root = 5)) then 6 else V33_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode) else V33_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_mode);
+  V40_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root = (if 
+  V36_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_2 then 
+  (if (not (V38_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root = 6)) then 6 else V38_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root) else V38_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root);
+  V41_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_3 = ((V40_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root = 6) and ((V21_chart_CruiseController_ModeLogic_mode_logic_decel = 0
+  ) and (not 
+  V37_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_2))
+  );
+  V42_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_3 = 
+  (V41_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_3 or 
+  V37_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_2);
+  V43_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root = (if 
+  V41_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_3 then 
+  (if (V40_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root = 6) then 3 else V40_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root) else V40_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_7_states___root);
+  V44_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_outports_mode = (if 
+  V36_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_2 then 
+  (if (not (V38_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_states___root = 6)) then 5 else V39_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode) else V39_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_6_outports_mode);
+  V45_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root = (if 
+  V41_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_3 then 
+  (if (not (V43_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root = 4)) then 4 else V43_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root) else V43_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root);
+  V46_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_outports_mode = (if 
+  V41_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_3 then 
+  (if (not (V43_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_states___root = 4)) then 4 else V44_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_outports_mode) else V44_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_8_outports_mode);
+  V47_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_4 = ((V45_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root = 5) and ((V23_chart_CruiseController_ModeLogic_mode_logic_accel = 0
+  ) and (not 
+  V42_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_3))
+  );
+  V48_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root = (if 
+  V47_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_4 then 
+  (if (V45_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root = 5) then 3 else V45_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root) else V45_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_9_states___root);
+  V49_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root = (if 
+  V47_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_4 then 
+  (if (not (V48_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root = 4)) then 4 else V48_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root) else V48_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_10_states___root);
+  V50_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2 = (if (not ((V78_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root >= 3) and (V78_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root <= 6))) then 3 else V78_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root);
+  V51_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02 = 
+  ((not ((V78_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root >= 3) and (V78_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root <= 6))) and ((V50_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2 >= 3) and (V50_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2 <= 6)))
+  ;
+  V52_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rltCheckEntryStateConsistency_02 = ((V53_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2 = 4) or ((V53_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2 = 5) or (V53_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2 = 6)
+  ));
+  V53_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2 = (if 
+  V51_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02 
+  then (if (not (V50_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2 = 4)) then 4 else V50_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2) else V50_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2);
+  V54_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root1 = (if (not ((V72_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root >= 3) and (V72_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root <= 6))) then 3 else V72_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root);
+  V55_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_01 = 
+  ((not ((V72_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root >= 3) and (V72_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root <= 6))) and ((V54_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root1 >= 3) and (V54_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root1 <= 6)))
+  ;
+  V56_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rltCheckEntryStateConsistency_01 = ((V57_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root1 = 4) or ((V57_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root1 = 5) or (V57_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root1 = 6)
+  ));
+  V57_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root1 = (if 
+  V55_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_01 
+  then (if (not (V54_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root1 = 4)) then 4 else V54_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root1) else V54_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root1);
+  V58_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root = (if (not ((V67_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root >= 3) and (V67_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root <= 6))) then 3 else V67_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root);
+  V59_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0 = (
+  (not ((V67_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root >= 3) and (V67_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root <= 6))) and ((V58_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root >= 3) and (V58_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root <= 6)));
+  V60_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rltCheckEntryStateConsistency_0 = ((V61_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root = 4) or ((V61_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root = 5) or (V61_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root = 6)));
+  V61_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root = (if 
+  V59_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0 
+  then (if (not (V58_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root = 4)) then 4 else V58_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root) else V58_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root);
+  V62_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0 = (((
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  >= 3) and (
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  <= 6)) and (not (if (
+  V24_chart_CruiseController_ModeLogic_mode_logic_safetyCondition <> 0) then 
+  true else false)));
+  V63_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root = (if V62_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0 
+  then (if ((
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  >= 3) and (
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  <= 6)) then 2 else 
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root) 
+  else 
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root)
+  ;
+  V64_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root = (if V62_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0 
+  then (if (not (V63_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root = 8)) then 8 else V63_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root) else V63_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root);
+  V65_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1 = ((V64_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root = 8) 
+  and (((if ((if ((V22_chart_CruiseController_ModeLogic_mode_logic_set = 1) = 
+  false) then 0 else 1) <> 0) then true else false) and (if ((if ((
+  V24_chart_CruiseController_ModeLogic_mode_logic_safetyCondition = 1) = false) 
+  then 0 else 1) <> 0) then true else false)) and (not 
+  V62_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0)));
+  V66_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_1 = (
+  V65_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1 or 
+  V62_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0);
+  V67_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root = (if V65_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1 
+  then (if (V64_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root = 8) then 2 else V64_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root) else V64_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_2_states___root);
+  V68_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_4_outports_mode = (if V62_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0 
+  then (if (not (V63_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root = 8)) then 3 else 
+  V95_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_outports_mode) 
+  else 
+  V95_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_outports_mode)
+  ;
+  V69_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root = (if V65_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1 
+  then V61_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root else V67_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root);
+  V70_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2 = ((V69_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root = 8) 
+  and (((if ((if (((if (
+  V106_cruise_controller_CruiseController_ModeLogic_resumeEvent_Out = false) 
+  then 0 else 1) = 1) = false) then 0 else 1) <> 0) then true else false) and 
+  (if ((if ((V24_chart_CruiseController_ModeLogic_mode_logic_safetyCondition = 
+  1) = false) then 0 else 1) <> 0) then true else false)) and (not 
+  V66_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_1)));
+  V71_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_2 = (
+  V70_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2 or 
+  V66_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_1);
+  V72_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root = (if V70_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2 
+  then (if (V69_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root = 8) then 2 else V69_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root) else V69_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_5_states___root);
+  V73_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode = (if V65_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1 
+  then (if 
+  V59_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_0 
+  then (if (not (V58_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root = 4)) then 4 else V68_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_4_outports_mode) else V68_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_4_outports_mode) else V68_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_4_outports_mode);
+  V74_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root = (if V70_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2 
+  then V57_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root1 else V72_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_states___root);
+  V75_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3 = ((V74_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root = 7) 
+  and (((if ((if ((V22_chart_CruiseController_ModeLogic_mode_logic_set = 1) = 
+  false) then 0 else 1) <> 0) then true else false) and (if ((if ((
+  V24_chart_CruiseController_ModeLogic_mode_logic_safetyCondition = 1) = false) 
+  then 0 else 1) <> 0) then true else false)) and (not 
+  V71_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_2)));
+  V76_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_3 = (
+  V75_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3 or 
+  V71_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_2);
+  V77_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode = (if V70_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_2 
+  then (if 
+  V55_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_01 
+  then (if (not (V54_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root1 = 4)) then 4 else V73_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode) else V73_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode) else V73_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_6_outports_mode);
+  V78_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root = (if V75_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3 
+  then (if (V74_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root = 7) then 2 else V74_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root) else V74_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_7_states___root);
+  V79_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed = (if 
+  V75_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3 then 1 else 
+  (if V65_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_1 then 1 
+  else (if V62_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0 
+  then (if ((
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  >= 3) and (
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  <= 6)) then (if (
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  = 4) then 0 else V89_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed) else V89_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed) else V89_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed)));
+  V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root = (if V75_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3 
+  then V53_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_3_states___root2 else V78_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_states___root);
+  V81_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_outports_mode = (if V75_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_fired_3 
+  then (if 
+  V51_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_02 
+  then (if (not (V50_rlt_enter_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_1_states___root2 = 4)) then 4 else V77_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode) else V77_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode) else V77_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_8_outports_mode);
+  V82_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root = (if (not ((
+  V92_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root 
+  >= 2) and (
+  V92_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root 
+  <= 8))) then 2 else 
+  V92_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root)
+  ;
+  V83_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0 = ((not ((
+  V92_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root 
+  >= 2) and (
+  V92_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root 
+  <= 8))) and ((V82_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root >= 2) and (V82_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root <= 8)));
+  V84_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rltCheckEntryStateConsistency_0 = (((V85_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root >= 3) and (V85_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root <= 6)) or ((V85_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root = 7) or (V85_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root = 8)));
+  V85_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root = (if V83_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0 
+  then (if (not (V82_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root = 7)) then 7 else V82_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root) else V82_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root);
+  V86_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_0 = (((
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root >= 
+  2) and (
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root <= 
+  8)) and (not (if (V20_chart_CruiseController_ModeLogic_mode_logic_onOff <> 0) 
+  then true else false)));
+  V87_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root 
+  = (if V86_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_0 then (if 
+  ((V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root 
+  >= 2) and (
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root <= 
+  8)) then 0 else 
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root) 
+  else 
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root);
+  V88_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root 
+  = (if V86_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_0 then (if 
+  (not (
+  V87_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root 
+  = 1)) then 1 else 
+  V87_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root) 
+  else 
+  V87_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root)
+  ;
+  V89_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed = (if 
+  V86_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_0 then (if ((
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root >= 
+  2) and (
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root <= 
+  8)) then (if ((
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root >= 
+  3) and (
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root <= 
+  6)) then (if (
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root = 4
+  ) then 0 else V101_chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed) else V101_chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed) else V101_chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed) else V101_chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed);
+  V90_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_1 = ((
+  V88_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root 
+  = 1) and ((if (V20_chart_CruiseController_ModeLogic_mode_logic_onOff <> 0) 
+  then true else false) and (not 
+  V86_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_0)));
+  V91_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_complete_1 = (
+  V90_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_1 or 
+  V86_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_0);
+  V92_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root 
+  = (if V90_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_1 then (if 
+  (V88_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root 
+  = 1) then 0 else 
+  V88_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root) 
+  else 
+  V88_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root)
+  ;
+  V93_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_outports_mode 
+  = (if V86_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_0 then (if 
+  (not (
+  V87_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_1_states___root 
+  = 1)) then 1 else 
+  V100_chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode) 
+  else 
+  V100_chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode);
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  = (if V90_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_1 then V85_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_3_states___root 
+  else 
+  V92_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_states___root)
+  ;
+  V95_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_outports_mode 
+  = (if V90_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_fired_1 then (if 
+  V83_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_fired_0 then (if 
+  (not (V82_rlt_enter_CruiseController_ModeLogic_mode_logic_On_rlt_state_1_states___root = 7)) then 2 else 
+  V93_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_outports_mode) 
+  else 
+  V93_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_outports_mode) 
+  else 
+  V93_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_3_outports_mode)
+  ;
+  V96_rlt_enter_CruiseController_ModeLogic_mode_logic_rltCheckEntryStateConsistency_0 = ((
+  V97_rlt_enter_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root 
+  = 1) or ((
+  V97_rlt_enter_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root 
+  >= 2) and (
+  V97_rlt_enter_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root 
+  <= 8)));
+  V97_rlt_enter_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root 
+  = (if (not (
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root = 1
+  )) then 1 else 
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root);
+  V98_chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep = (true -> 
+  (if (pre true) then false else (pre 
+  V98_chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep)));
+  V99_chart_CruiseController_ModeLogic_mode_logic_begin_state_states___root = (
+  0 -> (pre 
+  V102_chart_CruiseController_ModeLogic_mode_logic_final_state_states___root));
+  V100_chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_mode = 
+  (0 -> (pre V11_mode));
+  V101_chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed = (0 -> (pre 
+  V103_chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed));
+  V102_chart_CruiseController_ModeLogic_mode_logic_final_state_states___root = 
+  (if V98_chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep then 
+  V97_rlt_enter_CruiseController_ModeLogic_mode_logic_rlt_state_2_states___root 
+  else (if ((not 
+  V91_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_complete_1) and ((
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  >= 2) and (
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  <= 8))) then (if ((not 
+  V76_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_3) and ((V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root >= 3) and (V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root <= 6))) then V49_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root else V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root) else 
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root)
+  );
+  V103_chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed = (if 
+  V98_chart_CruiseController_ModeLogic_mode_logic_rlt_evtInitStep then V101_chart_CruiseController_ModeLogic_mode_logic_begin_state_outports_setDesiredSpeed 
+  else (if ((not 
+  V91_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_complete_1) and ((
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  >= 2) and (
+  V94_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_4_states___root 
+  <= 8))) then (if ((not 
+  V76_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_complete_3) and ((V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root >= 3) and (V80_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_10_states___root <= 6))) then (if ((not (
+  V47_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_4 or 
+  V42_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_complete_3)) 
+  and (V49_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_15_states___root = 4)) then 0 else (if 
+  V36_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_fired_2 then 
+  (if (V35_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_5_states___root = 4) then 0 else V34_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed) else V34_rlt_eval_CruiseController_ModeLogic_mode_logic_On_Active_rlt_state_4_outports_setDesiredSpeed)
+  ) else V79_rlt_eval_CruiseController_ModeLogic_mode_logic_On_rlt_state_9_outports_setDesiredSpeed) else V89_rlt_eval_CruiseController_ModeLogic_mode_logic_rlt_state_2_outports_setDesiredSpeed));
+  V104_cruise_controller_CruiseController_ModeLogic_DelayOnsetAccel_Bounded_Count_Out = ((if ((if (0 >= (if accelResume then 1 else 0)) then 0 else (if 
+  accelResume then 1 else 0)) <= 20) then (if (0 >= (if accelResume then 1 else 
+  0)) then 0 else (if accelResume then 1 else 0)) else 20) -> (if ((if (0 >= 
+  (if accelResume then ((pre V104_cruise_controller_CruiseController_ModeLogic_DelayOnsetAccel_Bounded_Count_Out) + 1) else 0)) then 0 else (if accelResume 
+  then ((pre V104_cruise_controller_CruiseController_ModeLogic_DelayOnsetAccel_Bounded_Count_Out) + 1) else 0)) <= 20) then (if (0 >= (if accelResume then (
+  (pre V104_cruise_controller_CruiseController_ModeLogic_DelayOnsetAccel_Bounded_Count_Out) + 1) else 0)) then 0 else (if accelResume then ((pre V104_cruise_controller_CruiseController_ModeLogic_DelayOnsetAccel_Bounded_Count_Out) + 1) 
+  else 0)) else 20));
+  V105_cruise_controller_CruiseController_ModeLogic_DelayOnsetDecel_Bounded_Count_Out = ((if ((if (0 >= (if decelSet then 1 else 0)) then 0 else (if decelSet 
+  then 1 else 0)) <= 20) then (if (0 >= (if decelSet then 1 else 0)) then 0 
+  else (if decelSet then 1 else 0)) else 20) -> (if ((if (0 >= (if decelSet 
+  then ((pre V105_cruise_controller_CruiseController_ModeLogic_DelayOnsetDecel_Bounded_Count_Out) + 1) else 0)) then 0 else (if decelSet then ((pre V105_cruise_controller_CruiseController_ModeLogic_DelayOnsetDecel_Bounded_Count_Out) + 
+  1) else 0)) <= 20) then (if (0 >= (if decelSet then ((pre V105_cruise_controller_CruiseController_ModeLogic_DelayOnsetDecel_Bounded_Count_Out) + 1) else 0)
+  ) then 0 else (if decelSet then ((pre V105_cruise_controller_CruiseController_ModeLogic_DelayOnsetDecel_Bounded_Count_Out) + 1) else 0)) else 20));
+  V106_cruise_controller_CruiseController_ModeLogic_resumeEvent_Out = (false -> 
+  ((not (pre accelResume)) and accelResume));
+  V107_cruise_controller_CruiseController_ModeLogic_safetyCondition_safetyCondition = (((((not cancel) and (not brakePedal)) and (if (carGear = 3) then true 
+  else false)) and (if (carSpeed >= 1.500000E+01) then true else false)) and 
+  validInputs);
+  V108_cruise_controller_CruiseController_ModeLogic_setEvent_Out = (false -> (
+  (not (pre decelSet)) and decelSet));
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed = (if 
+  (V103_chart_CruiseController_ModeLogic_mode_logic_setDesiredSpeed <> 0) then 
+  true else false);
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed 
+  = (if (if (V11_mode = 6) then true else false) then V19_newDesiredSpeed else 
+  (if (if (V11_mode = 5) then true else false) then V16_newDesiredSpeed1 else 
+  (if (if (V11_mode = 4) then true else false) then V111_cruise_controller_CruiseController_SetDesiredSpeed_GOTOL_prevDesiredSpeed else (if (if (V11_mode = 3
+  ) then true else false) then V111_cruise_controller_CruiseController_SetDesiredSpeed_GOTOL_prevDesiredSpeed else 0.000000E+00))));
+  V111_cruise_controller_CruiseController_SetDesiredSpeed_GOTOL_prevDesiredSpeed = (0.000000E+00 -> (if ((if (pre 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed) then 
+  (pre carSpeed) else (pre 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed)
+  ) < 0.000000E+00) then 0.000000E+00 else (if ((if (pre 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed) then 
+  (pre carSpeed) else (pre 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed)
+  ) > 1.000000E+02) then 1.000000E+02 else (if (pre 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed) then 
+  (pre carSpeed) else (pre 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed)
+  ))));
+  V112_cruise_controller_CruiseController_SetThrottle_cruiseThrottlePrevPlusDelta = ((((if ((((if ((if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  < 0.000000E+00) then 0.000000E+00 else (if ((if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  > 1.000000E+02) then 1.000000E+02 else (if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed)
+  )) - carSpeed) * 1.000000E+00) < -1.000000E+01) then -1.000000E+01 else (if (
+  (((if ((if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  < 0.000000E+00) then 0.000000E+00 else (if ((if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  > 1.000000E+02) then 1.000000E+02 else (if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed)
+  )) - carSpeed) * 1.000000E+00) > 1.000000E+01) then 1.000000E+01 else (((if (
+  (if V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed 
+  then carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  < 0.000000E+00) then 0.000000E+00 else (if ((if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  > 1.000000E+02) then 1.000000E+02 else (if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed)
+  )) - carSpeed) * 1.000000E+00))) / 2.000000E+01) + 0.000000E+00) -> (((if (((
+  (if ((if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  < 0.000000E+00) then 0.000000E+00 else (if ((if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  > 1.000000E+02) then 1.000000E+02 else (if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed)
+  )) - carSpeed) * 1.000000E+00) < -1.000000E+01) then -1.000000E+01 else (if (
+  (((if ((if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  < 0.000000E+00) then 0.000000E+00 else (if ((if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  > 1.000000E+02) then 1.000000E+02 else (if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed)
+  )) - carSpeed) * 1.000000E+00) > 1.000000E+01) then 1.000000E+01 else (((if (
+  (if V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed 
+  then carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  < 0.000000E+00) then 0.000000E+00 else (if ((if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed) 
+  > 1.000000E+02) then 1.000000E+02 else (if 
+  V109_cruise_controller_CruiseController_SetDesiredSpeed_setDesiredSpeed then 
+  carSpeed else 
+  V110_cruise_controller_CruiseController_SetDesiredSpeed_IncreaseDesiredSpeed)
+  )) - carSpeed) * 1.000000E+00))) / 2.000000E+01) + (if (((if ((pre V11_mode) 
+  = 4) then true else false) or (if ((pre V11_mode) = 5) then true else false)) 
+  or (if ((pre V11_mode) = 6) then true else false)) then (if ((pre V112_cruise_controller_CruiseController_SetThrottle_cruiseThrottlePrevPlusDelta) < 
+  0.000000E+00) then 0.000000E+00 else (if ((pre V112_cruise_controller_CruiseController_SetThrottle_cruiseThrottlePrevPlusDelta) > 1.000000E+02) then 
+  1.000000E+02 else (pre V112_cruise_controller_CruiseController_SetThrottle_cruiseThrottlePrevPlusDelta))) else 0.000000E+00)));
+  --%PROPERTY OK=true;
+
+
+tel.
+
