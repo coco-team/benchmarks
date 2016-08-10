@@ -1,0 +1,206 @@
+
+----------------********************************** automaton version********************
+node A1node(R,S,T : bool; a_1, id_1:int) returns (a, id: int);
+let
+
+	automaton a1
+		state POINTa1:
+		unless (id_1=0) restart A1A_ENTRY
+		unless (id_1=1) and S restart A1A_EXIT_A1B_ENTRY
+		unless (id_1=1) restart A1A_IDL
+		unless (id_1=2) and R restart A1B_EXIT_A1A_ENTRY
+		unless (id_1=2) restart A1B_IDL
+		let
+				(a, id) = (a_1, id_1);
+		tel	
+		
+		state A1A_ENTRY:
+			let
+				(a, id) = (a_1 + 1, 1);
+				
+			tel
+		until true restart A1A_IDL
+		
+		state A1A_IDL:
+		unless (id_1=0) restart A1A_ENTRY
+		unless (id_1=1) and S restart A1A_EXIT_A1B_ENTRY
+		unless (id_1=1) restart A1A_IDL
+		unless (id_1=2) and R restart A1B_EXIT_A1A_ENTRY
+		unless (id_1=2) restart A1B_IDL
+			let
+				(a, id) = (a_1, 1);
+			tel
+			
+		state A1A_EXIT_A1B_ENTRY:
+			let		
+				(a, id) = (a_1 +2, 2);
+			tel	
+		until true restart A1B_IDL
+		
+		state A1B_IDL:
+		unless (id_1=0) restart A1A_ENTRY
+		unless (id_1=1) and S restart A1A_EXIT_A1B_ENTRY
+		unless (id_1=1) restart A1A_IDL
+		unless (id_1=2) and R restart A1B_EXIT_A1A_ENTRY
+		unless (id_1=2) restart A1B_IDL
+			let
+				(a, id) = (a_1, 2);
+			tel
+			
+		state A1B_EXIT_A1A_ENTRY:
+			let		
+				(a, id) = (a_1 +1, 1);
+			tel	
+		until true restart A1A_IDL
+tel
+
+
+----------------------------------A2------------------------------------
+node A2node(R,S,T : bool; a_1, id_1:int) returns (a,id: int);
+let
+
+	automaton a2
+		
+		state POINTA2:
+		unless (id_1=0) restart A2A_ENTRY
+		unless (id_1=1) and S restart A2A_EXIT_A2B_ENTRY
+		unless (id_1=1) restart A2A_IDL
+		unless (id_1=2) and R restart A2B_EXIT_A2A_ENTRY
+		unless (id_1=2) restart A2B_IDL
+		let
+				(a, id) = (a_1, id_1);
+		tel	
+		state A2A_ENTRY:
+			let
+				(a, id) = (a_1 + 3, 1);
+			tel
+		until true restart A2A_IDL
+		
+		state A2A_IDL:
+		unless (id_1=0) restart A2A_ENTRY
+		unless (id_1=1) and S restart A2A_EXIT_A2B_ENTRY
+		unless (id_1=1) restart A2A_IDL
+		unless (id_1=2) and R restart A2B_EXIT_A2A_ENTRY
+		unless (id_1=2) restart A2B_IDL
+			let
+				(a, id) = (a_1, 1);
+			tel
+			
+		state A2A_EXIT_A2B_ENTRY:
+			let		
+				(a, id) = (a_1 + 4, 2);
+			tel	
+		until true restart A2B_IDL
+		
+		state A2B_IDL:
+		unless (id_1=0) restart A2A_ENTRY
+		unless (id_1=1) and S restart A2A_EXIT_A2B_ENTRY
+		unless (id_1=1) restart A2A_IDL
+		unless (id_1=2) and R restart A2B_EXIT_A2A_ENTRY
+		unless (id_1=2) restart A2B_IDL
+			let
+				(a, id) = (a_1, 2);
+			tel
+			
+		state A2B_EXIT_A2A_ENTRY:
+			let		
+				(a, id) = (a_1 + 3, 1);
+			tel	
+		until true restart A2A_IDL
+		
+tel
+
+--------------------------------State A--------------------------------
+
+node Anode(R,S,T : bool; a_1, idA_1, idA1_1, idA2_1:int) returns (a, idA, idA1, idA2: int);
+
+let
+
+
+  --Automate A 
+  automaton a
+	state POINT0A:
+		unless (idA_1=0) restart A1_ENTRY
+		unless (idA_1=1) and T restart A1_Exit_A2_Entry
+		unless (idA_1=1) restart A1_IDL
+		unless (idA_1=2) and T restart A2_Exit_A1_Entry
+		unless (idA_1=2) restart A2_IDL
+		let
+			(a, idA, idA1, idA2) = (a_1, idA_1, idA1_1, idA2_1) ;
+		tel
+
+
+  state A1_ENTRY:
+	let		
+			(a, idA1) = A1node(R, S, T, a_1, idA1_1);
+			idA  = 1;-- to go to A1_IDL or A1_Exit_A2_Entry (if T) next step
+			idA2 = 0;
+	tel	
+	until true restart A1_IDL
+
+  state A1_IDL:
+	unless (idA_1=0) restart A1_ENTRY
+	unless (idA_1=1) and T restart A1_Exit_A2_Entry
+	unless (idA_1=1) restart A1_IDL
+	unless (idA_1=2) and T restart A2_Exit_A1_Entry
+	unless (idA_1=2) restart A2_IDL
+	let		
+			(a, idA1) = A1node(R, S, T, a_1, idA1_1);
+			idA 	  = 1;	-- to go to A1_IDL or A1_Exit_A2_Entry (if T) next step
+			idA2 	  = 0;
+		
+	tel	
+	
+  state A1_Exit_A2_Entry:
+	let		
+			(a, idA2) = A2node(R, S, T, a_1, idA2_1);
+			idA       = 2;		-- to go to A2_IDL or A2_Exit_A1_Entry (if T) next step
+			idA1      = 0;
+	tel	
+	until true restart A2_IDL
+	
+	state A2_IDL:
+    unless (idA_1=0) restart A1_ENTRY
+	unless (idA_1=1) and T restart A1_Exit_A2_Entry
+	unless (idA_1=1) restart A1_IDL
+	unless (idA_1=2) and T restart A2_Exit_A1_Entry
+	unless (idA_1=2) restart A2_IDL
+	let		
+			(a, idA2) = A2node(R, S, T, a_1, idA2_1);
+			idA       = 2;		-- to go to A2_IDL or A2_Exit_A1_Entry (if T) next step
+			idA1      = 0;
+		
+	tel	
+	
+	state A2_Exit_A1_Entry:
+	let		
+			(a, idA1)   = A1node(R, S, T, a_1, idA1_1);
+			idA  		= 1;-- to go to A1_IDL or A1_Exit_A2_Entry (if T) next step
+			idA2 		= 0;
+	tel	
+	until true restart A1_IDL
+tel
+
+
+------------------------**********global State ********************-----------------
+node eventsOrdered(R, S, T: bool) 
+returns(a,idA, idA_1, idA_2, idA_3, idA1, idA1_1, idA1_2, idA1_3, idA2, idA2_1, idA2_2, idA2_3: int);
+  var a_1, a_2, a_3 :int;
+let
+  -- initial values
+	a_1 = 0-> pre a;
+	idA_1 = 0-> pre idA;
+	idA1_1 = 0-> pre idA1;
+	idA2_1 = 0-> pre idA2;
+	
+    (a_2, idA_2, idA1_2, idA2_2)  = if R then Anode(R, false, false, a_1, idA_1, idA1_1, idA2_1)
+									else (a_1, idA_1, idA1_1, idA2_1);
+	(a_3, idA_3, idA1_3, idA2_3)  = if S then Anode(false, S, false, a_2, idA_2, idA1_2, idA2_2)
+									else (a_2, idA_2, idA1_2, idA2_2);
+	(a, idA, idA1, idA2)	  	  = if T then Anode(false, false, T, a_3, idA_3, idA1_3, idA2_3)
+									else (a_3, idA_3, idA1_3, idA2_3);
+
+tel
+
+
+
