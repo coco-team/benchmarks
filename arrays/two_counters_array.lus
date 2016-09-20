@@ -1,0 +1,31 @@
+-- a simple boolean ant int counter
+
+
+node greycounter (x:bool^3) returns (out:bool);
+var a,b:bool;
+let
+  a = false -> x[0] and not pre(b);
+  b = false -> pre(a);
+  out = a and b;
+tel
+
+node intloopcounter (x:bool^3) returns (out:bool);
+var time: int;
+let
+  time = 0 -> if  x[0] and x[1] and pre(time) = 3 then 0
+            else pre time + 1;
+  out =  (time = 2);
+tel
+
+
+node top (x:bool) returns (OK:bool);
+var b,d:bool;
+    c:  bool^3;
+let
+  c = if x then [true, true,  true] else [false,  false,  false];
+  b = greycounter(c);
+  d = intloopcounter(c);
+  OK = b = d;
+  --!PROPERTY : OK=true;
+  --!MAIN : true;
+tel
