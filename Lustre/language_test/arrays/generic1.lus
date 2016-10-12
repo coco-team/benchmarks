@@ -1,4 +1,4 @@
-#open "dummy_lib"
+
 
 type choice = enum { One, Two };
 type entier = int;
@@ -11,6 +11,13 @@ const M1 = [ [ 2.1 ], [ 1.0 ], [ 3.0 ], [ 4.2 ] ] ;
 const M2 = [ [ 1.1, 2.2, 1.0, 1.0 ] ] ;
 
 
+
+node _mul(x1,  x2, x3:  int; a: real^1^4; a2:  real^4^1) returns (out: real^1^1);
+let
+ out = [[0.0]];
+tel
+
+
 node mult(
      in1 : real^4^1)
 returns (
@@ -19,10 +26,22 @@ var l,p;
 let
   l = [ tab, [3.,4.,5.,6.] ];
   p = l + [tab,tab+[3.,4.,5.,6.]];
-  out = _MatMul_real (1,4,1,[ [ 2.1 ], [ 1.0 ], [ 3.0 ], [ 4.2 ] ], in1);
+  out = _mul (1,4,1,[ [ 2.1 ], [ 1.0 ], [ 3.0 ], [ 4.2 ] ], in1);
 tel
-    
-node base(const p:int; x:int^(PI*p)) returns (y:int^p)
+   
+
+node imp2(const i: int; x: int^i) returns (z: int^i);
+let
+   z = x -> pre(z);
+tel
+
+node imp1(const i: int; x: int^(PI*i)) returns (z: int^(PI*i));
+let
+   z = x -> pre(z);
+tel
+
+ 
+node base(const p:int; x:int^(PI*p)) returns (y:int^(PI*p))
 var z:int^(PI*p);
 let
   z = imp2(PI*p, x);
