@@ -1,0 +1,59 @@
+--mom automaton version
+node SetReset01(Set, Reset: bool)
+returns (sOff, sOn: bool);
+let
+	sOff = true -> if pre sOff and Set then false
+			else if (pre sOn and Reset) then true
+			else pre sOff;
+	sOn = false -> if pre sOn and Reset then false
+			else if (pre sOff and Set) then true
+			else pre sOn;
+tel
+
+--automaton vevrsion
+node SetReset02(Set, Reset: bool)
+returns (sOff, sOn: bool);
+var  unused : bool;
+let
+  automaton a
+  state POINT:
+  unless true restart OFF
+  	let
+	sOff = true;
+	sOn = false; 
+	unused = false -> pre Set;
+ 	tel
+		
+  state OFF:
+  unless Set resume ON
+	let		
+	sOff = true;
+	sOn = false;
+	unused = false -> pre Set;
+	tel	
+	
+
+   state ON:
+   unless Reset resume OFF
+	let		
+	sOff = false;
+	sOn = true;
+	unused = false -> pre Set;
+	tel	
+	
+
+
+tel
+
+
+node top0(Set, Reset: bool) returns (OK:bool);
+var b,c,d,e:bool;
+let
+  (b,c) = SetReset01(Set, Reset);
+  (d,e) = SetReset02(Set, Reset);
+  OK = b = d and c=e;
+  --%PROPERTY OK=true;
+tel
+
+
+

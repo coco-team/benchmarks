@@ -1,0 +1,84 @@
+
+
+----------------********************************** automaton version********************
+
+node arrays(E: bool) returns(x1, x2, x3: int);
+var x_1, x_2, x_3 : int;
+let
+  -- initial values
+  x_1 = 1-> pre x1;
+  x_2 = 1-> pre x2;
+  x_3 = 1-> pre x3;
+  automaton a
+
+  state POINT:
+  unless true resume A_ENTRY
+	let		
+		x1 = x_1;
+		x2 = x_2;
+		x3 = x_3;
+	tel	
+--execute A entry action
+  state A_ENTRY:
+	let		
+		x1 = x_1 + 1;
+		x2 = x_2;
+		x3 = x_3;
+	tel	
+  until true resume A_IDL
+
+--execute A during action		
+  state A_IDL:
+  unless E  resume A_EXIT_B_ENTRY
+	let		
+		x1 = x_1;
+		x2 = x_2;
+		x3 = x_3;
+	tel	
+  
+--execute A exit action and B entry action
+  state A_EXIT_B_ENTRY:
+	let		
+		x1 = x_1;
+		x2 = x_2 + 1;
+		x3 = x_3;
+	tel	
+  until true resume B_IDL
+
+--execute B during action
+   state B_IDL:
+   unless E  resume B_EXIT_C_ENTRY
+	let		
+		x1 = x_1;
+		x2 = x_2;
+		x3 = x_3;
+	tel
+		
+--execute B exit action and C entry action	
+   state B_EXIT_C_ENTRY:
+   let		
+		x1 = x_1;
+		x2 = x_2;
+		x3 = x_3 + 1;
+	tel	
+  until true resume C_IDL
+  
+  --execute C during action
+   state C_IDL:
+   unless E  resume C_EXIT_A_ENTRY
+	let		
+		x1 = x_1;
+		x2 = x_2;
+		x3 = x_3;
+	tel
+		
+--execute C exit action and A entry action	
+   state C_EXIT_A_ENTRY:
+   let		
+		x1 = x_1 + 1;
+		x2 = x_2;
+		x3 = x_3;
+	tel	
+  until true resume A_IDL
+
+tel
