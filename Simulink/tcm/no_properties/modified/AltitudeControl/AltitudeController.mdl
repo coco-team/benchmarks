@@ -1,44 +1,76 @@
 Model {
   Name			  "AltitudeController"
-  Version		  8.5
-  MdlSubVersion		  0
-  SavedCharacterEncoding  "ISO-8859-1"
+  Version		  8.7
+  MdlSubVersion		  1
+  SavedCharacterEncoding  "UTF-8"
   GraphicalInterface {
     NumRootInports	    6
     Inport {
       Name		      "AntEng"
       BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
     }
     Inport {
       Name		      "AltCmd"
       BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
     }
     Inport {
       Name		      "Alt"
       BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
     }
     Inport {
       Name		      "GsKts"
       BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
     }
     Inport {
       Name		      "hdot"
       BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
     }
     Inport {
       Name		      "hdotChgRate"
       BusObject		      ""
+      OutputFunctionCall      "off"
+      UnitExpr		      "inherit"
     }
-    NumRootOutports	    1
+    NumRootOutports	    2
     Outport {
       Name		      "altgammacmd"
       BusObject		      ""
       BusOutputAsStruct	      "off"
+      UnitExpr		      "inherit"
+    }
+    Outport {
+      Name		      "hdotcLim"
+      BusObject		      ""
+      BusOutputAsStruct	      "off"
+      UnitExpr		      "inherit"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1"
+    ComputedModelVersion    "1.4"
     NumModelReferences	    0
     NumTestPointedSignals   0
+    NumProvidedFunctions    0
+    NumRequiredFunctions    0
+  }
+  slprops.hdlmdlprops {
+    $PropName		    "HDLParams"
+    $ObjectID		    1
+    Array {
+      Type		      "Cell"
+      Dimension		      2
+      Cell		      "HDLSubsystem"
+      Cell		      "AltitudeController"
+      PropName		      "mdlProps"
+    }
   }
   ScopeRefreshTime	  0.035000
   OverrideScopeRefreshTime on
@@ -49,19 +81,20 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
+  LastSavedArchitecture	  "glnxa64"
   Object {
     $PropName		    "BdWindowsInfo"
-    $ObjectID		    1
+    $ObjectID		    2
     $ClassName		    "Simulink.BDWindowsInfo"
     Object {
       $PropName		      "WindowsInfo"
-      $ObjectID		      2
+      $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [100.0, 78.0, 1376.0, 957.0]
+      Location		      [65.0, 24.0, 1301.0, 744.0]
       Object {
 	$PropName		"ModelBrowserInfo"
-	$ObjectID		3
+	$ObjectID		4
 	$ClassName		"Simulink.ModelBrowserInfo"
 	Visible			[0]
 	DockPosition		"Left"
@@ -71,18 +104,18 @@ Model {
       }
       Object {
 	$PropName		"ExplorerBarInfo"
-	$ObjectID		4
+	$ObjectID		5
 	$ClassName		"Simulink.ExplorerBarInfo"
 	Visible			[1]
       }
       Object {
 	$PropName		"EditorsInfo"
-	$ObjectID		5
+	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1342.0, 783.0]
+	Extents			[1267.0, 599.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
       }
@@ -92,11 +125,11 @@ Model {
   Creator		  "teme"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "teme"
+  LastModifiedBy	  "bourbouh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Jun 21 16:01:59 2015"
-  RTWModifiedTimeStamp	  356802790
-  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  LastModifiedDate	  "Thu Feb 09 16:44:52 2017"
+  RTWModifiedTimeStamp	  408559491
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -104,6 +137,10 @@ Model {
   WideLines		  off
   ShowLineDimensions	  off
   ShowPortDataTypes	  off
+  ShowEditTimeErrors	  on
+  ShowEditTimeWarnings	  off
+  ShowEditTimeAdvisorChecks off
+  ShowPortUnits		  off
   ShowDesignRanges	  off
   ShowLoopsOnError	  on
   IgnoreBidirectionalLines off
@@ -112,8 +149,10 @@ Model {
   ShowSignalResolutionIcons on
   ShowViewerIcons	  on
   SortedOrder		  off
+  VariantCondition	  off
   ExecutionContextIcon	  off
   ShowLinearizationAnnotations on
+  ShowVisualizeInsertedRTB on
   ShowMarkup		  on
   BlockNameDataTip	  off
   BlockParametersDataTip  off
@@ -121,6 +160,7 @@ Model {
   ToolBar		  on
   StatusBar		  on
   BrowserShowLibraryLinks off
+  FunctionConnectors	  off
   BrowserLookUnderMasks	  off
   SimulationMode	  "normal"
   PauseTimes		  "5"
@@ -137,10 +177,10 @@ Model {
   TryForcingSFcnDF	  off
   Object {
     $PropName		    "DataLoggingOverride"
-    $ObjectID		    6
+    $ObjectID		    7
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "AltitudeController"
-    overrideMode_	    [0U]
+    overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
       Dimension		      1
@@ -154,27 +194,6 @@ Model {
       PropName		      "logAsSpecifiedByModelsSSIDs_"
     }
   }
-  RecordCoverage	  off
-  CovPath		  "/"
-  CovSaveName		  "covdata"
-  CovMetricSettings	  "dw"
-  CovNameIncrementing	  off
-  CovHtmlReporting	  on
-  CovForceBlockReductionOff on
-  CovEnableCumulative	  on
-  covSaveCumulativeToWorkspaceVar on
-  CovSaveSingleToWorkspaceVar on
-  CovCumulativeVarName	  "covCumulativeData"
-  CovCumulativeReport	  off
-  CovReportOnPause	  on
-  CovModelRefEnable	  "Off"
-  CovExternalEMLEnable	  off
-  CovSFcnEnable		  on
-  CovBoundaryAbsTol	  0.000010
-  CovBoundaryRelTol	  0.010000
-  CovUseTimeInterval	  off
-  CovStartTime		  0
-  CovStopTime		  0
   ExtModeBatchMode	  off
   ExtModeEnableFloating	  on
   ExtModeTrigType	  "manual"
@@ -202,14 +221,14 @@ Model {
     Type		    "Handle"
     Dimension		    1
     Simulink.ConfigSet {
-      $ObjectID		      7
-      Version		      "1.15.0"
+      $ObjectID		      8
+      Version		      "1.16.2"
       Array {
 	Type			"Handle"
-	Dimension		9
+	Dimension		10
 	Simulink.SolverCC {
-	  $ObjectID		  8
-	  Version		  "1.15.0"
+	  $ObjectID		  9
+	  Version		  "1.16.2"
 	  StartTime		  "0.0"
 	  StopTime		  "10.0"
 	  AbsTol		  "auto"
@@ -229,13 +248,15 @@ Model {
 	  SolverMode		  "Auto"
 	  EnableConcurrentExecution off
 	  ConcurrentTasks	  off
-	  Solver		  "ode45"
-	  SolverName		  "ode45"
+	  Solver		  "FixedStepAuto"
+	  SolverName		  "FixedStepAuto"
 	  SolverJacobianMethodControl "auto"
 	  ShapePreserveControl	  "DisableAll"
 	  ZeroCrossControl	  "UseLocalSettings"
 	  ZeroCrossAlgorithm	  "Nonadaptive"
 	  AlgebraicLoopSolver	  "TrustRegion"
+	  SolverInfoToggleStatus  off
+	  IsAutoAppliedInSIP	  off
 	  SolverResetMethod	  "Fast"
 	  PositivePriorityOrder	  off
 	  AutoInsertRateTranBlk	  off
@@ -243,8 +264,8 @@ Model {
 	  InsertRTBMode		  "Whenever possible"
 	}
 	Simulink.DataIOCC {
-	  $ObjectID		  9
-	  Version		  "1.15.0"
+	  $ObjectID		  10
+	  Version		  "1.16.2"
 	  Decimation		  "1"
 	  ExternalInput		  "[t, u]"
 	  FinalStateName	  "xFinal"
@@ -263,6 +284,8 @@ Model {
 	  DSMLogging		  on
 	  InspectSignalLogs	  off
 	  VisualizeSimOutput	  on
+	  StreamToWorkspace	  off
+	  StreamVariableName	  "streamout"
 	  SaveTime		  on
 	  ReturnWorkspaceOutputs  off
 	  StateSaveName		  "xout"
@@ -274,10 +297,13 @@ Model {
 	  OutputTimes		  "[]"
 	  ReturnWorkspaceOutputsName "out"
 	  Refine		  "1"
+	  LoggingToFile		  off
+	  LoggingFileName	  "out.mat"
+	  LoggingIntervals	  "[-inf, inf]"
 	}
 	Simulink.OptimizationCC {
-	  $ObjectID		  10
-	  Version		  "1.15.0"
+	  $ObjectID		  11
+	  Version		  "1.16.2"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    8
@@ -294,7 +320,7 @@ Model {
 	  BlockReduction	  on
 	  BooleanDataType	  on
 	  ConditionallyExecuteInputs on
-	  InlineParams		  off
+	  DefaultParameterBehavior "Tunable"
 	  UseDivisionForNetSlopeComputation "off"
 	  UseFloatMulNetSlope	  off
 	  DefaultUnderspecifiedDataType	"double"
@@ -333,8 +359,8 @@ Model {
 	  AccelVerboseBuild	  off
 	}
 	Simulink.DebuggingCC {
-	  $ObjectID		  11
-	  Version		  "1.15.0"
+	  $ObjectID		  12
+	  Version		  "1.16.2"
 	  RTPrefix		  "error"
 	  ConsistencyChecking	  "none"
 	  ArrayBoundsChecking	  "none"
@@ -361,7 +387,6 @@ Model {
 	  IgnoredZcDiagnostic	  "warning"
 	  SolverPrmCheckMsg	  "none"
 	  InheritedTsInSrcMsg	  "warning"
-	  DiscreteInheritContinuousMsg "warning"
 	  MultiTaskDSMMsg	  "error"
 	  MultiTaskCondExecSysMsg "error"
 	  MultiTaskRateTransMsg	  "error"
@@ -394,6 +419,7 @@ Model {
 	  BusObjectLabelMismatch  "warning"
 	  RootOutportRequireBusObject "warning"
 	  AssertControl		  "UseLocalSettings"
+	  AllowSymbolicDim	  on
 	  ModelReferenceIOMsg	  "none"
 	  ModelReferenceMultiInstanceNormalModeStructChecksumCheck "error"
 	  ModelReferenceVersionMismatchMessage "none"
@@ -409,6 +435,9 @@ Model {
 	  StrictBusMsg		  "ErrorLevel1"
 	  BusNameAdapt		  "WarnAndRepair"
 	  NonBusSignalsTreatedAsBus "none"
+	  SymbolicDimMinMaxWarning "warning"
+	  LossOfSymbolicDimsSimulationWarning "warning"
+	  LossOfSymbolicDimsCodeGenerationWarning "error"
 	  BlockIODiagnostic	  "none"
 	  SFUnusedDataAndEventsDiag "warning"
 	  SFUnexpectedBacktrackingDiag "warning"
@@ -420,10 +449,13 @@ Model {
 	  SFTransitionActionBeforeConditionDiag	"warning"
 	  SFOutputUsedAsStateInMooreChartDiag "error"
 	  IntegerSaturationMsg	  "warning"
+	  AllowedUnitSystems	  "all"
+	  UnitsInconsistencyMsg	  "warning"
+	  AllowAutomaticUnitConversions	on
 	}
 	Simulink.HardwareCC {
-	  $ObjectID		  12
-	  Version		  "1.15.0"
+	  $ObjectID		  13
+	  Version		  "1.16.2"
 	  ProdBitPerChar	  8
 	  ProdBitPerShort	  16
 	  ProdBitPerInt		  32
@@ -460,11 +492,14 @@ Model {
 	  TargetHWDeviceType	  "Specified"
 	  TargetUnknown		  off
 	  ProdEqTarget		  on
+	  UseEmbeddedCoderFeatures on
+	  UseSimulinkCoderFeatures on
 	}
 	Simulink.ModelReferenceCC {
-	  $ObjectID		  13
-	  Version		  "1.15.0"
+	  $ObjectID		  14
+	  Version		  "1.16.2"
 	  UpdateModelReferenceTargets "IfOutOfDateOrStructuralChange"
+	  EnableRefExpFcnMdlSchedulingChecks on
 	  CheckModelReferenceTargetMessage "error"
 	  EnableParallelModelReferenceBuilds off
 	  ParallelModelReferenceErrorOnInvalidPool on
@@ -477,9 +512,8 @@ Model {
 	  SupportModelReferenceSimTargetCustomCode off
 	}
 	Simulink.SFSimCC {
-	  $ObjectID		  14
-	  Version		  "1.15.0"
-	  SFSimOverflowDetection  on
+	  $ObjectID		  15
+	  Version		  "1.16.2"
 	  SFSimEcho		  on
 	  SimCtrlC		  on
 	  SimIntegrity		  on
@@ -490,8 +524,8 @@ Model {
 	}
 	Simulink.RTWCC {
 	  $BackupClass		  "Simulink.RTWCC"
-	  $ObjectID		  15
-	  Version		  "1.15.0"
+	  $ObjectID		  16
+	  Version		  "1.16.2"
 	  Array {
 	    Type		    "Cell"
 	    Dimension		    16
@@ -514,12 +548,12 @@ Model {
 	    PropName		    "DisabledProps"
 	  }
 	  SystemTargetFile	  "grt.tlc"
+	  HardwareBoard		  "None"
 	  TLCOptions		  ""
 	  GenCodeOnly		  off
 	  MakeCommand		  "make_rtw"
 	  GenerateMakefile	  on
 	  PackageGeneratedCodeAndArtifacts off
-	  PackageName		  ""
 	  TemplateMakefile	  "grt_default_tmf"
 	  PostCodeGenCommand	  ""
 	  Description		  ""
@@ -533,13 +567,6 @@ Model {
 	  TLCAssert		  off
 	  RTWUseLocalCustomCode	  off
 	  RTWUseSimCustomCode	  off
-	  CustomSourceCode	  ""
-	  CustomHeaderCode	  ""
-	  CustomInclude		  ""
-	  CustomSource		  ""
-	  CustomLibrary		  ""
-	  CustomInitializer	  ""
-	  CustomTerminator	  ""
 	  Toolchain		  "Automatically locate an installed toolchain"
 	  BuildConfiguration	  "Faster Builds"
 	  IncludeHyperlinkInReport off
@@ -570,8 +597,8 @@ Model {
 	    Type		    "Handle"
 	    Dimension		    2
 	    Simulink.CodeAppCC {
-	      $ObjectID		      16
-	      Version		      "1.15.0"
+	      $ObjectID		      17
+	      Version		      "1.16.2"
 	      Array {
 		Type			"Cell"
 		Dimension		24
@@ -642,8 +669,8 @@ Model {
 	    }
 	    Simulink.GRTTargetCC {
 	      $BackupClass	      "Simulink.TargetCC"
-	      $ObjectID		      17
-	      Version		      "1.15.0"
+	      $ObjectID		      18
+	      Version		      "1.16.2"
 	      Array {
 		Type			"Cell"
 		Dimension		13
@@ -664,7 +691,6 @@ Model {
 	      }
 	      TargetFcnLib	      "ansi_tfl_table_tmw.mat"
 	      TargetLibSuffix	      ""
-	      TargetPreCompLibLocation ""
 	      GenFloatMathFcnCalls    "NOT IN USE"
 	      TargetLangStandard      "C89/C90 (ANSI)"
 	      CodeReplacementLibrary  "None"
@@ -707,6 +733,7 @@ Model {
 	      AutosarCompliant	      off
 	      GRTInterface	      off
 	      GenerateAllocFcn	      off
+	      UseToolchainInfoCompliant	on
 	      GenerateSharedConstants on
 	      UseMalloc		      off
 	      ExtMode		      off
@@ -726,9 +753,42 @@ Model {
 	    PropName		    "Components"
 	  }
 	}
+	SlCovCC.ConfigComp {
+	  $ObjectID		  19
+	  Version		  "1.16.2"
+	  Description		  "Simulink Coverage Configuration Component"
+	  Name			  "Simulink Coverage"
+	  CovEnable		  off
+	  CovScope		  "EntireSystem"
+	  CovIncludeTopModel	  on
+	  RecordCoverage	  off
+	  CovPath		  "/"
+	  CovSaveName		  "covdata"
+	  CovMetricSettings	  "dw"
+	  CovNameIncrementing	  off
+	  CovHtmlReporting	  on
+	  CovForceBlockReductionOff on
+	  CovEnableCumulative	  on
+	  CovSaveCumulativeToWorkspaceVar on
+	  CovSaveSingleToWorkspaceVar on
+	  CovCumulativeVarName	  "covCumulativeData"
+	  CovCumulativeReport	  off
+	  CovSaveOutputData	  on
+	  CovOutputDir		  "slcov_output/$ModelName$"
+	  CovDataFileName	  "$ModelName$_cvdata"
+	  CovReportOnPause	  on
+	  CovModelRefEnable	  "Off"
+	  CovExternalEMLEnable	  off
+	  CovSFcnEnable		  on
+	  CovBoundaryAbsTol	  1e-05
+	  CovBoundaryRelTol	  0.01
+	  CovUseTimeInterval	  off
+	  CovStartTime		  0
+	  CovStopTime		  0
+	}
 	hdlcoderui.hdlcc {
-	  $ObjectID		  18
-	  Version		  "1.15.0"
+	  $ObjectID		  20
+	  Version		  "1.16.2"
 	  Description		  "HDL Coder custom configuration component"
 	  Name			  "HDL Coder"
 	  Array {
@@ -743,17 +803,17 @@ Model {
       }
       Name		      "Configuration"
       CurrentDlgPage	      "Solver"
-      ConfigPrmDlgPosition     [ 420, 280, 1500, 920 ] 
+      ConfigPrmDlgPosition     [ 55, 14, 985, 574 ] 
     }
     PropName		    "ConfigurationSets"
   }
   Simulink.ConfigSet {
     $PropName		    "ActiveConfigurationSet"
-    $ObjectID		    7
+    $ObjectID		    8
   }
   Object {
     $PropName		    "DataTransfer"
-    $ObjectID		    19
+    $ObjectID		    21
     $ClassName		    "Simulink.GlobalDataTransfer"
     DefaultTransitionBetweenSyncTasks "Ensure deterministic transfer (maximum delay)"
     DefaultTransitionBetweenAsyncTasks "Ensure data integrity only"
@@ -796,7 +856,7 @@ Model {
   MaskDefaults {
     SelfModifiable	    "off"
     IconFrame		    "on"
-    IconOpaque		    "on"
+    IconOpaque		    "opaque"
     RunInitForIconRedraw    "off"
     IconRotate		    "none"
     PortRotate		    "default"
@@ -860,8 +920,6 @@ Model {
       IgnoreLimit	      off
       StateMustResolveToSignalObject off
       RTWStateStorageClass    "Auto"
-      ICPrevOutput	      "DiscIntNeverNeededParam"
-      ICPrevScaledInput	      "DiscIntNeverNeededParam"
     }
     Block {
       BlockType		      Gain
@@ -887,6 +945,7 @@ Model {
       OutDataTypeStr	      "Inherit: auto"
       LockScale		      off
       BusOutputAsStruct	      off
+      Unit		      "inherit"
       PortDimensions	      "-1"
       VarSizeSig	      "Inherit"
       SampleTime	      "-1"
@@ -927,6 +986,7 @@ Model {
       OutDataTypeStr	      "Inherit: auto"
       LockScale		      off
       BusOutputAsStruct	      off
+      Unit		      "inherit"
       PortDimensions	      "-1"
       VarSizeSig	      "Inherit"
       SampleTime	      "-1"
@@ -978,8 +1038,8 @@ Model {
       Opaque		      off
       MaskHideContents	      off
       SFBlockType	      "NONE"
-      Variant		      off
       GeneratePreprocessorConditionals off
+      TreatAsGroupedWhenPropagatingVariantConditions on
       ContentPreviewEnabled   off
       IsWebBlock	      off
     }
@@ -1017,7 +1077,7 @@ Model {
   }
   System {
     Name		    "AltitudeController"
-    Location		    [100, 78, 1476, 1035]
+    Location		    [65, 24, 1366, 768]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1031,7 +1091,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "61"
+    SIDHighWatermark	    "63"
     Block {
       BlockType		      Inport
       Name		      "AntEng"
@@ -1104,13 +1164,14 @@ Model {
       SID		      "7"
       RequirementInfo	      "{'other' '..\\..\\tcm_requirements.docx' '@Simulink_requirement_item_14' 'true' 'Altitude"
       " Control' '' } %GIDa_740ef422_46e2_47bc_9a8b_72c78cd9c99f"
-      Ports		      [6, 1]
+      Ports		      [6, 2]
       Position		      [545, 308, 655, 527]
       ZOrder		      2
       RequestExecContextInheritance off
+      Variant		      off
       System {
 	Name			"Altitude Control"
-	Location		[8, 44, 1328, 994]
+	Location		[65, 24, 1366, 768]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1284,9 +1345,10 @@ Model {
 	  ZOrder		  -14
 	  TreatAsAtomicUnit	  on
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  System {
 	    Name		    "Saturation1"
-	    Location		    [596, 44, 1916, 994]
+	    Location		    [65, 24, 1366, 768]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1460,6 +1522,7 @@ Model {
 	  ZOrder		  -19
 	  TreatAsAtomicUnit	  on
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  Port {
 	    PortNumber		    1
 	    Name		    "hdotcLim"
@@ -1468,7 +1531,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Variable \nRate Limit"
-	    Location		    [8, 44, 1328, 949]
+	    Location		    [100, 78, 1476, 1035]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1551,9 +1614,11 @@ Model {
 	      ExternalReset	      "level"
 	      InitialConditionSource  "external"
 	      SampleTime	      "0.1"
+	      ICPrevOutput	      "DiscIntNeverNeededParam"
+	      ICPrevScaledInput	      "DiscIntNeverNeededParam"
 	      Object {
 		$PropName		"MaskObject"
-		$ObjectID		20
+		$ObjectID		22
 		$ClassName		"Simulink.Mask"
 		Type			"DiscretizedDiscreteIntegrator"
 		Initialization		"%zoh"
@@ -1583,6 +1648,7 @@ Model {
 	      ZOrder		      -9
 	      TreatAsAtomicUnit	      on
 	      RequestExecContextInheritance off
+	      Variant		      off
 	      System {
 		Name			"Variable Limit\nSaturation"
 		Location		[8, 44, 1696, 2662]
@@ -1809,6 +1875,7 @@ Model {
 	  ZOrder		  -20
 	  TreatAsAtomicUnit	  on
 	  RequestExecContextInheritance	off
+	  Variant		  off
 	  Port {
 	    PortNumber		    1
 	    Name		    "hdotc"
@@ -1817,7 +1884,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Variable Limit\nSaturation"
-	    Location		    [8, 44, 1688, 1910]
+	    Location		    [65, 24, 1366, 768]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1976,6 +2043,16 @@ Model {
 	  RequirementInfo	  "{} %GIDa_e2872f4d_8dba_49af_8e9f_1e25a3d3f6dd"
 	  Position		  [1095, 303, 1125, 317]
 	  ZOrder		  -24
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "hdotcLim"
+	  SID			  "62"
+	  RequirementInfo	  "{} %GIDa_5694cc52_b370_44ef_a68f_defdd3a41f12"
+	  Position		  [920, 198, 950, 212]
+	  ZOrder		  1
+	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Line {
@@ -2141,8 +2218,18 @@ Model {
 	  Labels		  [1, 0]
 	  SrcBlock		  "Variable \nRate Limit"
 	  SrcPort		  1
-	  DstBlock		  "Divide"
-	  DstPort		  1
+	  Points		  [34, 0]
+	  Branch {
+	    ZOrder		    33
+	    Points		    [0, -95]
+	    DstBlock		    "hdotcLim"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    32
+	    DstBlock		    "Divide"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  ZOrder		  25
@@ -2199,7 +2286,7 @@ Model {
 	Annotation {
 	  SID			  "60"
 	  Name			  "C1"
-	  Position		  [319, 192, 333, 204]
+	  Position		  [312, 186, 326, 200]
 	  InternalMargins	  [0, 0, 0, 0]
 	  FixedHeight		  off
 	  FixedWidth		  off
@@ -2211,8 +2298,18 @@ Model {
       BlockType		      Outport
       Name		      "altgammacmd"
       SID		      "61"
-      Position		      [715, 278, 745, 292]
+      Position		      [715, 358, 745, 372]
       ZOrder		      1
+      IconDisplay	      "Port number"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "hdotcLim"
+      SID		      "63"
+      RequirementInfo	      "{} %GIDa_c798d6ae_e029_4ff1_adb3_f3ec2ca50b55"
+      Position		      [725, 468, 755, 482]
+      ZOrder		      9
+      Port		      "2"
       IconDisplay	      "Port number"
     }
     Line {
@@ -2235,7 +2332,6 @@ Model {
       ZOrder		      3
       SrcBlock		      "Altitude Control"
       SrcPort		      1
-      Points		      [22, 0; 0, -135]
       DstBlock		      "altgammacmd"
       DstPort		      1
     }
@@ -2269,6 +2365,13 @@ Model {
       SrcPort		      1
       DstBlock		      "Altitude Control"
       DstPort		      6
+    }
+    Line {
+      ZOrder		      8
+      SrcBlock		      "Altitude Control"
+      SrcPort		      2
+      DstBlock		      "hdotcLim"
+      DstPort		      1
     }
   }
 }
