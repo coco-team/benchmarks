@@ -2,7 +2,7 @@ Model {
   Name			  "ControlsWithAutopilot_cocoSim_pp"
   Version		  8.7
   MdlSubVersion		  1
-  SavedCharacterEncoding  "ISO-8859-1"
+  SavedCharacterEncoding  "UTF-8"
   GraphicalInterface {
     NumRootInports	    1
     Inport {
@@ -19,7 +19,7 @@ Model {
       UnitExpr		      "inherit"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.17"
+    ComputedModelVersion    "1.18"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -34,7 +34,7 @@ Model {
   MinMaxOverflowArchiveMode "Overwrite"
   FPTRunName		  "Run 1"
   MaxMDLFileLineLength	  120
-  LastSavedArchitecture	  "maci64"
+  LastSavedArchitecture	  "glnxa64"
   Object {
     $PropName		    "BdWindowsInfo"
     $ObjectID		    1
@@ -44,7 +44,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [542.0, 23.0, 1280.0, 773.0]
+      Location		      [55.0, 14.0, 1280.0, 764.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -68,7 +68,7 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1056.0, 600.0]
+	Extents			[1031.0, 571.0]
 	ZoomFactor		[0.5338904363974003]
 	Offset			[-115.06070652173901, 134.77739130434782]
       }
@@ -78,11 +78,11 @@ Model {
   Creator		  "mddavies"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Teme"
+  LastModifiedBy	  "bourbouh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Dec 30 14:14:57 2016"
-  RTWModifiedTimeStamp	  377180184
-  ModelVersionFormat	  "1.%<AutoIncrement:17>"
+  LastModifiedDate	  "Wed Feb 15 10:51:47 2017"
+  RTWModifiedTimeStamp	  409056707
+  ModelVersionFormat	  "1.%<AutoIncrement:18>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1115,20 +1115,21 @@ Model {
       BlockType		      Terminator
     }
     Block {
-      BlockType		      TransferFcn
-      Numerator		      "[1]"
-      Denominator	      "[1 2 1]"
-      AbsoluteTolerance	      "auto"
-      ContinuousStateAttributes	"''"
-      Realization	      "auto"
-    }
-    Block {
       BlockType		      Trigonometry
       Operator		      "sin"
       ApproximationMethod     "None"
       NumberOfIterations      "11"
       OutputSignalType	      "auto"
       SampleTime	      "-1"
+    }
+    Block {
+      BlockType		      UnitDelay
+      InitialCondition	      "0"
+      InputProcessing	      "Inherited"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      CodeGenStateStorageClass "Auto"
+      HasFrameUpgradeWarning  on
     }
     Block {
       BlockType		      ZeroPole
@@ -1141,7 +1142,7 @@ Model {
   }
   System {
     Name		    "ControlsWithAutopilot_cocoSim_pp"
-    Location		    [0, 23, 1280, 796]
+    Location		    [55, 14, 1335, 778]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -1155,7 +1156,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "53"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "674"
+    SIDHighWatermark	    "704"
     Block {
       BlockType		      Inport
       Name		      "Sensors"
@@ -1896,14 +1897,175 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
-	  BlockType		  TransferFcn
-	  Name			  "Transfer Fcn"
-	  SID			  "86"
-	  RequirementInfo	  "{} %GIDa_76b9b3a6_995f_4f78_b7a2_a7361be06aec"
+	  BlockType		  SubSystem
+	  Name			  "Transfer Fcn_pp"
+	  SID			  "675"
+	  Ports			  [1, 1]
 	  Position		  [585, 37, 640, 73]
-	  ZOrder		  -27
-	  Numerator		  "[16 0]"
-	  Denominator		  "[16 1]"
+	  ZOrder		  106
+	  TreatAsAtomicUnit	  on
+	  RequestExecContextInheritance	off
+	  Variant		  off
+	  System {
+	    Name		    "Transfer Fcn_pp"
+	    Location		    [100, 100, 600, 900]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Inport1"
+	      SID		      "683"
+	      Position		      [15, 15, 65, 65]
+	      ZOrder		      8
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "D1"
+	      SID		      "676"
+	      Position		      [30, 90, 60, 120]
+	      ZOrder		      1
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "GainAC1_1"
+	      SID		      "677"
+	      Position		      [90, 140, 120, 170]
+	      ZOrder		      2
+	      Gain		      "-0.0625"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "GainAC2_1"
+	      SID		      "678"
+	      Position		      [90, 200, 120, 230]
+	      ZOrder		      3
+	      Gain		      "-0.0625"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "GainBD1_1"
+	      SID		      "679"
+	      Position		      [150, 140, 180, 170]
+	      ZOrder		      4
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "GainBD2_1"
+	      SID		      "680"
+	      Position		      [150, 250, 180, 280]
+	      ZOrder		      5
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      SID		      "681"
+	      Ports		      [2, 1]
+	      Position		      [210, 242, 240, 273]
+	      ZOrder		      6
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      SID		      "682"
+	      Ports		      [2, 1]
+	      Position		      [210, 352, 240, 383]
+	      ZOrder		      7
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Outport1"
+	      SID		      "684"
+	      Position		      [270, 340, 300, 370]
+	      ZOrder		      9
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "D1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		ZOrder			1
+		DstBlock		"GainAC1_1"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			4
+		DstBlock		"GainAC2_1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "GainAC1_1"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "GainAC2_1"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "Inport1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		ZOrder			6
+		DstBlock		"GainBD1_1"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			9
+		DstBlock		"GainBD2_1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      7
+	      SrcBlock		      "GainBD1_1"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      10
+	      SrcBlock		      "GainBD2_1"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      11
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "D1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      12
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      DstBlock		      "Outport1"
+	      DstPort		      1
+	    }
+	  }
 	}
 	Block {
 	  BlockType		  Trigonometry
@@ -2399,7 +2561,7 @@ Model {
 	  Labels		  [0, 0]
 	  SrcBlock		  "Gain1"
 	  SrcPort		  1
-	  DstBlock		  "Transfer Fcn"
+	  DstBlock		  "Transfer Fcn_pp"
 	  DstPort		  1
 	}
 	Line {
@@ -2569,7 +2731,7 @@ Model {
 	}
 	Line {
 	  ZOrder		  35
-	  SrcBlock		  "Transfer Fcn"
+	  SrcBlock		  "Transfer Fcn_pp"
 	  SrcPort		  1
 	  Points		  [40, 0]
 	  DstBlock		  "Sum1"
@@ -6118,7 +6280,7 @@ Model {
 	    Annotation {
 	      SID		      "395"
 	      Name		      "orig =[0 60 140]"
-	      Position		      [101, 291, 172, 303]
+	      Position		      [101, 291, 172, 305]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -6127,7 +6289,7 @@ Model {
 	    Annotation {
 	      SID		      "394"
 	      Name		      "orig = 0.25"
-	      Position		      [257, 203, 306, 215]
+	      Position		      [257, 203, 306, 217]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -6136,7 +6298,7 @@ Model {
 	    Annotation {
 	      SID		      "393"
 	      Name		      "orig = 0.8"
-	      Position		      [268, 128, 311, 140]
+	      Position		      [268, 128, 311, 142]
 	      InternalMargins	      [0, 0, 0, 0]
 	      FixedHeight	      off
 	      FixedWidth	      off
@@ -8689,14 +8851,175 @@ Model {
 	      }
 	    }
 	    Block {
-	      BlockType		      TransferFcn
-	      Name		      "Transfer Fcn"
-	      SID		      "370"
-	      RequirementInfo	      "{} %GIDa_3bfe3d6e_47ed_45cd_9b22_d5337598ae49"
+	      BlockType		      SubSystem
+	      Name		      "Transfer Fcn_pp"
+	      SID		      "685"
+	      Ports		      [1, 1]
 	      Position		      [155, 207, 215, 243]
-	      ZOrder		      -13
-	      Numerator		      "[16 0]"
-	      Denominator	      "[16 1]"
+	      ZOrder		      1
+	      TreatAsAtomicUnit	      on
+	      RequestExecContextInheritance off
+	      Variant		      off
+	      System {
+		Name			"Transfer Fcn_pp"
+		Location		[100, 100, 600, 900]
+		Open			off
+		ModelBrowserVisibility	on
+		ModelBrowserWidth	200
+		ScreenColor		"white"
+		PaperOrientation	"landscape"
+		PaperPositionMode	"auto"
+		PaperType		"A4"
+		PaperUnits		"centimeters"
+		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+		TiledPageScale		1
+		ShowPageBoundaries	off
+		ZoomFactor		"100"
+		Block {
+		  BlockType		  Inport
+		  Name			  "Inport1"
+		  SID			  "693"
+		  Position		  [15, 15, 65, 65]
+		  ZOrder		  8
+		  IconDisplay		  "Port number"
+		}
+		Block {
+		  BlockType		  UnitDelay
+		  Name			  "D1"
+		  SID			  "686"
+		  Position		  [30, 90, 60, 120]
+		  ZOrder		  1
+		  SampleTime		  "-1"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "GainAC1_1"
+		  SID			  "687"
+		  Position		  [90, 140, 120, 170]
+		  ZOrder		  2
+		  Gain			  "-0.0625"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "GainAC2_1"
+		  SID			  "688"
+		  Position		  [90, 200, 120, 230]
+		  ZOrder		  3
+		  Gain			  "-0.0625"
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "GainBD1_1"
+		  SID			  "689"
+		  Position		  [150, 140, 180, 170]
+		  ZOrder		  4
+		}
+		Block {
+		  BlockType		  Gain
+		  Name			  "GainBD2_1"
+		  SID			  "690"
+		  Position		  [150, 250, 180, 280]
+		  ZOrder		  5
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum1"
+		  SID			  "691"
+		  Ports			  [2, 1]
+		  Position		  [210, 242, 240, 273]
+		  ZOrder		  6
+		}
+		Block {
+		  BlockType		  Sum
+		  Name			  "Sum2"
+		  SID			  "692"
+		  Ports			  [2, 1]
+		  Position		  [210, 352, 240, 383]
+		  ZOrder		  7
+		}
+		Block {
+		  BlockType		  Outport
+		  Name			  "Outport1"
+		  SID			  "694"
+		  Position		  [270, 340, 300, 370]
+		  ZOrder		  9
+		  IconDisplay		  "Port number"
+		}
+		Line {
+		  ZOrder		  3
+		  SrcBlock		  "D1"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  Branch {
+		    ZOrder		    1
+		    DstBlock		    "GainAC1_1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    ZOrder		    4
+		    DstBlock		    "GainAC2_1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  ZOrder		  2
+		  SrcBlock		  "GainAC1_1"
+		  SrcPort		  1
+		  DstBlock		  "Sum1"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  5
+		  SrcBlock		  "GainAC2_1"
+		  SrcPort		  1
+		  DstBlock		  "Sum2"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  8
+		  SrcBlock		  "Inport1"
+		  SrcPort		  1
+		  Points		  [0, 0]
+		  Branch {
+		    ZOrder		    6
+		    DstBlock		    "GainBD1_1"
+		    DstPort		    1
+		  }
+		  Branch {
+		    ZOrder		    9
+		    DstBlock		    "GainBD2_1"
+		    DstPort		    1
+		  }
+		}
+		Line {
+		  ZOrder		  7
+		  SrcBlock		  "GainBD1_1"
+		  SrcPort		  1
+		  DstBlock		  "Sum1"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  10
+		  SrcBlock		  "GainBD2_1"
+		  SrcPort		  1
+		  DstBlock		  "Sum2"
+		  DstPort		  2
+		}
+		Line {
+		  ZOrder		  11
+		  SrcBlock		  "Sum1"
+		  SrcPort		  1
+		  DstBlock		  "D1"
+		  DstPort		  1
+		}
+		Line {
+		  ZOrder		  12
+		  SrcBlock		  "Sum2"
+		  SrcPort		  1
+		  DstBlock		  "Outport1"
+		  DstPort		  1
+		}
+	      }
 	    }
 	    Block {
 	      BlockType		      Outport
@@ -8755,12 +9078,12 @@ Model {
 	      ZOrder		      8
 	      SrcBlock		      "qdeg"
 	      SrcPort		      1
-	      DstBlock		      "Transfer Fcn"
+	      DstBlock		      "Transfer Fcn_pp"
 	      DstPort		      1
 	    }
 	    Line {
 	      ZOrder		      9
-	      SrcBlock		      "Transfer Fcn"
+	      SrcBlock		      "Transfer Fcn_pp"
 	      SrcPort		      1
 	      DstBlock		      "Kwo"
 	      DstPort		      1
@@ -10755,14 +11078,175 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
-	  BlockType		  TransferFcn
-	  Name			  "YD_wo"
-	  SID			  "427"
-	  RequirementInfo	  "{} %GIDa_e4ecddaf_b3d8_4a89_aabe_57315209a16f"
+	  BlockType		  SubSystem
+	  Name			  "YD_wo_pp"
+	  SID			  "695"
+	  Ports			  [1, 1]
 	  Position		  [265, 52, 325, 88]
-	  ZOrder		  -6
-	  Numerator		  "[1 0]"
-	  Denominator		  "[1 10]"
+	  ZOrder		  105
+	  TreatAsAtomicUnit	  on
+	  RequestExecContextInheritance	off
+	  Variant		  off
+	  System {
+	    Name		    "YD_wo_pp"
+	    Location		    [100, 100, 600, 900]
+	    Open		    off
+	    ModelBrowserVisibility  on
+	    ModelBrowserWidth	    200
+	    ScreenColor		    "white"
+	    PaperOrientation	    "landscape"
+	    PaperPositionMode	    "auto"
+	    PaperType		    "A4"
+	    PaperUnits		    "centimeters"
+	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
+	    TiledPageScale	    1
+	    ShowPageBoundaries	    off
+	    ZoomFactor		    "100"
+	    Block {
+	      BlockType		      Inport
+	      Name		      "Inport1"
+	      SID		      "703"
+	      Position		      [15, 15, 65, 65]
+	      ZOrder		      8
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "D1"
+	      SID		      "696"
+	      Position		      [30, 90, 60, 120]
+	      ZOrder		      1
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "GainAC1_1"
+	      SID		      "697"
+	      Position		      [90, 140, 120, 170]
+	      ZOrder		      2
+	      Gain		      "-10"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "GainAC2_1"
+	      SID		      "698"
+	      Position		      [90, 200, 120, 230]
+	      ZOrder		      3
+	      Gain		      "-10"
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "GainBD1_1"
+	      SID		      "699"
+	      Position		      [150, 140, 180, 170]
+	      ZOrder		      4
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "GainBD2_1"
+	      SID		      "700"
+	      Position		      [150, 250, 180, 280]
+	      ZOrder		      5
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum1"
+	      SID		      "701"
+	      Ports		      [2, 1]
+	      Position		      [210, 242, 240, 273]
+	      ZOrder		      6
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      SID		      "702"
+	      Ports		      [2, 1]
+	      Position		      [210, 352, 240, 383]
+	      ZOrder		      7
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Outport1"
+	      SID		      "704"
+	      Position		      [270, 340, 300, 370]
+	      ZOrder		      9
+	      IconDisplay	      "Port number"
+	    }
+	    Line {
+	      ZOrder		      3
+	      SrcBlock		      "D1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		ZOrder			1
+		DstBlock		"GainAC1_1"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			4
+		DstBlock		"GainAC2_1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      2
+	      SrcBlock		      "GainAC1_1"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      5
+	      SrcBlock		      "GainAC2_1"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      8
+	      SrcBlock		      "Inport1"
+	      SrcPort		      1
+	      Points		      [0, 0]
+	      Branch {
+		ZOrder			6
+		DstBlock		"GainBD1_1"
+		DstPort			1
+	      }
+	      Branch {
+		ZOrder			9
+		DstBlock		"GainBD2_1"
+		DstPort			1
+	      }
+	    }
+	    Line {
+	      ZOrder		      7
+	      SrcBlock		      "GainBD1_1"
+	      SrcPort		      1
+	      DstBlock		      "Sum1"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      10
+	      SrcBlock		      "GainBD2_1"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      11
+	      SrcBlock		      "Sum1"
+	      SrcPort		      1
+	      DstBlock		      "D1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      12
+	      SrcBlock		      "Sum2"
+	      SrcPort		      1
+	      DstBlock		      "Outport1"
+	      DstPort		      1
+	    }
+	  }
 	}
 	Block {
 	  BlockType		  Outport
@@ -10814,12 +11298,12 @@ Model {
 	  ZOrder		  5
 	  SrcBlock		  "Kr"
 	  SrcPort		  1
-	  DstBlock		  "YD_wo"
+	  DstBlock		  "YD_wo_pp"
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  6
-	  SrcBlock		  "YD_wo"
+	  SrcBlock		  "YD_wo_pp"
 	  SrcPort		  1
 	  Points		  [15, 0; 0, 35]
 	  DstBlock		  "Product"

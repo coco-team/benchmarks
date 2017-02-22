@@ -25,7 +25,7 @@ Model {
       UnitExpr		      "inherit"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.29"
+    ComputedModelVersion    "1.30"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -50,7 +50,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [55.0, 14.0, 1300.0, 764.0]
+      Location		      [55.0, 14.0, 1320.0, 764.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -65,7 +65,7 @@ Model {
 	$PropName		"ExplorerBarInfo"
 	$ObjectID		4
 	$ClassName		"Simulink.ExplorerBarInfo"
-	Visible			[1]
+	Visible			[0]
       }
       Object {
 	$PropName		"EditorsInfo"
@@ -74,9 +74,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
-	Extents			[1051.0, 571.0]
-	ZoomFactor		[1.0]
-	Offset			[352.65655398832689, 260.91004985408563]
+	Extents			[1071.0, 601.0]
+	ZoomFactor		[1.2099713150226805]
+	Offset			[474.09354026845637, 287.14700495865293]
       }
     }
   }
@@ -86,9 +86,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "bourbouh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 06 20:32:37 2017"
-  RTWModifiedTimeStamp	  408313949
-  ModelVersionFormat	  "1.%<AutoIncrement:29>"
+  LastModifiedDate	  "Fri Feb 17 20:14:52 2017"
+  RTWModifiedTimeStamp	  409089932
+  ModelVersionFormat	  "1.%<AutoIncrement:30>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1112,7 +1112,7 @@ Model {
   }
   System {
     Name		    "tcm"
-    Location		    [55, 14, 1355, 778]
+    Location		    [55, 14, 1375, 778]
     Open		    on
     ModelBrowserVisibility  on
     ModelBrowserWidth	    200
@@ -1124,7 +1124,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "121"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "388"
     Block {
@@ -3391,7 +3391,7 @@ Model {
 		    Variant		    off
 		    System {
 		    Name		    "ANGL"
-		    Location		    [467, 54, 1042, 693]
+		    Location		    [55, 14, 1375, 778]
 		    Open		    off
 		    ModelBrowserVisibility  on
 		    ModelBrowserWidth	    200
@@ -3484,7 +3484,7 @@ Model {
 		    }
 		    Block {
 		    BlockType		    Outport
-		    Name		    "+ -180"
+		    Name		    "ANGL"
 		    SID			    "125"
 		    RequirementInfo	    "{} %GIDa_da671ccf_1469_4f90_9911_e50416dafc2f"
 		    Position		    [410, 148, 440, 162]
@@ -3538,7 +3538,7 @@ Model {
 		    ZOrder		    9
 		    SrcBlock		    "Switch1"
 		    SrcPort		    1
-		    DstBlock		    "+ -180"
+		    DstBlock		    "ANGL"
 		    DstPort		    1
 		    }
 		    Line {
