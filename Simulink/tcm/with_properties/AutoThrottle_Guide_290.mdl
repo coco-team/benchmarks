@@ -61,7 +61,7 @@ Model {
       UnitExpr		      "inherit"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.4"
+    ComputedModelVersion    "1.5"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -106,24 +106,24 @@ Model {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[8]
+	Filter			[9]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
 	$ObjectID		5
 	$ClassName		"Simulink.ExplorerBarInfo"
-	Visible			[1]
+	Visible			[0]
       }
       Object {
 	$PropName		"EditorsInfo"
 	$ObjectID		6
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1267.0, 599.0]
-	ZoomFactor		[0.62057142857142855]
-	Offset			[-250.97298177083337, 2.940147329650074]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"76"
+	Extents			[1267.0, 629.0]
+	ZoomFactor		[1.0]
+	Offset			[0.0, -70.837488025426865]
       }
     }
   }
@@ -133,9 +133,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "bourbouh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 14 16:28:30 2017"
-  RTWModifiedTimeStamp	  408990504
-  ModelVersionFormat	  "1.%<AutoIncrement:4>"
+  LastModifiedDate	  "Wed Mar 15 22:06:22 2017"
+  RTWModifiedTimeStamp	  411516381
+  ModelVersionFormat	  "1.%<AutoIncrement:5>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1072,7 +1072,7 @@ Model {
   System {
     Name		    "AutoThrottle_Guide_290"
     Location		    [65, 24, 1366, 768]
-    Open		    on
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1085,7 +1085,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "62"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "98"
+    SIDHighWatermark	    "99"
     Block {
       BlockType		      Inport
       Name		      "ATEng"
@@ -2279,8 +2279,8 @@ Model {
       Variant		      off
       System {
 	Name			"VarLimIntegAT"
-	Location		[598, 448, 1229, 1040]
-	Open			off
+	Location		[65, 24, 1366, 768]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2479,6 +2479,16 @@ Model {
 	  Threshold		  "0.1"
 	}
 	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  SID			  "99"
+	  Position		  [483, 35, 517, 70]
+	  ZOrder		  1
+	  BlockRotation		  270
+	  InputProcessing	  "Elements as channels (sample based)"
+	  SampleTime		  "-1"
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "Out"
 	  SID			  "94"
@@ -2613,18 +2623,8 @@ Model {
 	  Points		  [10, 0]
 	  Branch {
 	    ZOrder		    19
-	    Points		    [0, -50; -355, 0; 0, 20]
-	    Branch {
-	      ZOrder		      20
-	      DstBlock		      "Relational\nOperator2"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      21
-	      Points		      [0, 90]
-	      DstBlock		      "Relational\nOperator1"
-	      DstPort		      1
-	    }
+	    DstBlock		    "Unit Delay"
+	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    22
@@ -2645,6 +2645,23 @@ Model {
 	  SrcPort		  1
 	  DstBlock		  "Switch1"
 	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  25
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [0, -49; -355, 0; 0, 104]
+	  Branch {
+	    ZOrder		    20
+	    DstBlock		    "Relational\nOperator2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    21
+	    Points		    [0, 90]
+	    DstBlock		    "Relational\nOperator1"
+	    DstPort		    1
+	  }
 	}
       }
     }

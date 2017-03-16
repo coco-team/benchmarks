@@ -61,7 +61,7 @@ Model {
       UnitExpr		      "inherit"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.5"
+    ComputedModelVersion    "1.7"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -106,25 +106,25 @@ Model {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[8]
+	Filter			[9]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
 	$ObjectID		5
 	$ClassName		"Simulink.ExplorerBarInfo"
-	Visible			[1]
+	Visible			[0]
       }
       Array {
 	Type			"Simulink.EditorInfo"
 	Dimension		3
 	Object {
 	  $ObjectID		  6
-	  IsActive		  [1]
+	  IsActive		  [0]
 	  ViewObjType		  "SimulinkTopLevel"
 	  LoadSaveID		  "0"
-	  Extents		  [1267.0, 593.0]
-	  ZoomFactor		  [0.64942528735632188]
-	  Offset		  [-205.61752454369469, -16.057522123893762]
+	  Extents		  [1267.0, 623.0]
+	  ZoomFactor		  [0.68390804597701149]
+	  Offset		  [-156.43376608455878, -14.970588235294144]
 	}
 	Object {
 	  $ObjectID		  7
@@ -137,12 +137,12 @@ Model {
 	}
 	Object {
 	  $ObjectID		  8
-	  IsActive		  [0]
+	  IsActive		  [1]
 	  ViewObjType		  "SimulinkSubsys"
 	  LoadSaveID		  "85"
-	  Extents		  [1267.0, 593.0]
-	  ZoomFactor		  [2.0457142857142858]
-	  Offset		  [-12.17178770949721, 58.656424581005581]
+	  Extents		  [1267.0, 623.0]
+	  ZoomFactor		  [1.5]
+	  Offset		  [-219.5, -29.043137254901922]
 	}
 	PropName		"EditorsInfo"
       }
@@ -154,9 +154,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "bourbouh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 14 16:27:11 2017"
-  RTWModifiedTimeStamp	  408990424
-  ModelVersionFormat	  "1.%<AutoIncrement:5>"
+  LastModifiedDate	  "Wed Mar 15 22:03:40 2017"
+  RTWModifiedTimeStamp	  411516218
+  ModelVersionFormat	  "1.%<AutoIncrement:7>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1104,9 +1104,9 @@ Model {
     TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "65"
+    ZoomFactor		    "68"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "107"
+    SIDHighWatermark	    "111"
     Block {
       BlockType		      Inport
       Name		      "ATEng"
@@ -1236,7 +1236,7 @@ Model {
       Variant		      off
       System {
 	Name			"EngageORzero"
-	Location		[205, 45, 2173, 1370]
+	Location		[65, 24, 1366, 768]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1248,7 +1248,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"99"
+	ZoomFactor		"462"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Engage"
@@ -1456,7 +1456,7 @@ Model {
       }
       System {
 	Name			"Guide_100_Env"
-	Location		[36, 137, 1662, 1308]
+	Location		[65, 24, 1366, 768]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2466,7 +2466,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"205"
+	ZoomFactor		"150"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Input"
@@ -2654,6 +2654,16 @@ Model {
 	  Threshold		  "0.1"
 	}
 	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  SID			  "111"
+	  Position		  [483, 25, 517, 60]
+	  ZOrder		  3
+	  BlockRotation		  270
+	  InputProcessing	  "Elements as channels (sample based)"
+	  SampleTime		  "-1"
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "Out"
 	  SID			  "103"
@@ -2788,18 +2798,8 @@ Model {
 	  Points		  [10, 0]
 	  Branch {
 	    ZOrder		    19
-	    Points		    [0, -50; -355, 0; 0, 20]
-	    Branch {
-	      ZOrder		      20
-	      DstBlock		      "Relational\nOperator2"
-	      DstPort		      1
-	    }
-	    Branch {
-	      ZOrder		      21
-	      Points		      [0, 90]
-	      DstBlock		      "Relational\nOperator1"
-	      DstPort		      1
-	    }
+	    DstBlock		    "Unit Delay"
+	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    22
@@ -2820,6 +2820,23 @@ Model {
 	  SrcPort		  1
 	  DstBlock		  "Switch1"
 	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  25
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [0, -7; -355, 0; 0, 72]
+	  Branch {
+	    ZOrder		    20
+	    DstBlock		    "Relational\nOperator2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    21
+	    Points		    [0, 90]
+	    DstBlock		    "Relational\nOperator1"
+	    DstPort		    1
+	  }
 	}
       }
     }

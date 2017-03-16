@@ -56,7 +56,7 @@ Model {
       UnitExpr		      "inherit"
     }
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.2"
+    ComputedModelVersion    "1.4"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -81,7 +81,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [55.0, 14.0, 1162.0, 764.0]
+      Location		      [65.0, 24.0, 1162.0, 764.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -90,13 +90,13 @@ Model {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[8]
+	Filter			[9]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
 	$ObjectID		4
 	$ClassName		"Simulink.ExplorerBarInfo"
-	Visible			[1]
+	Visible			[0]
       }
       Object {
 	$PropName		"EditorsInfo"
@@ -104,8 +104,8 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"62"
-	Extents			[1108.0, 571.0]
+	LoadSaveID		"110"
+	Extents			[1108.0, 601.0]
 	ZoomFactor		[1.0]
 	Offset			[0.0, 0.0]
       }
@@ -117,9 +117,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "bourbouh"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Feb 14 16:30:34 2017"
-  RTWModifiedTimeStamp	  408990634
-  ModelVersionFormat	  "1.%<AutoIncrement:2>"
+  LastModifiedDate	  "Wed Mar 15 22:36:34 2017"
+  RTWModifiedTimeStamp	  411518193
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1091,10 +1091,19 @@ Model {
       OutputSignalType	      "auto"
       SampleTime	      "-1"
     }
+    Block {
+      BlockType		      UnitDelay
+      InitialCondition	      "0"
+      InputProcessing	      "Inherited"
+      SampleTime	      "1"
+      StateMustResolveToSignalObject off
+      CodeGenStateStorageClass "Auto"
+      HasFrameUpgradeWarning  on
+    }
   }
   System {
     Name		    "Heading_Control_Guide_250"
-    Location		    [55, 14, 1217, 778]
+    Location		    [65, 24, 1227, 788]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1108,7 +1117,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "75"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "132"
+    SIDHighWatermark	    "139"
     Block {
       BlockType		      Inport
       Name		      "HdgCmdMCP"
@@ -1572,7 +1581,7 @@ Model {
       }
       System {
 	Name			"HdgCmdProcessor"
-	Location		[55, 14, 1217, 778]
+	Location		[65, 24, 1227, 788]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1584,7 +1593,7 @@ Model {
 	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"84"
 	Block {
 	  BlockType		  Inport
 	  Name			  "Vt"
@@ -2117,6 +2126,28 @@ Model {
 	  Operator		  "tan"
 	}
 	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  SID			  "134"
+	  Position		  [390, 563, 425, 597]
+	  ZOrder		  2
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  InputProcessing	  "Elements as channels (sample based)"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay1"
+	  SID			  "135"
+	  Position		  [830, 523, 865, 557]
+	  ZOrder		  3
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  InputProcessing	  "Elements as channels (sample based)"
+	  SampleTime		  "-1"
+	}
+	Block {
 	  BlockType		  SubSystem
 	  Name			  "VarLimIntegIC"
 	  SID			  "62"
@@ -2134,8 +2165,8 @@ Model {
 	  }
 	  System {
 	    Name		    "VarLimIntegIC"
-	    Location		    [55, 14, 1217, 778]
-	    Open		    on
+	    Location		    [65, 24, 1227, 788]
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2358,6 +2389,28 @@ Model {
 	      Threshold		      "0.5"
 	    }
 	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay"
+	      SID		      "136"
+	      Position		      [530, 198, 565, 232]
+	      ZOrder		      2
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      InputProcessing	      "Elements as channels (sample based)"
+	      SampleTime	      "-1"
+	    }
+	    Block {
+	      BlockType		      UnitDelay
+	      Name		      "Unit Delay1"
+	      SID		      "137"
+	      Position		      [405, 8, 440, 42]
+	      ZOrder		      3
+	      BlockMirror	      on
+	      NamePlacement	      "alternate"
+	      InputProcessing	      "Elements as channels (sample based)"
+	      SampleTime	      "-1"
+	    }
+	    Block {
 	      BlockType		      Outport
 	      Name		      "Out"
 	      SID		      "82"
@@ -2373,9 +2426,9 @@ Model {
 	      Points		      [5, 0]
 	      Branch {
 		ZOrder			2
-		Points			[0, 65; -420, 0]
-		DstBlock		"Logical\nOperator1"
-		DstPort			2
+		Points			[0, 65]
+		DstBlock		"Unit Delay"
+		DstPort			1
 	      }
 	      Branch {
 		ZOrder			3
@@ -2534,8 +2587,8 @@ Model {
 	      Points		      [5, 0]
 	      Branch {
 		ZOrder			27
-		Points			[0, -70; -310, 0; 0, 20]
-		DstBlock		"Logical\nOperator"
+		Points			[0, -130]
+		DstBlock		"Unit Delay1"
 		DstPort			1
 	      }
 	      Branch {
@@ -2584,6 +2637,22 @@ Model {
 		DstBlock		"Switch1"
 		DstPort			3
 	      }
+	    }
+	    Line {
+	      ZOrder		      36
+	      SrcBlock		      "Unit Delay"
+	      SrcPort		      1
+	      Points		      [-310, 0]
+	      DstBlock		      "Logical\nOperator1"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      37
+	      SrcBlock		      "Unit Delay1"
+	      SrcPort		      1
+	      Points		      [-190, 0; 0, 80]
+	      DstBlock		      "Logical\nOperator"
+	      DstPort		      1
 	    }
 	  }
 	}
@@ -2746,9 +2815,9 @@ Model {
 	  Points		  [45, 0]
 	  Branch {
 	    ZOrder		    2
-	    Points		    [0, 95; -810, 0]
-	    DstBlock		    "Sum2"
-	    DstPort		    2
+	    Points		    [0, 95]
+	    DstBlock		    "Unit Delay"
+	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    3
@@ -2900,7 +2969,7 @@ Model {
 	    Points		    [0, 75]
 	    Branch {
 	      ZOrder		      25
-	      DstBlock		      "2zetaOmega"
+	      DstBlock		      "Unit Delay1"
 	      DstPort		      1
 	    }
 	    Branch {
@@ -3122,6 +3191,21 @@ Model {
 	      DstPort		      2
 	    }
 	  }
+	}
+	Line {
+	  ZOrder		  60
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [-20, 0]
+	  DstBlock		  "Sum2"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  61
+	  SrcBlock		  "Unit Delay1"
+	  SrcPort		  1
+	  DstBlock		  "2zetaOmega"
+	  DstPort		  1
 	}
       }
     }
@@ -3350,6 +3434,17 @@ Model {
       ZOrder		      -24
     }
     Block {
+      BlockType		      UnitDelay
+      Name		      "Unit Delay"
+      SID		      "133"
+      Position		      [835, 723, 870, 757]
+      ZOrder		      1
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      InputProcessing	      "Elements as channels (sample based)"
+      SampleTime	      "-1"
+    }
+    Block {
       BlockType		      SubSystem
       Name		      "VarLimIntegIC"
       SID		      "110"
@@ -3367,8 +3462,8 @@ Model {
       }
       System {
 	Name			"VarLimIntegIC"
-	Location		[68, 45, 1863, 1358]
-	Open			off
+	Location		[65, 24, 1227, 788]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3591,6 +3686,28 @@ Model {
 	  Threshold		  "0.5"
 	}
 	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay"
+	  SID			  "138"
+	  Position		  [580, 198, 615, 232]
+	  ZOrder		  2
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  InputProcessing	  "Elements as channels (sample based)"
+	  SampleTime		  "-1"
+	}
+	Block {
+	  BlockType		  UnitDelay
+	  Name			  "Unit Delay1"
+	  SID			  "139"
+	  Position		  [405, 3, 440, 37]
+	  ZOrder		  3
+	  BlockMirror		  on
+	  NamePlacement		  "alternate"
+	  InputProcessing	  "Elements as channels (sample based)"
+	  SampleTime		  "-1"
+	}
+	Block {
 	  BlockType		  Outport
 	  Name			  "Out"
 	  SID			  "130"
@@ -3606,9 +3723,9 @@ Model {
 	  Points		  [5, 0]
 	  Branch {
 	    ZOrder		    2
-	    Points		    [0, 65; -420, 0]
-	    DstBlock		    "Logical\nOperator1"
-	    DstPort		    2
+	    Points		    [0, 65]
+	    DstBlock		    "Unit Delay"
+	    DstPort		    1
 	  }
 	  Branch {
 	    ZOrder		    3
@@ -3767,8 +3884,8 @@ Model {
 	  Points		  [5, 0]
 	  Branch {
 	    ZOrder		    27
-	    Points		    [0, -70; -310, 0; 0, 20]
-	    DstBlock		    "Logical\nOperator"
+	    Points		    [0, -135]
+	    DstBlock		    "Unit Delay1"
 	    DstPort		    1
 	  }
 	  Branch {
@@ -3817,6 +3934,22 @@ Model {
 	    DstBlock		    "Switch1"
 	    DstPort		    3
 	  }
+	}
+	Line {
+	  ZOrder		  36
+	  SrcBlock		  "Unit Delay"
+	  SrcPort		  1
+	  Points		  [-360, 0]
+	  DstBlock		  "Logical\nOperator1"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  37
+	  SrcBlock		  "Unit Delay1"
+	  SrcPort		  1
+	  Points		  [-190, 0; 0, 85]
+	  DstBlock		  "Logical\nOperator"
+	  DstPort		  1
 	}
       }
     }
@@ -4025,18 +4158,9 @@ Model {
       Points		      [30, 0]
       Branch {
 	ZOrder			31
-	Points			[0, 260; -655, 0; 0, -35]
-	Branch {
-	  ZOrder		  32
-	  Points		  [0, -60]
-	  DstBlock		  "Sum3"
-	  DstPort		  1
-	}
-	Branch {
-	  ZOrder		  33
-	  DstBlock		  "Sum4"
-	  DstPort		  2
-	}
+	Points			[0, 260]
+	DstBlock		"Unit Delay"
+	DstPort			1
       }
       Branch {
 	ZOrder			34
@@ -4273,6 +4397,23 @@ Model {
       SrcPort		      1
       DstBlock		      "Terminator1"
       DstPort		      1
+    }
+    Line {
+      ZOrder		      145
+      SrcBlock		      "Unit Delay"
+      SrcPort		      1
+      Points		      [-530, 0; 0, -35]
+      Branch {
+	ZOrder			32
+	Points			[0, -60]
+	DstBlock		"Sum3"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			33
+	DstBlock		"Sum4"
+	DstPort			2
+      }
     }
   }
 }
